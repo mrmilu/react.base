@@ -5,13 +5,21 @@ import DummyPage from "@/src/ui/pages/dummy/components/dummy_page/dummy_page";
 import Page404 from "@/src/ui/components/error_pages/404";
 import PostsPage from "@/src/ui/pages/dummy/components/posts_page/posts_page";
 import CreatePostPage from "@/src/ui/pages/dummy/components/create_post_page/create_post_page";
+import { AppErrorBoundary } from "@/src/ui/components/app_error_boundary/app_error_boundary";
 
 export const routes: Array<RouteObject> = [
   {
     path: "/",
     element: <BaseLayout />,
     children: [
-      { index: true, element: <HomePage /> },
+      {
+        index: true,
+        element: (
+          <AppErrorBoundary>
+            <HomePage />
+          </AppErrorBoundary>
+        )
+      },
       {
         path: "/dummy",
         element: <DummyPage />

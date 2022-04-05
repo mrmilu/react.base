@@ -1,5 +1,4 @@
 import { Component } from "react";
-import * as Sentry from "@sentry/nextjs";
 import type { BaseError } from "@/src/core/app/domain/models/base_error";
 import { AppErrorBoundaryStyled } from "@/src/ui/components/app_error_boundary/app_error_boundary.styled";
 
@@ -27,7 +26,7 @@ export class AppErrorBoundary extends Component {
       hasError: true,
       errorMsg: error.message
     });
-    Sentry.captureException(error);
+    // Sentry.captureException(error);
   }
 
   render() {

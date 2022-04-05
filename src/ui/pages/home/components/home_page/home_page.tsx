@@ -21,7 +21,7 @@ const formValues: FormValues = {
 };
 
 export default function HomePage() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation("home");
   const [firstSubmit, setFirstSubmit] = useState(false);
   const validationSchema = useMemo(
     () =>
