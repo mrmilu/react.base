@@ -1,0 +1,7 @@
+mutation CreateDummyPost($input: CreatePostInput!) {
+  createPost(input: $input) {
+    id
+    title
+    body
+  }
+}

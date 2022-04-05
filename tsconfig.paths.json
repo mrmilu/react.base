@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/ioc/*": ["src/common/ioc/*"],
+      "@/src/*": ["src/*"]
+    }
+  }
+}
