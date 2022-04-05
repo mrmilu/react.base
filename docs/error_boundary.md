@@ -1,7 +1,7 @@
 ## Error boundaries
 
 To avoid that ui errors breaking the app and make it unusable we are going to implement error boundaries at
-page level. This way we can guarantee if a page breaks the user can still navigate it's way out and the application
+page level (in our routes object). This way we can guarantee if a page breaks the user can still navigate it's way out and the application
 maintains interactive.
 
 [Error boundaries](https://reactjs.org/docs/error-boundaries.html) is a technique introduced in React 16.

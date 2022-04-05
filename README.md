@@ -15,6 +15,7 @@
 - [Error boundary](docs/error_boundary.md)
 - [i18n-next](docs/i18n_next.md) ([next-i18n official documentation](https://github.com/isaachinman/next-i18next))
 - [Development proxy through rewrites](docs/dev_proxy.md)
+- React Router 6
 
 ### First steps
 

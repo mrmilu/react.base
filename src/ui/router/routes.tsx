@@ -1,11 +1,14 @@
 import type { RouteObject } from "react-router-dom";
 import { BaseLayout } from "@/src/ui/components/base_layout/base_layout";
-import HomePage from "@/src/ui/pages/home/components/home_page/home_page";
-import DummyPage from "@/src/ui/pages/dummy/components/dummy_page/dummy_page";
-import Page404 from "@/src/ui/components/error_pages/404";
-import PostsPage from "@/src/ui/pages/dummy/components/posts_page/posts_page";
-import CreatePostPage from "@/src/ui/pages/dummy/components/create_post_page/create_post_page";
 import { AppErrorBoundary } from "@/src/ui/components/app_error_boundary/app_error_boundary";
+import Page404 from "@/src/ui/components/error_pages/404";
+import { lazy } from "react";
+import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
+
+const HomePage = lazy(() => import("@/src/ui/pages/home/components/home_page/home_page"));
+const DummyPage = lazy(() => import("@/src/ui/pages/dummy/components/dummy_page/dummy_page"));
+const PostsPage = lazy(() => import("@/src/ui/pages/dummy/components/posts_page/posts_page"));
+const CreatePostPage = lazy(() => import("@/src/ui/pages/dummy/components/create_post_page/create_post_page"));
 
 export const routes: Array<RouteObject> = [
   {
@@ -16,21 +19,35 @@ export const routes: Array<RouteObject> = [
         index: true,
         element: (
           <AppErrorBoundary>
-            <HomePage />
+            <SuspenseMainLoader>
+              <HomePage />
+            </SuspenseMainLoader>
           </AppErrorBoundary>
         )
       },
       {
         path: "/dummy",
-        element: <DummyPage />
+        element: (
+          <SuspenseMainLoader>
+            <DummyPage />
+          </SuspenseMainLoader>
+        )
       },
       {
         path: "/posts",
-        element: <PostsPage />
+        element: (
+          <SuspenseMainLoader>
+            <PostsPage />
+          </SuspenseMainLoader>
+        )
       },
       {
         path: "/create-post",
-        element: <CreatePostPage />
+        element: (
+          <SuspenseMainLoader>
+            <CreatePostPage />
+          </SuspenseMainLoader>
+        )
       },
       { path: "*", element: <Page404 /> }
     ]

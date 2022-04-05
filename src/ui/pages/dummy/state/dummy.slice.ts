@@ -10,28 +10,27 @@ import type { GetDummyPostsUseCase } from "@/src/core/dummy/domain/use_cases/get
 
 const initialState = (): DummySliceState => ({
   users: [],
-  posts: [],
-  loading: false
+  posts: []
 });
 
 export const getUsersThunk = createAsyncThunk("dummy.slice/getUsers", async (arg, { dispatch }) => {
   dispatch(setLoader(true));
   try {
     const getDummyUsersUseCase = await locator.get<IocProvider<GetDummyUsersUseCase>>(TYPES.GetDummyUsersUseCase)();
-    return getDummyUsersUseCase.execute();
-  } finally {
-    dispatch(setLoader(false));
-  }
+    return getDummyUsersUseCase.execute().finally(() => {
+      dispatch(setLoader(false));
+    });
+  } catch (e) {}
 });
 
 export const getPostsThunk = createAsyncThunk("dummy.slice/getPosts", async (arg, { dispatch }) => {
   dispatch(setLoader(true));
   try {
     const getDummyPostsUseCase = await locator.get<IocProvider<GetDummyPostsUseCase>>(TYPES.GetDummyPostsUseCase)();
-    return getDummyPostsUseCase.execute();
-  } finally {
-    dispatch(setLoader(false));
-  }
+    return getDummyPostsUseCase.execute().finally(() => {
+      dispatch(setLoader(false));
+    });
+  } catch (e) {}
 });
 
 const uiSlice = createSlice({
@@ -40,18 +39,10 @@ const uiSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getUsersThunk.fulfilled, (state, { payload }) => {
-      state.loading = false;
-      state.users = payload;
-    });
-    builder.addCase(getUsersThunk.pending, (state) => {
-      state.loading = true;
+      state.users = payload ?? [];
     });
     builder.addCase(getPostsThunk.fulfilled, (state, { payload }) => {
-      state.loading = false;
-      state.posts = payload;
-    });
-    builder.addCase(getPostsThunk.pending, (state) => {
-      state.loading = true;
+      state.posts = payload ?? [];
     });
   }
 });
@@ -62,6 +53,5 @@ function selectDummyBase(state: RootState) {
 
 export const getUsers = createSelector([selectDummyBase], (slice) => slice.users);
 export const getPosts = createSelector([selectDummyBase], (slice) => slice.posts);
-export const getLoadingState = createSelector([selectDummyBase], (slice) => slice.loading);
 
 export default uiSlice.reducer;
