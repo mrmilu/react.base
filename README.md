@@ -2,6 +2,7 @@
 
 ### Index and features
 
+- [CRA with CRACO](https://github.com/gsoft-inc/craco)
 - [Clean architecture](https://www.notion.so/mrmilu/Arquitectura-7e45973fc107487294a63bac9f5c3aa4) <-- READ THIS!
 - Dependency Injection ([Inversify](https://github.com/inversify/InversifyJS))
 - Typescript
@@ -13,9 +14,9 @@
 - ESLint (with TypeScript config)
 - Prettier
 - [Error boundary](docs/error_boundary.md)
-- [i18n-next](docs/i18n_next.md) ([next-i18n official documentation](https://github.com/isaachinman/next-i18next))
-- [Development proxy through rewrites](docs/dev_proxy.md)
-- React Router 6
+- [react-i18next](docs/i18next.md) ([i18next react official documentation](https://react.i18next.com/))
+- [Development proxy server](docs/dev_proxy.md)
+- [React Router 6](https://reactrouter.com/docs/en/v6/api)
 
 ### First steps
 

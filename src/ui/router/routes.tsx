@@ -4,6 +4,8 @@ import { AppErrorBoundary } from "@/src/ui/components/app_error_boundary/app_err
 import Page404 from "@/src/ui/components/error_pages/404";
 import { lazy } from "react";
 import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
+import { RouteMiddleware } from "@/src/ui/router/route_middleware";
+import { useAuthMiddleware } from "@/src/ui/router/middlewares/auth_middleware.hook";
 
 const HomePage = lazy(() => import("@/src/ui/pages/home/components/home_page/home_page"));
 const DummyPage = lazy(() => import("@/src/ui/pages/dummy/components/dummy_page/dummy_page"));
@@ -28,9 +30,11 @@ export const routes: Array<RouteObject> = [
       {
         path: "/dummy",
         element: (
-          <SuspenseMainLoader>
-            <DummyPage />
-          </SuspenseMainLoader>
+          <RouteMiddleware validationHook={useAuthMiddleware}>
+            <SuspenseMainLoader>
+              <DummyPage />
+            </SuspenseMainLoader>
+          </RouteMiddleware>
         )
       },
       {

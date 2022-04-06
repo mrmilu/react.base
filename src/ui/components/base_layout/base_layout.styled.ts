@@ -35,6 +35,7 @@ export const BaseLayoutNavStyled = styled.nav`
   justify-content: start;
   background-color: ${colors.gray20};
   padding: 0 ${px2rem(spacing.size4)};
+  gap: ${px2rem(spacing.size4)};
 
   ${includeMedia(
     "md",

@@ -36,7 +36,6 @@ export const Modal = () => {
 
   useEffect(() => {
     if (showModal) {
-      console.log("here");
       setTimeout(() => {
         setShowContent(true);
       }, 80);
