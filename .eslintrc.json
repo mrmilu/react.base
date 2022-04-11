@@ -12,5 +12,10 @@
     "@typescript-eslint/consistent-type-imports": "error",
     "react/react-in-jsx-scope": 0,
     "react/prop-types": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

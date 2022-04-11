@@ -17,6 +17,7 @@
 - [react-i18next](docs/i18next.md) ([i18next react official documentation](https://react.i18next.com/))
 - [Development proxy server](docs/dev_proxy.md)
 - [React Router 6](https://reactrouter.com/docs/en/v6/api)
+- Sentry
 
 ### First steps
 
@@ -43,15 +44,11 @@ yarn dev
 Create a `.env.local` file with your environment variables with the following defaults
 
 ```
-NEXT_PUBLIC_API_URL=http://localhost:3000
-NEXT_PUBLIC_ANOTHER_API_URL=http://localhost:3000
-NEXT_PUBLIC_GRAPHQL_PROXY_ENDPOINT=https://graphqlzero.almansi.me/api
-NEXT_PUBLIC_REST_PROXY_ENDPOINT=https://jsonplaceholder.typicode.com
-NEXT_PUBLIC_SENTRY_DSN=project_dsn
-NEXT_PUBLIC_SENTRY_ENABLED=false
+REACT_APP_API_URL=http://localhost:3000
+REACT_APP_ANOTHER_API_URL=http://localhost:3000
+REACT_APP_GRAPHQL_PROXY_ENDPOINT=https://graphqlzero.almansi.me/api
+REACT_APP_REST_PROXY_ENDPOINT=https://jsonplaceholder.typicode.com
+REACT_APP_SENTRY_DSN=project_dsn
+REACT_APP_SENTRY_ENABLED=false
 SENTRY_ENVIRONMENT=dev
-SENTRY_URL=https://sentry.mrmilu.com
-SENTRY_ORG=mrmilu
-SENTRY_PROJECT=project-name
-SENTRY_AUTH_TOKEN=sentry-user-auth-token
 ```
