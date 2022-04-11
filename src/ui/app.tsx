@@ -5,7 +5,7 @@ import { useRoutes } from "react-router-dom";
 import { routes } from "@/src/ui/router/routes";
 
 function App() {
-  let page = useRoutes(routes);
+  const page = useRoutes(routes);
 
   return (
     <>
