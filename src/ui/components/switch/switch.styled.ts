@@ -14,6 +14,7 @@ export const SwitchStyled = styled.label`
   display: inline-block;
   width: ${px2rem(40)};
   height: ${px2rem(26)};
+  flex: 0 0 auto;
 
   > input {
     opacity: 0;

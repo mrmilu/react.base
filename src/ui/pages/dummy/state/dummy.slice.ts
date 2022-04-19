@@ -33,7 +33,7 @@ export const getPostsThunk = createAsyncThunk("dummy.slice/getPosts", async (arg
   } catch (e) {}
 });
 
-const uiSlice = createSlice({
+const dummySlice = createSlice({
   name: "ui.slice",
   initialState: initialState(),
   reducers: {},
@@ -54,4 +54,4 @@ function selectDummyBase(state: RootState) {
 export const getUsers = createSelector([selectDummyBase], (slice) => slice.users);
 export const getPosts = createSelector([selectDummyBase], (slice) => slice.posts);
 
-export default uiSlice.reducer;
+export default dummySlice.reducer;
