@@ -1,8 +1,7 @@
 import { DummyPageSimpleCardStyled, DummyPageStyled } from "@/src/ui/pages/dummy/components/dummy_page/dummy_page.styled";
-import { useBreakpointsMatch } from "@/src/ui/hooks/breakpoint_match.hook";
 import { getPosts, getPostsThunk } from "@/src/ui/pages/dummy/state/dummy.slice";
 import { useAppDispatch, useAppSelector } from "@/src/ui/state";
-import { useEffectOnce } from "@/src/ui/hooks/use_effect_once";
+import { useBreakpointsMatch, useEffectOnce } from "@front_web_mrmilu/hooks";
 
 export default function PostsPage() {
   const dispatch = useAppDispatch();

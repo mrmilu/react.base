@@ -4,9 +4,9 @@ import { Button } from "@/src/ui/components/button/button";
 import { useEffect, useMemo, useState } from "react";
 import { HomeFormStyled, HomePageLocaleStyled, HomePageStyled } from "@/src/ui/pages/home/components/home_page/home_page.styled";
 import yup from "@/src/common/utils/yup_extended";
-import { timeout } from "@/src/common/utils/promise";
 import { BaseError } from "make-error";
 import { useTranslation } from "react-i18next";
+import { timeout } from "@front_web_mrmilu/utils";
 
 interface FormValues {
   name: string;

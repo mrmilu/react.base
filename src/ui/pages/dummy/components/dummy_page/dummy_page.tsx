@@ -1,12 +1,11 @@
 import { useAppDispatch, useAppSelector } from "@/src/ui/state";
 import { getUsers, getUsersThunk } from "@/src/ui/pages/dummy/state/dummy.slice";
 import { DummyPageSimpleCardStyled, DummyPageStyled } from "@/src/ui/pages/dummy/components/dummy_page/dummy_page.styled";
-import { useBreakpointsMatch } from "@/src/ui/hooks/breakpoint_match.hook";
 import type { DummyUser } from "@/src/core/dummy/domain/models/dummy_user";
 import { UserModal } from "@/src/ui/pages/dummy/components/user_modal/user_modal";
 import { showModal } from "@/src/ui/state/ui.slice";
-import { makeCancelable } from "@/src/common/utils/promise";
-import { useEffectOnce } from "@/src/ui/hooks/use_effect_once";
+import { makeCancelable } from "@front_web_mrmilu/utils";
+import { useBreakpointsMatch, useEffectOnce } from "@front_web_mrmilu/hooks";
 
 export default function DummyPage() {
   const dispatch = useAppDispatch();

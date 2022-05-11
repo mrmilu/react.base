@@ -5,7 +5,7 @@ import { useTransition, animated, easings } from "react-spring";
 import { Close as CloseIcon } from "@/src/ui/icons";
 import { useAppDispatch, useAppSelector } from "@/src/ui/state";
 import { getModalContent, getShowModal, hideModal } from "@/src/ui/state/ui.slice";
-import { useClickOutside } from "@/src/ui/hooks/click_outisde.hook";
+import { useClickOutside } from "@front_web_mrmilu/hooks";
 
 const MODAL_TRANSITION_CONFIG = {
   duration: 450,

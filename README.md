@@ -41,13 +41,23 @@ yarn dev
 
 ### Environment variables
 
-Create a `.env.local` file with your environment variables with the following defaults
+Create a `.env.development.local` file with your environment variables with the following defaults for dev server
 
 ```
 REACT_APP_API_URL=http://localhost:3000
 REACT_APP_ANOTHER_API_URL=http://localhost:3000
-REACT_APP_GRAPHQL_PROXY_ENDPOINT=https://graphqlzero.almansi.me/api
+REACT_APP_GRAPHQL_PROXY_ENDPOINT=https://graphqlzero.almansi.me
 REACT_APP_REST_PROXY_ENDPOINT=https://jsonplaceholder.typicode.com
+REACT_APP_SENTRY_DSN=project_dsn
+REACT_APP_SENTRY_ENABLED=false
+SENTRY_ENVIRONMENT=dev
+```
+
+Also create a `.env.production.local` file with your environment variables with the following defaults for production build
+
+```
+REACT_APP_API_URL=https://graphqlzero.almansi.me
+REACT_APP_ANOTHER_API_URL=https://jsonplaceholder.typicode.com
 REACT_APP_SENTRY_DSN=project_dsn
 REACT_APP_SENTRY_ENABLED=false
 SENTRY_ENVIRONMENT=dev

@@ -1,4 +1,4 @@
-import * as yup from "yup";
+import { yup } from "@front_web_mrmilu/utils";
 import type { AnyObject, Maybe } from "yup/lib/types";
 
 // Here declare yup extend methods for each schema type
