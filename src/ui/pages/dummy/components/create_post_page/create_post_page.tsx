@@ -7,7 +7,7 @@ import type { CreateDummyPostUseCase } from "@/src/core/dummy/domain/use_cases/c
 import { TYPES } from "@/src/core/app/ioc/types";
 import { debounce } from "lodash";
 import { Switch } from "@/src/ui/components/switch/switch";
-import { useAsyncState } from "@/src/ui/hooks/async_state.hook";
+import { useAsyncState } from "@front_web_mrmilu/hooks";
 
 export default function CreatePostPage() {
   const [postNumber, setPostNumber] = useState(1);

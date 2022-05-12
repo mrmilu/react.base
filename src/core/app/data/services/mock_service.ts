@@ -1,13 +1,13 @@
 import { inject, injectable } from "inversify";
-import type { IGraphqlDataSource } from "@/src/common/interfaces/graphql_data_source";
 import type { DocumentNode } from "graphql";
 import type { IEnvVars } from "@/src/core/app/domain/interfaces/env_vars";
 import { TYPES } from "../../ioc/types";
 import possibleTypes from "./mock_service_possible_types.json";
-import { GraphqlClient } from "@/src/common/network/graphql/graphql_client";
+import type { NetworkInterfaces } from "@front_web_mrmilu/network";
+import { GraphqlClient } from "@front_web_mrmilu/network";
 
 @injectable()
-export class MockService implements IGraphqlDataSource {
+export class MockService implements NetworkInterfaces.IGraphqlDataSource {
   private graphqlClient: GraphqlClient;
 
   constructor(@inject(TYPES.IEnvVars) envVars: IEnvVars) {

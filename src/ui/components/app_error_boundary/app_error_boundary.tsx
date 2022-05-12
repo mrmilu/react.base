@@ -1,3 +1,4 @@
+import type { PropsWithChildren } from "react";
 import { Component } from "react";
 import type { BaseError } from "@/src/core/app/domain/models/base_error";
 import { AppErrorBoundaryStyled } from "@/src/ui/components/app_error_boundary/app_error_boundary.styled";
@@ -8,13 +9,13 @@ interface State {
   errorMsg: string;
 }
 
-export class AppErrorBoundary extends Component {
+export class AppErrorBoundary extends Component<PropsWithChildren<Record<string, unknown>>> {
   state: State = {
     hasError: false,
     errorMsg: ""
   };
 
-  constructor(props: Record<string, unknown>) {
+  constructor(props: PropsWithChildren<Record<string, unknown>>) {
     super(props);
   }
 
