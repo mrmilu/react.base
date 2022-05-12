@@ -5,14 +5,14 @@ import type { DummyUser } from "@/src/core/dummy/domain/models/dummy_user";
 import { UserModal } from "@/src/ui/pages/dummy/components/user_modal/user_modal";
 import { showModal } from "@/src/ui/state/ui.slice";
 import { makeCancelable } from "@front_web_mrmilu/utils";
-import { useBreakpointsMatch, useEffectOnce } from "@front_web_mrmilu/hooks";
+import { useBreakpointsMatch, useEffectStrictMode } from "@front_web_mrmilu/hooks";
 
 export default function DummyPage() {
   const dispatch = useAppDispatch();
   const users = useAppSelector(getUsers);
   const { mdAndUp } = useBreakpointsMatch();
 
-  useEffectOnce(() => {
+  useEffectStrictMode(() => {
     const cancelablePromise = makeCancelable(dispatch(getUsersThunk()));
     cancelablePromise.promise.then(() => {
       console.log("Expensive side effect");
@@ -22,7 +22,7 @@ export default function DummyPage() {
     });
 
     return () => {
-      cancelablePromise.cancel();
+      cancelablePromise.cancel(); // clean up only works if strict mode enabled
     };
   });
 

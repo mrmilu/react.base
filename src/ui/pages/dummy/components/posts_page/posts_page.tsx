@@ -1,18 +1,18 @@
 import { DummyPageSimpleCardStyled, DummyPageStyled } from "@/src/ui/pages/dummy/components/dummy_page/dummy_page.styled";
 import { getPosts, getPostsThunk } from "@/src/ui/pages/dummy/state/dummy.slice";
 import { useAppDispatch, useAppSelector } from "@/src/ui/state";
-import { useBreakpointsMatch, useEffectOnce } from "@front_web_mrmilu/hooks";
+import { useBreakpointsMatch, useEffectStrictMode } from "@front_web_mrmilu/hooks";
 
 export default function PostsPage() {
   const dispatch = useAppDispatch();
   const posts = useAppSelector(getPosts);
   const { mdAndUp } = useBreakpointsMatch();
 
-  useEffectOnce(() => {
+  useEffectStrictMode(() => {
     dispatch(getPostsThunk());
 
     return () => {
-      console.log("clean up");
+      console.log("clean up"); // clean up only works if strict mode enabled
     };
   });
 
