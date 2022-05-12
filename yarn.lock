@@ -1494,21 +1494,21 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@front_web_mrmilu/hooks@mrmilu/front_web_mrmilu#@front_web_mrmilu/hooks-v1.0.1":
-  version "1.0.1"
-  resolved "git+ssh://git@github.com/mrmilu/front_web_mrmilu.git#d5924281f72d32c10593be5b4088c0a9eeb2cfec"
+"@front_web_mrmilu/hooks@mrmilu/front_web_mrmilu#@front_web_mrmilu/hooks-v1.1.0":
+  version "1.1.0"
+  resolved "git+ssh://git@github.com/mrmilu/front_web_mrmilu.git#e1fa02813060d14cea755ccb246e3fb93d598250"
 
-"@front_web_mrmilu/network@mrmilu/front_web_mrmilu#@front_web_mrmilu/network-v1.0.1":
-  version "1.0.1"
-  resolved "git+ssh://git@github.com/mrmilu/front_web_mrmilu.git#1681b517a61f97fd57d357aa503b57e35ca48517"
+"@front_web_mrmilu/network@mrmilu/front_web_mrmilu#@front_web_mrmilu/network-v1.1.0":
+  version "1.1.0"
+  resolved "git+ssh://git@github.com/mrmilu/front_web_mrmilu.git#e10fc77c3c70a262130df1fdd73dc7c2fb1eb55b"
 
-"@front_web_mrmilu/services@mrmilu/front_web_mrmilu#@front_web_mrmilu/services-v1.0.1":
-  version "1.0.1"
-  resolved "git+ssh://git@github.com/mrmilu/front_web_mrmilu.git#abc05f5e7f643ba51b81557e7be8f4c7e01f77c7"
+"@front_web_mrmilu/services@mrmilu/front_web_mrmilu#@front_web_mrmilu/services-v1.1.0":
+  version "1.1.0"
+  resolved "git+ssh://git@github.com/mrmilu/front_web_mrmilu.git#464e53f9dc3e63f6166d26f675d58376936314e8"
 
-"@front_web_mrmilu/utils@mrmilu/front_web_mrmilu#@front_web_mrmilu/utils-v1.0.1":
-  version "1.0.1"
-  resolved "git+ssh://git@github.com/mrmilu/front_web_mrmilu.git#e2e8c836514a9a20316ba670c91d3a259374eccb"
+"@front_web_mrmilu/utils@mrmilu/front_web_mrmilu#@front_web_mrmilu/utils-v1.1.0":
+  version "1.1.0"
+  resolved "git+ssh://git@github.com/mrmilu/front_web_mrmilu.git#98b1ef2d2188b68af52d0283bd90c1d03b71c972"
 
 "@graphql-typed-document-node/core@^3.1.1":
   version "3.1.1"
