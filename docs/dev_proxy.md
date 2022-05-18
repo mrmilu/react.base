@@ -4,7 +4,7 @@ Due to the nature of front end development and their tooling (hot reload, bundle
 most of the time our development server will run better in our local machines; in comparison with a docker environment.
 
 If our external sources (backend) are in an online server o a local container some requests (auth for example)
-can make it harder to work in our local machine.
+can make it harder to work in with our project running in local environment.
 
 To solve it in this boilerplate you will find a file named `src/setupProxy.js` that exports a module with the configuration
 for the `http-proxy-middleware` package. This package is used on `express` servers to create a proxy pass. CRA (react-scripts) handles this by
