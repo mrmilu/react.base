@@ -33,10 +33,16 @@ nvm use
 yarn
 ```
 
+**Create Graphql schema**
+
+```
+yarn graphql
+```
+
 **Run project**
 
 ```
-yarn dev
+yarn start
 ```
 
 ### Environment variables
