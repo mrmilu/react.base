@@ -2,7 +2,7 @@ import type { PropsWithChildren, ReactElement } from "react";
 import { cloneElement, forwardRef, useEffect, useRef, useState } from "react";
 import { ModalCloseBtn, ModalContentStyled, ModalStyled } from "@/src/ui/components/modal/modal.styled";
 import { useTransition, animated, easings } from "react-spring";
-import { Close as CloseIcon } from "@/src/ui/icons";
+import { Close as CloseIcon } from "@/src/ui/assets/icons";
 import { useAppDispatch, useAppSelector } from "@/src/ui/state";
 import { getModalContent, getShowModal, hideModal } from "@/src/ui/state/ui.slice";
 import { useClickOutside } from "@front_web_mrmilu/hooks";
