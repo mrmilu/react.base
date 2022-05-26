@@ -6,7 +6,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "check-types": "tsc",
+    "lint": "eslint --fix --ext js,ts,tsx src",
+    "check-types": "tsc --project tsconfig.json",
     "prepare": "husky install",
     "commit": "commit",
     "graphql-schema": "apollo client:download-schema schema.json",
@@ -88,9 +89,6 @@
     "husky": "8.0.1",
     "lint-staged": "12.4.1",
     "prettier": "2.6.2"
-  },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
   },
   "resolutions": {
     "graphql": "15.5.3",
