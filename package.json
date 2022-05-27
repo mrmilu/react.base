@@ -13,7 +13,9 @@
     "graphql-schema": "apollo client:download-schema schema.json",
     "graphql-types": "apollo client:codegen --target=typescript --localSchemaFile=schema.json --globalTypesFile=src/__generated__/globalTypes.d.ts",
     "graphql-possible-types": "node generate_possible_types.js",
-    "graphql": "yarn graphql-schema --endpoint=https://graphqlzero.almansi.me/api && yarn graphql-possible-types && yarn graphql-types"
+    "graphql": "yarn graphql-schema --endpoint=https://graphqlzero.almansi.me/api && yarn graphql-possible-types && yarn graphql-types",
+    "e2e:run": "cypress run",
+    "e2e:open": "cypress open"
   },
   "browserslist": {
     "production": [
@@ -28,11 +30,11 @@
     ]
   },
   "dependencies": {
+    "@apollo/client": "3.6.2",
+    "@front_web_mrmilu/hooks": "mrmilu/front_web_mrmilu#@front_web_mrmilu/hooks-v1.1.0",
+    "@front_web_mrmilu/network": "mrmilu/front_web_mrmilu#@front_web_mrmilu/network-v1.1.0",
     "@front_web_mrmilu/services": "mrmilu/front_web_mrmilu#@front_web_mrmilu/services-v1.1.0",
     "@front_web_mrmilu/utils": "mrmilu/front_web_mrmilu#@front_web_mrmilu/utils-v1.1.0",
-    "@front_web_mrmilu/network": "mrmilu/front_web_mrmilu#@front_web_mrmilu/network-v1.1.0",
-    "@front_web_mrmilu/hooks": "mrmilu/front_web_mrmilu#@front_web_mrmilu/hooks-v1.1.0",
-    "@apollo/client": "3.6.2",
     "@reduxjs/toolkit": "1.8.1",
     "@sentry/nextjs": "6.19.7",
     "@sentry/react": "6.19.7",
@@ -80,6 +82,7 @@
     "babel-plugin-styled-components": "2.0.7",
     "babel-plugin-transform-typescript-metadata": "0.3.2",
     "craco-alias": "3.0.1",
+    "cypress": "^9.7.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react": "7.29.4",

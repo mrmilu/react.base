@@ -1,7 +1,8 @@
 import React, { StrictMode } from "react";
 import reportWebVitals from "./reportWebVitals";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import { Provider } from "react-redux";
 import App from "@/src/ui/app";
 import { store } from "@/src/ui/state";
@@ -24,14 +25,18 @@ if (locator.get<IEnvVars>(TYPES.IEnvVars).sentryEnabled) {
 
 const container = document.getElementById("root");
 const root = createRoot(container as HTMLElement);
+const history = createBrowserHistory({ window });
+if (window.Cypress) {
+  window.tgHistory = history;
+}
 root.render(
   // Un comment strict mode when libraries like redux and react spring support react 18v in a stable way
   <StrictMode>
-    <BrowserRouter>
+    <HistoryRouter history={history}>
       <Provider store={store}>
         <App />
       </Provider>
-    </BrowserRouter>
+    </HistoryRouter>
   </StrictMode>
 );
 
@@ -39,3 +44,10 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+declare global {
+  interface Window {
+    Cypress: boolean;
+    tgHistory: unknown;
+  }
+}

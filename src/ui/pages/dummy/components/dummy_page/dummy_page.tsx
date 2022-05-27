@@ -31,10 +31,16 @@ export default function DummyPage() {
   };
 
   return (
-    <DummyPageStyled>
+    <DummyPageStyled data-cy="dummy-page">
       {mdAndUp && <h2>Dummy page</h2>}
       {users.map((user, idx) => (
-        <DummyPageSimpleCardStyled onClick={() => showUserModal(user)} key={`${user.id}_${idx}`} title={user.name} subtitle={user.email} />
+        <DummyPageSimpleCardStyled
+          data-cy="dummy-card"
+          onClick={() => showUserModal(user)}
+          key={`${user.id}_${idx}`}
+          title={user.name}
+          subtitle={user.email}
+        />
       ))}
     </DummyPageStyled>
   );

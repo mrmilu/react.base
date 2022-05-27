@@ -30,7 +30,9 @@ export const BaseLayout = () => {
             <Link to="/posts">list post</Link>
           </li>
         </ul>
-        <Button onClick={logUser}>{userLogged ? "Log out" : "Log in"}</Button>
+        <Button data-cy="login-btn" onClick={logUser}>
+          {userLogged ? "Log out" : "Log in"}
+        </Button>
       </BaseLayoutNavStyled>
       <main>
         <Outlet />
