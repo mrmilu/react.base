@@ -17,10 +17,10 @@ export default function PostsPage() {
   });
 
   return (
-    <DummyPageStyled>
+    <DummyPageStyled data-cy="posts-page">
       {mdAndUp && <h2>Posts page</h2>}
       {posts.map((post, idx) => (
-        <DummyPageSimpleCardStyled key={`${post.id}_${idx}`} title={post.title} subtitle={post.body} />
+        <DummyPageSimpleCardStyled data-cy="dummy-card" key={`${post.id}_${idx}`} title={post.title} subtitle={post.body} />
       ))}
     </DummyPageStyled>
   );

@@ -1,8 +1,9 @@
 import type { MouseEventHandler, ReactNode } from "react";
 import React, { forwardRef } from "react";
 import { IconButtonStyled } from "./icon_button.styled";
+import type { CypressProps } from "@/src/ui/view_models/cypress";
 
-export interface IconButtonProps {
+export interface IconButtonProps extends CypressProps {
   onClick?: MouseEventHandler;
   href?: string;
   disabled?: boolean;
@@ -13,16 +14,16 @@ export interface IconButtonProps {
 
 // eslint-disable-next-line react/display-name
 export const IconButton = forwardRef<HTMLAnchorElement, IconButtonProps>(
-  ({ href, onClick, icon, disabled = false, className, asLink = false }, ref) => {
+  ({ href, onClick, icon, disabled = false, className, asLink = false, "data-cy": dataCy }, ref) => {
     if (asLink) {
       return (
-        <IconButtonStyled as="a" className={className} href={href} onClick={onClick} ref={ref}>
+        <IconButtonStyled data-cy={dataCy} as="a" className={className} href={href} onClick={onClick} ref={ref}>
           {icon}
         </IconButtonStyled>
       );
     }
     return (
-      <IconButtonStyled disabled={disabled} className={className} onClick={onClick}>
+      <IconButtonStyled data-cy={dataCy} disabled={disabled} className={className} onClick={onClick}>
         {icon}
       </IconButtonStyled>
     );

@@ -9,9 +9,9 @@ export interface SimpleCardProps extends CypressProps {
   onClick?: MouseEventHandler;
 }
 
-export const SimpleCard = ({ title, subtitle, className, onClick, ...rest }: SimpleCardProps) => {
+export const SimpleCard = ({ title, subtitle, className, onClick, "data-cy": dataCy }: SimpleCardProps) => {
   return (
-    <SimpleCardStyled onClick={onClick} className={className} {...rest}>
+    <SimpleCardStyled onClick={onClick} className={className} data-cy={dataCy}>
       <SimpleCardAvatarStyled />
       <SimpleCardStyledContent>
         <h4>{title}</h4>

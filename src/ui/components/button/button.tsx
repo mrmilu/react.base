@@ -9,9 +9,9 @@ export interface ButtonProps extends CypressProps {
   className?: string;
 }
 
-export const Button = ({ className, children, onClick, type, disabled, ...rest }: PropsWithChildren<ButtonProps>) => {
+export const Button = ({ className, children, onClick, type, disabled, "data-cy": dataCy }: PropsWithChildren<ButtonProps>) => {
   return (
-    <ButtonStyled className={className} type={type} onClick={onClick} disabled={disabled} {...rest}>
+    <ButtonStyled className={className} type={type} onClick={onClick} disabled={disabled} data-cy={dataCy}>
       {children}
     </ButtonStyled>
   );

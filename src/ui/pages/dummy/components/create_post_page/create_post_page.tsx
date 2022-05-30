@@ -47,7 +47,9 @@ export default function CreatePostPage() {
           }}
         />
       </div>
-      <Button onClick={debounceOn ? () => debounceCreatePost(true) : () => createPost()}>Create</Button>
+      <Button data-cy="create-post-btn" onClick={debounceOn ? () => debounceCreatePost(true) : () => createPost()}>
+        Create
+      </Button>
       <div>
         <h3>Create a random disable button state post</h3>
         <Switch

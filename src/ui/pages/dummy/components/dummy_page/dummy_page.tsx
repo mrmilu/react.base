@@ -27,7 +27,7 @@ export default function DummyPage() {
   });
 
   const showUserModal = (user: DummyUser) => {
-    dispatch(showModal(<UserModal user={user} />));
+    dispatch(showModal(<UserModal user={user} data-cy="user-modal" />));
   };
 
   return (

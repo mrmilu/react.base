@@ -6,6 +6,7 @@ import { Close as CloseIcon } from "@/src/ui/assets/icons";
 import { useAppDispatch, useAppSelector } from "@/src/ui/state";
 import { getModalContent, getShowModal, hideModal } from "@/src/ui/state/ui.slice";
 import { useClickOutside } from "@front_web_mrmilu/hooks";
+import type { CypressProps } from "@/src/ui/view_models/cypress";
 
 const MODAL_TRANSITION_CONFIG = {
   duration: 450,
@@ -64,7 +65,7 @@ export const Modal = () => {
   return showModalTransition(
     (styles, item) =>
       item && (
-        <ModalStyled ref={modalRef} style={styles}>
+        <ModalStyled data-cy="modal" ref={modalRef} style={styles}>
           {showContentTransition(
             (styles, item) =>
               item && (
@@ -77,13 +78,15 @@ export const Modal = () => {
 };
 
 // eslint-disable-next-line react/display-name
-export const ModalContent = forwardRef<HTMLDivElement, PropsWithChildren<{ className?: string }>>(({ children, className }, ref) => {
-  const dispatch = useAppDispatch();
+export const ModalContent = forwardRef<HTMLDivElement, PropsWithChildren<{ className?: string } & CypressProps>>(
+  ({ children, className, "data-cy": dataCy }, ref) => {
+    const dispatch = useAppDispatch();
 
-  return (
-    <ModalContentStyled ref={ref} className={className}>
-      <ModalCloseBtn icon={<CloseIcon />} onClick={() => dispatch(hideModal())} />
-      {children}
-    </ModalContentStyled>
-  );
-});
+    return (
+      <ModalContentStyled data-cy={dataCy} ref={ref} className={className}>
+        <ModalCloseBtn data-cy="modal-close" icon={<CloseIcon />} onClick={() => dispatch(hideModal())} />
+        {children}
+      </ModalContentStyled>
+    );
+  }
+);

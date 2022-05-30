@@ -7,7 +7,7 @@ declare global {
     interface Chainable {
       login(): void;
       logout(): void;
-      dataCy(value: string): Chainable<JQuery<HTMLElement>>;
+      dataCy(value: string, log?: boolean): Chainable<JQuery<HTMLElement>>;
       goToRoute(route: string): Chainable;
     }
   }
