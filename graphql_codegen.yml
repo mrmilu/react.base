@@ -1,0 +1,22 @@
+overwrite: true
+schema: "https://graphqlzero.almansi.me/api"
+documents: "src/**/*.graphql"
+generates:
+  src/__generated__/graphql.d.ts:
+    plugins:
+      - "typescript"
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      extension: .d.ts
+      folder: __generated__
+      baseTypesPath: graphql.d.ts
+    plugins:
+      - "typescript-operations"
+      - "typescript-graphql-files-modules"
+  src/core/app/data/__generated__/graphql_introspection.ts:
+    plugins:
+      - "fragment-matcher"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

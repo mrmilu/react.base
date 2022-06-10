@@ -10,10 +10,7 @@
     "check-types": "tsc --project tsconfig.json",
     "prepare": "husky install",
     "commit": "commit",
-    "graphql-schema": "apollo client:download-schema schema.json",
-    "graphql-types": "apollo client:codegen --target=typescript --localSchemaFile=schema.json --globalTypesFile=src/__generated__/globalTypes.d.ts",
-    "graphql-possible-types": "node generate_possible_types.js",
-    "graphql": "yarn graphql-schema --endpoint=https://graphqlzero.almansi.me/api && yarn graphql-possible-types && yarn graphql-types",
+    "graphql": "graphql-codegen --config graphql_codegen.yml",
     "e2e:run": "cypress run",
     "e2e:open": "cypress open"
   },
@@ -45,11 +42,10 @@
     "@types/node": "17.0.41",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
-    "apollo": "2.34.0",
     "axios": "0.27.2",
     "class-transformer": "0.5.1",
     "formik": "2.2.9",
-    "graphql": "15.5.3",
+    "graphql": "16.5.0",
     "i18next": "21.8.9",
     "i18next-http-backend": "1.4.1",
     "i18next-resources-to-backend": "1.0.0",
@@ -74,6 +70,13 @@
     "@commitlint/config-conventional": "17.0.2",
     "@commitlint/prompt-cli": "17.0.0",
     "@craco/craco": "7.0.0-alpha.3",
+    "@graphql-codegen/cli": "2.6.2",
+    "@graphql-codegen/fragment-matcher": "3.2.1",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/near-operation-file-preset": "^2.2.13",
+    "@graphql-codegen/typescript": "2.5.0",
+    "@graphql-codegen/typescript-graphql-files-modules": "2.1.1",
+    "@graphql-codegen/typescript-operations": "2.4.1",
     "@types/styled-components": "5.1.25",
     "@typescript-eslint/eslint-plugin": "5.27.1",
     "babel-plugin-import-graphql": "2.8.1",
@@ -93,7 +96,6 @@
     "prettier": "2.6.2"
   },
   "resolutions": {
-    "graphql": "15.5.3",
     "@types/react": "18.x"
   }
 }

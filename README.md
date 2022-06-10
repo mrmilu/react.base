@@ -8,7 +8,7 @@
 - Typescript
 - [Class transformers](https://github.com/typestack/class-transformer)
 - Redux toolkit
-- Apollo (GraphQL)
+- Apollo Client (GraphQL)
 - [Commitlint](docs/comitlint.md) (with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) config)
 - [Styled components](docs/styled_components.md)
 - ESLint (with TypeScript config)
