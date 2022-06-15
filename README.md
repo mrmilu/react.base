@@ -27,7 +27,7 @@ This project uses the following packages
 - [Just](https://just.systems/man/en/chapter_4.html) (For justfile usage)
 
 Run the following command to install the node version declared in the `.nvmrc`
-file fo this project:
+file for this project:
 
 ```shell
 nvm install
