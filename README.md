@@ -19,30 +19,51 @@
 - [React Router 6](https://reactrouter.com/docs/en/v6/api)
 - Sentry
 
+### Prerequisites
+
+This project uses the following packages
+
+- [nvm](https://github.com/nvm-sh/nvm) (Node version manager)
+- [Just](https://just.systems/man/en/chapter_4.html) (For justfile usage)
+
+Run the following command to install the node version declared in the `.nvmrc`
+file fo this project:
+
+```shell
+nvm install
+```
+
+Finally, enable [corepack](https://github.com/nodejs/corepack) so the correct
+version of yarn is used.
+
+```shell
+just corepack-enable
+```
+
 ### First steps
-
-**Set node version**
-
-```
-nvm use
-```
 
 **Install dependencies**
 
-```
-yarn
-```
-
-**Create Graphql schema**
-
-```
-yarn graphql
+```shell
+just install-deps
 ```
 
 **Run project**
 
+```shell
+just dev
 ```
-yarn start
+
+**See a list of available commands**
+
+```shell
+just
+```
+
+**Proxy commands through nvm**
+
+```shell
+just nvm-exec "yarn add @front_web_mrmilu/hooks"
 ```
 
 ### Environment variables

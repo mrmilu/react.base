@@ -28,10 +28,10 @@
   },
   "dependencies": {
     "@apollo/client": "3.6.6",
-    "@front_web_mrmilu/hooks": "mrmilu/front_web_mrmilu#@front_web_mrmilu/hooks-v1.2.0",
-    "@front_web_mrmilu/network": "mrmilu/front_web_mrmilu#@front_web_mrmilu/network-v1.2.0",
-    "@front_web_mrmilu/services": "mrmilu/front_web_mrmilu#@front_web_mrmilu/services-v1.2.0",
-    "@front_web_mrmilu/utils": "mrmilu/front_web_mrmilu#@front_web_mrmilu/utils-v1.2.0",
+    "@front_web_mrmilu/hooks": "^1.4.0",
+    "@front_web_mrmilu/network": "1.4.0",
+    "@front_web_mrmilu/services": "1.4.0",
+    "@front_web_mrmilu/utils": "1.4.0",
     "@reduxjs/toolkit": "1.8.2",
     "@sentry/react": "7.1.1",
     "@sentry/tracing": "7.1.1",
@@ -97,5 +97,6 @@
   },
   "resolutions": {
     "@types/react": "18.x"
-  }
+  },
+  "packageManager": "yarn@3.2.1"
 }
