@@ -1,6 +1,6 @@
 {
   "name": "graphqlzero",
-  "schemaPath": "schema.json",
+  "schemaPath": "graphql.schema.json",
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {
