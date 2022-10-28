@@ -1,4 +1,4 @@
-import { LoaderStyled } from "@/src/ui/components/loader/loader.styled";
+import LoaderStyled from "@/src/ui/components/loader/loader.styled";
 import type { PropsWithChildren } from "react";
 import { Suspense } from "react";
 import { SuspenseMainLoaderStyled } from "@/src/ui/components/suspense_main_loader/supense_main_loader.styled";

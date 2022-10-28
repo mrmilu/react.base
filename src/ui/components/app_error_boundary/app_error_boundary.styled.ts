@@ -3,7 +3,7 @@ import { colors } from "../../styles/colors";
 import { px2rem } from "@/src/ui/styles/utils";
 import { shadows } from "@/src/ui/styles/shadows";
 
-export const AppErrorBoundaryStyled = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,3 +23,9 @@ export const AppErrorBoundaryStyled = styled.div`
     color: ${colors.gray80};
   }
 `;
+
+const AppErrorBoundaryStyled = {
+  Wrapper
+}
+
+export default AppErrorBoundaryStyled;

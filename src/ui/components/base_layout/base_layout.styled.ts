@@ -4,7 +4,7 @@ import { px2rem } from "@/src/ui/styles/utils";
 import { spacing } from "../../styles/spacing";
 import { includeMedia } from "@/src/ui/styles/breakpoints";
 
-export const BaseLayoutStyled = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -17,7 +17,7 @@ export const BaseLayoutStyled = styled.div`
   }
 `;
 
-export const BaseLayoutFooterStyled = styled.footer`
+const Footer = styled.footer`
   display: flex;
   flex: 0 0 auto;
   align-items: center;
@@ -27,7 +27,7 @@ export const BaseLayoutFooterStyled = styled.footer`
   height: ${px2rem(120)};
 `;
 
-export const BaseLayoutNavStyled = styled.nav`
+const Nav = styled.nav`
   height: ${px2rem(60)};
   display: flex;
   flex: 0 0 auto;
@@ -61,3 +61,11 @@ export const BaseLayoutNavStyled = styled.nav`
     }
   }
 `;
+
+const BaseLayoutStyled = {
+  Wrapper,
+  Footer,
+  Nav
+};
+
+export default BaseLayoutStyled;

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { getLoggedState } from "@/src/ui/state/user.slice";
 import { useEffect } from "react";
 import { showModal } from "@/src/ui/state/ui.slice";
-import { LoggingModal } from "@/src/ui/pages/dummy/components/loggin_modal/loggin_modal";
+import { LoggingModal } from "@/src/ui/pages/dummy/components/logging_modal/logging_modal";
 import { useAppDispatch } from "@/src/ui/state";
 
 export const useAuthMiddleware: MiddlewareHook = () => {
