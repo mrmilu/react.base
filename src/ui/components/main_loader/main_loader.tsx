@@ -1,7 +1,7 @@
 import { getLoaderState } from "@/src/ui/state/ui.slice";
 import { useAppSelector } from "@/src/ui/state";
-import { LoaderStyled } from "@/src/ui/components/loader/loader.styled";
-import { MainLoaderStyled } from "@/src/ui/components/main_loader/main_loader.styled";
+import LoaderStyled from "@/src/ui/components/loader/loader.styled";
+import Styled from "@/src/ui/components/main_loader/main_loader.styled";
 import { easings, useTransition } from "react-spring";
 
 export const MainLoader = () => {
@@ -20,9 +20,9 @@ export const MainLoader = () => {
   return showModalTransition(
     (styles, item) =>
       item && (
-        <MainLoaderStyled style={styles}>
+        <Styled.Wrapper style={styles}>
           <LoaderStyled />
-        </MainLoaderStyled>
+        </Styled.Wrapper>
       )
   );
 };

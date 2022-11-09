@@ -1,4 +1,4 @@
-import { SwitchStyled, SwitchWrapperStyled } from "@/src/ui/components/switch/switch.styled";
+import Styled from "@/src/ui/components/switch/switch.styled";
 import type { FieldInputProps, FormikHandlers } from "formik";
 import { useField } from "formik";
 import type { KeyboardEvent } from "react";
@@ -40,9 +40,9 @@ export const Switch = ({ value, label, onChange, formik, name, id, defaultChecke
   };
 
   return (
-    <SwitchWrapperStyled>
+    <Styled.Wrapper>
       {label && <p>{label}</p>}
-      <SwitchStyled htmlFor={id} tabIndex={0} className={className} onKeyPress={handleKeypress}>
+      <Styled.Switch htmlFor={id} tabIndex={0} className={className} onKeyPress={handleKeypress}>
         <input
           ref={innerRef}
           id={id}
@@ -53,8 +53,8 @@ export const Switch = ({ value, label, onChange, formik, name, id, defaultChecke
           defaultChecked={field.checked}
         />
         <span />
-      </SwitchStyled>
-    </SwitchWrapperStyled>
+      </Styled.Switch>
+    </Styled.Wrapper>
   );
 };
 

@@ -3,13 +3,13 @@ import { px2rem } from "@/src/ui/styles/utils";
 import { colors } from "../../styles/colors";
 import { spacing } from "@/src/ui/styles/spacing";
 
-export const SwitchWrapperStyled = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   gap: ${px2rem(spacing.size3)};
 `;
 
-export const SwitchStyled = styled.label`
+const Switch = styled.label`
   position: relative;
   display: inline-block;
   width: ${px2rem(40)};
@@ -58,3 +58,10 @@ export const SwitchStyled = styled.label`
     }
   }
 `;
+
+const SwitchStyled = {
+  Wrapper,
+  Switch
+};
+
+export default SwitchStyled;

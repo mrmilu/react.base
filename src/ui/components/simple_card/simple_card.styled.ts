@@ -5,7 +5,7 @@ import { colors } from "../../styles/colors";
 import { shadows } from "@/src/ui/styles/shadows";
 import { typography } from "@/src/ui/styles/typography";
 
-export const SimpleCardStyled = styled.div`
+const Wrapper = styled.div`
   display: flex;
   min-width: 0;
   align-items: center;
@@ -15,7 +15,7 @@ export const SimpleCardStyled = styled.div`
   border-radius: ${px2rem(8)};
 `;
 
-export const SimpleCardStyledContent = styled.div`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -31,10 +31,18 @@ export const SimpleCardStyledContent = styled.div`
   }
 `;
 
-export const SimpleCardAvatarStyled = styled.div`
+const Avatar = styled.div`
   width: ${px2rem(65)};
   height: ${px2rem(65)};
   border-radius: 100%;
   flex: 0 0 auto;
   background-color: ${colors.gray30};
 `;
+
+const SimpleCardStyled = {
+  Wrapper,
+  Content,
+  Avatar
+};
+
+export default SimpleCardStyled;

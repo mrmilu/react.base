@@ -3,7 +3,7 @@ import { px2rem } from "@/src/ui/styles/utils";
 import { spacing } from "../../styles/spacing";
 import { colors } from "../../styles/colors";
 
-export const IconButtonStyled = styled.button`
+const Wrapper = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,3 +22,9 @@ export const IconButtonStyled = styled.button`
     background-color: ${colors.gray10};
   }
 `;
+
+const IconButtonStyled = {
+  Wrapper
+};
+
+export default IconButtonStyled;

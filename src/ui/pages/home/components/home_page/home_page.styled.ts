@@ -4,7 +4,7 @@ import { px2rem, wrapperStyles } from "@/src/ui/styles/utils";
 import { colors } from "@/src/ui/styles/colors";
 import { spacing } from "@/src/ui/styles/spacing";
 
-export const HomePageStyled = styled.div`
+const Wrapper = styled.div`
   ${wrapperStyles};
   display: flex;
   flex-direction: column;
@@ -14,15 +14,23 @@ export const HomePageStyled = styled.div`
   gap: ${px2rem(spacing.size2)};
 `;
 
-export const HomeFormStyled = styled(Form)`
+const FormStyled = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: ${px2rem(spacing.size4)};
 `;
 
-export const HomePageLocaleStyled = styled.div`
+const Locale = styled.div`
   display: flex;
   align-items: center;
   margin: ${px2rem(spacing.size4)} 0;
   gap: ${px2rem(spacing.size4)};
 `;
+
+const HomePageStyled = {
+  Wrapper,
+  Form: FormStyled,
+  Locale
+};
+
+export default HomePageStyled;

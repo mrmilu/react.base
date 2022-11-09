@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from "react";
 import { Component } from "react";
 import type { BaseError } from "@/src/core/app/domain/models/base_error";
-import { AppErrorBoundaryStyled } from "@/src/ui/components/app_error_boundary/app_error_boundary.styled";
+import Styled from "@/src/ui/components/app_error_boundary/app_error_boundary.styled";
 import * as Sentry from "@sentry/react";
 
 interface State {
@@ -37,14 +37,14 @@ export class AppErrorBoundary extends Component<PropsWithChildren<Record<string,
 
     if (hasError)
       return (
-        <AppErrorBoundaryStyled>
+        <Styled.Wrapper>
           <div>
             <h2>
               <b>Something went wrong</b>
             </h2>
             <h3>This is an error boundary</h3>
           </div>
-        </AppErrorBoundaryStyled>
+        </Styled.Wrapper>
       );
     return children;
   }

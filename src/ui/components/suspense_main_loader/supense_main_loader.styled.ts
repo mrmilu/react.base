@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { MainLoaderStyled } from "@/src/ui/components/main_loader/main_loader.styled";
+import Styled from "@/src/ui/components/main_loader/main_loader.styled";
 
-export const SuspenseMainLoaderStyled = styled(MainLoaderStyled)`
+export const SuspenseMainLoaderStyled = styled(Styled.Wrapper)`
   left: 0;
   top: 0;
 `;

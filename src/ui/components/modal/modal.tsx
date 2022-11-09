@@ -1,12 +1,11 @@
 import type { PropsWithChildren, ReactElement } from "react";
 import { cloneElement, forwardRef, useEffect, useRef, useState } from "react";
-import { ModalCloseBtn, ModalContentStyled, ModalStyled } from "@/src/ui/components/modal/modal.styled";
+import Styled from "@/src/ui/components/modal/modal.styled";
 import { useTransition, animated, easings } from "react-spring";
 import { Close as CloseIcon } from "@/src/ui/assets/icons";
 import { useAppDispatch, useAppSelector } from "@/src/ui/state";
 import { getModalContent, getShowModal, hideModal } from "@/src/ui/state/ui.slice";
 import { useClickOutside } from "@front_web_mrmilu/hooks";
-import type { CypressProps } from "@/src/ui/view_models/cypress";
 
 const MODAL_TRANSITION_CONFIG = {
   duration: 450,
@@ -65,28 +64,26 @@ export const Modal = () => {
   return showModalTransition(
     (styles, item) =>
       item && (
-        <ModalStyled data-cy="modal" ref={modalRef} style={styles}>
+        <Styled.Wrapper ref={modalRef} style={styles}>
           {showContentTransition(
             (styles, item) =>
               item && (
                 <animated.div style={styles}>{modalContent && cloneElement(modalContent as ReactElement, { ref: modalContentRef })}</animated.div>
               )
           )}
-        </ModalStyled>
+        </Styled.Wrapper>
       )
   );
 };
 
 // eslint-disable-next-line react/display-name
-export const ModalContent = forwardRef<HTMLDivElement, PropsWithChildren<{ className?: string } & CypressProps>>(
-  ({ children, className, "data-cy": dataCy }, ref) => {
-    const dispatch = useAppDispatch();
+export const ModalContent = forwardRef<HTMLDivElement, PropsWithChildren<{ className?: string }>>(({ children, className }, ref) => {
+  const dispatch = useAppDispatch();
 
-    return (
-      <ModalContentStyled data-cy={dataCy} ref={ref} className={className}>
-        <ModalCloseBtn data-cy="modal-close" icon={<CloseIcon />} onClick={() => dispatch(hideModal())} />
-        {children}
-      </ModalContentStyled>
-    );
-  }
-);
+  return (
+    <Styled.Content ref={ref} className={className}>
+      <Styled.CloseBtn icon={<CloseIcon />} onClick={() => dispatch(hideModal())} />
+      {children}
+    </Styled.Content>
+  );
+});
