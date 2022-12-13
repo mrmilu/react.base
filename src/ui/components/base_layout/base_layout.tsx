@@ -29,6 +29,9 @@ export const BaseLayout = () => {
           <li>
             <Link to="/posts">list post</Link>
           </li>
+          <li>
+            <Link to="/posts-react-router">list post (react router)</Link>
+          </li>
         </ul>
         <Button data-cy="login-btn" onClick={logUser}>
           {userLogged ? "Log out" : "Log in"}
