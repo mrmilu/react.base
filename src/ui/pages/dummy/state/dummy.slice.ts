@@ -34,7 +34,7 @@ export const getPostsThunk = createAsyncThunk("dummy.slice/getPosts", async (arg
 });
 
 const dummySlice = createSlice({
-  name: "ui.slice",
+  name: "dummy.slice",
   initialState: initialState(),
   reducers: {},
   extraReducers: (builder) => {
