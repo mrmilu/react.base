@@ -10,6 +10,7 @@ import { useAuthMiddleware } from "@/src/ui/router/middlewares/auth_middleware.h
 const HomePage = lazy(() => import("@/src/ui/pages/home/components/home_page/home_page"));
 const DummyPage = lazy(() => import("@/src/ui/pages/dummy/components/dummy_page/dummy_page"));
 const PostsPage = lazy(() => import("@/src/ui/pages/dummy/components/posts_page/posts_page"));
+const PostsZustandPage = lazy(() => import("@/src/ui/pages/posts_zustand/components/posts_zustand_page/posts_zustand_page"));
 const CreatePostPage = lazy(() => import("@/src/ui/pages/dummy/components/create_post_page/create_post_page"));
 
 export const routes: Array<RouteObject> = [
@@ -42,6 +43,14 @@ export const routes: Array<RouteObject> = [
         element: (
           <SuspenseMainLoader>
             <PostsPage />
+          </SuspenseMainLoader>
+        )
+      },
+      {
+        path: "/posts-zustand",
+        element: (
+          <SuspenseMainLoader>
+            <PostsZustandPage />
           </SuspenseMainLoader>
         )
       },
