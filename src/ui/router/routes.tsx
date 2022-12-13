@@ -6,10 +6,12 @@ import { lazy } from "react";
 import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
 import { RouteMiddleware } from "@/src/ui/router/route_middleware";
 import { useAuthMiddleware } from "@/src/ui/router/middlewares/auth_middleware.hook";
+import { postsPageLoader } from "@/src/ui/pages/posts_react_router/components/posts_react_router_page/posts_react_router_page.loader";
 
 const HomePage = lazy(() => import("@/src/ui/pages/home/components/home_page/home_page"));
 const DummyPage = lazy(() => import("@/src/ui/pages/dummy/components/dummy_page/dummy_page"));
 const PostsPage = lazy(() => import("@/src/ui/pages/dummy/components/posts_page/posts_page"));
+const PostsReactRouterPage = lazy(() => import("@/src/ui/pages/posts_react_router/components/posts_react_router_page/posts_react_router_page"));
 const CreatePostPage = lazy(() => import("@/src/ui/pages/dummy/components/create_post_page/create_post_page"));
 
 export const routes: Array<RouteObject> = [
@@ -42,6 +44,15 @@ export const routes: Array<RouteObject> = [
         element: (
           <SuspenseMainLoader>
             <PostsPage />
+          </SuspenseMainLoader>
+        )
+      },
+      {
+        path: "/posts-react-router",
+        loader: postsPageLoader,
+        element: (
+          <SuspenseMainLoader>
+            <PostsReactRouterPage />
           </SuspenseMainLoader>
         )
       },
