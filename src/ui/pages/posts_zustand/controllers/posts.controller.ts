@@ -1,15 +1,14 @@
 import { usePostsStore } from "@/src/ui/pages/posts_zustand/state/posts.store";
-import { useEffect, useRef } from "react";
-import { debounce } from "lodash";
+import { useEffect } from "react";
 
 export function usePostsController() {
-  const debounced = useRef(debounce(usePostsStore.getState().loadPosts));
+  const loadPosts = usePostsStore((state) => state.loadPosts);
   useEffect(() => {
-    debounced.current();
-  }, []);
+    void loadPosts();
+  }, [loadPosts]);
 
   const hasError = usePostsStore((state) => state.hasError);
   const isLoading = usePostsStore((state) => state.isLoading);
   const posts = usePostsStore((state) => state.posts);
-  return { hasError, isLoading, posts, loadPosts: debounced.current };
+  return { hasError, isLoading, posts, loadPosts };
 }
