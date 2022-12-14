@@ -19,11 +19,10 @@ const loadPostsAtom = atom(null, async (get, set) => {
   try {
     const getDummyPostsUseCase = await locator.get<IocProvider<GetDummyPostsUseCase>>(TYPES.GetDummyPostsUseCase)();
     const posts = await getDummyPostsUseCase.execute();
-    set(postsAtom, (p) => ({ ...p, posts }));
+    set(postsAtom, (p) => ({ ...p, posts, isLoading: false }));
   } catch (e) {
-    set(postsAtom, (p) => ({ ...p, hasError: true }));
+    set(postsAtom, (p) => ({ ...p, hasError: true, isLoading: false }));
   }
-  set(postsAtom, (p) => ({ ...p, isLoading: false }));
 });
 
 export const usePostsStore = () => useAtomValue(postsAtom, postsScope);
