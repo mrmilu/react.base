@@ -1,14 +1,14 @@
 import Styled from "@/src/ui/pages/dummy/components/dummy_page/dummy_page.styled";
 import PostsZustandPageResults from "@/src/ui/pages/posts_zustand/components/posts_zustand_page_results/posts_zustand_page_results";
-import { PostsProvider } from "@/src/ui/pages/posts_zustand/state/posts.store";
+import { usePostsStore } from "@/src/ui/pages/posts_zustand/state/posts.store";
 
 export default function PostsZustandPage() {
   return (
-    <PostsProvider>
+    <usePostsStore.Provider>
       <Styled.Wrapper data-cy="posts-page">
         <h2>Posts page</h2>
         <PostsZustandPageResults />
       </Styled.Wrapper>
-    </PostsProvider>
+    </usePostsStore.Provider>
   );
 }
