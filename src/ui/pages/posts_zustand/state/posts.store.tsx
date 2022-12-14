@@ -5,35 +5,40 @@ import type { IocProvider } from "@/src/core/app/ioc/interfaces";
 import type { GetDummyPostsUseCase } from "@/src/core/dummy/domain/use_cases/get_dummy_posts_use_case";
 import { TYPES } from "@/src/core/app/ioc/types";
 import type { PropsWithChildren } from "react";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useMemo } from "react";
 import { timeout } from "@front_web_mrmilu/utils";
+import type { StoreApi } from "zustand/ts3.4";
 
-const postsStore = createStore<PostsState>((set) => ({
-  posts: [],
-  isLoading: true,
-  hasError: false,
+const createPostsStore = () =>
+  createStore<PostsState>((set) => ({
+    posts: [],
+    isLoading: true,
+    hasError: false,
 
-  async loadPosts() {
-    set({ isLoading: true, hasError: false });
-    try {
-      await timeout(2000);
-      const getDummyPostsUseCase = await locator.get<IocProvider<GetDummyPostsUseCase>>(TYPES.GetDummyPostsUseCase)();
-      set({ posts: await getDummyPostsUseCase.execute() });
-    } catch (e) {
-      console.error(e);
-      set({ hasError: true });
+    async loadPosts() {
+      set({ isLoading: true, hasError: false });
+      try {
+        await timeout(2000);
+        const getDummyPostsUseCase = await locator.get<IocProvider<GetDummyPostsUseCase>>(TYPES.GetDummyPostsUseCase)();
+        set({ posts: await getDummyPostsUseCase.execute() });
+      } catch (e) {
+        console.error(e);
+        set({ hasError: true });
+      }
+      set({ isLoading: false });
     }
-    set({ isLoading: false });
-  }
-}));
+  }));
 
-type StoreType = typeof postsStore;
+type StoreType = StoreApi<PostsState>;
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const PostsContext = createContext<StoreType>();
 
-export const PostsProvider = ({ children }: PropsWithChildren) => <PostsContext.Provider value={postsStore}>{children}</PostsContext.Provider>;
+export const PostsProvider = ({ children }: PropsWithChildren) => {
+  const postsStore = useMemo(() => createPostsStore(), []);
+  return <PostsContext.Provider value={postsStore}>{children}</PostsContext.Provider>;
+};
 
 export function usePostsStore<U>(selector: (state: PostsState) => U, equalityFn?: ((a: U, b: U) => boolean) | undefined) {
   const store = useContext(PostsContext);
