@@ -11153,6 +11153,46 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jotai@npm:^1.11.2":
+  version: 1.11.2
+  resolution: "jotai@npm:1.11.2"
+  peerDependencies:
+    "@babel/core": "*"
+    "@babel/template": "*"
+    jotai-immer: "*"
+    jotai-optics: "*"
+    jotai-redux: "*"
+    jotai-tanstack-query: "*"
+    jotai-urql: "*"
+    jotai-valtio: "*"
+    jotai-xstate: "*"
+    jotai-zustand: "*"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    "@babel/template":
+      optional: true
+    jotai-immer:
+      optional: true
+    jotai-optics:
+      optional: true
+    jotai-redux:
+      optional: true
+    jotai-tanstack-query:
+      optional: true
+    jotai-urql:
+      optional: true
+    jotai-valtio:
+      optional: true
+    jotai-xstate:
+      optional: true
+    jotai-zustand:
+      optional: true
+  checksum: 3cdd7cf31ddf3e63ef2f168555cca7ecd5e84b8699eb3ceb0f2fc6eef9a695a21df81274627076c8978c9e773437bc24e93eaa012ab8de0c66dc1942cf5113bb
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -14638,6 +14678,7 @@ __metadata:
     i18next-http-backend: 1.4.1
     i18next-resources-to-backend: 1.0.0
     inversify: 6.0.1
+    jotai: ^1.11.2
     lint-staged: 13.0.1
     lodash: 4.17.21
     prettier: 2.6.2
