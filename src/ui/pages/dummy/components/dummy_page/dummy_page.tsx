@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "@/src/ui/state";
 import { getUsers, getUsersThunk } from "@/src/ui/pages/dummy/state/dummy.slice";
-import { DummyPageSimpleCardStyled, DummyPageStyled } from "@/src/ui/pages/dummy/components/dummy_page/dummy_page.styled";
+import Styled from "@/src/ui/pages/dummy/components/dummy_page/dummy_page.styled";
 import type { DummyUser } from "@/src/core/dummy/domain/models/dummy_user";
 import { UserModal } from "@/src/ui/pages/dummy/components/user_modal/user_modal";
 import { showModal } from "@/src/ui/state/ui.slice";
@@ -31,10 +31,10 @@ export default function DummyPage() {
   };
 
   return (
-    <DummyPageStyled data-cy="dummy-page">
+    <Styled.Wrapper data-cy="dummy-page">
       {mdAndUp && <h2>Dummy page</h2>}
       {users.map((user, idx) => (
-        <DummyPageSimpleCardStyled
+        <Styled.SimpleCard
           data-cy="dummy-card"
           onClick={() => showUserModal(user)}
           key={`${user.id}_${idx}`}
@@ -42,6 +42,6 @@ export default function DummyPage() {
           subtitle={user.email}
         />
       ))}
-    </DummyPageStyled>
+    </Styled.Wrapper>
   );
 }

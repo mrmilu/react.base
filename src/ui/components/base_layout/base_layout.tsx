@@ -1,4 +1,4 @@
-import { BaseLayoutFooterStyled, BaseLayoutNavStyled, BaseLayoutStyled } from "@/src/ui/components/base_layout/base_layout.styled";
+import Styled from "@/src/ui/components/base_layout/base_layout.styled";
 import { Outlet, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getLoggedState, setLogged } from "@/src/ui/state/user.slice";
@@ -14,8 +14,8 @@ export const BaseLayout = () => {
   };
 
   return (
-    <BaseLayoutStyled>
-      <BaseLayoutNavStyled>
+    <Styled.Wrapper>
+      <Styled.Nav>
         <ul>
           <li>
             <Link to="/">home</Link>
@@ -33,11 +33,11 @@ export const BaseLayout = () => {
         <Button data-cy="login-btn" onClick={logUser}>
           {userLogged ? "Log out" : "Log in"}
         </Button>
-      </BaseLayoutNavStyled>
+      </Styled.Nav>
       <main>
         <Outlet />
       </main>
-      <BaseLayoutFooterStyled>cool footer</BaseLayoutFooterStyled>
-    </BaseLayoutStyled>
+      <Styled.Footer>cool footer</Styled.Footer>
+    </Styled.Wrapper>
   );
 };

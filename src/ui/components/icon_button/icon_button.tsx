@@ -1,6 +1,6 @@
 import type { MouseEventHandler, ReactNode } from "react";
-import React, { forwardRef } from "react";
-import { IconButtonStyled } from "./icon_button.styled";
+import { forwardRef } from "react";
+import Styled from "./icon_button.styled";
 import type { CypressProps } from "@/src/ui/view_models/cypress";
 
 export interface IconButtonProps extends CypressProps {
@@ -17,15 +17,15 @@ export const IconButton = forwardRef<HTMLAnchorElement, IconButtonProps>(
   ({ href, onClick, icon, disabled = false, className, asLink = false, "data-cy": dataCy }, ref) => {
     if (asLink) {
       return (
-        <IconButtonStyled data-cy={dataCy} as="a" className={className} href={href} onClick={onClick} ref={ref}>
+        <Styled.Wrapper data-cy={dataCy} as="a" className={className} href={href} onClick={onClick} ref={ref}>
           {icon}
-        </IconButtonStyled>
+        </Styled.Wrapper>
       );
     }
     return (
-      <IconButtonStyled data-cy={dataCy} disabled={disabled} className={className} onClick={onClick}>
+      <Styled.Wrapper data-cy={dataCy} disabled={disabled} className={className} onClick={onClick}>
         {icon}
-      </IconButtonStyled>
+      </Styled.Wrapper>
     );
   }
 );

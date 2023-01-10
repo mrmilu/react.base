@@ -3,13 +3,7 @@ import { spacing } from "@/src/ui/styles/spacing";
 import { px2rem, wrapperStyles } from "@/src/ui/styles/utils";
 import { Button } from "@/src/ui/components/button/button";
 
-export const ClearButton = styled(Button)`
-  align-self: end;
-  width: auto;
-  background-color: darkred;
-`;
-
-export const CreatePostPageStyled = styled.div`
+const Wrapper = styled.div`
   ${wrapperStyles};
   display: flex;
   flex-direction: column;
@@ -22,3 +16,16 @@ export const CreatePostPageStyled = styled.div`
     justify-content: space-between;
   }
 `;
+
+const ClearButton = styled(Button)`
+  align-self: end;
+  width: auto;
+  background-color: darkred;
+`;
+
+const CreatePostPageStyled = {
+  Wrapper,
+  ClearButton
+};
+
+export default CreatePostPageStyled;

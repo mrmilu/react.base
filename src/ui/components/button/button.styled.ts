@@ -4,7 +4,7 @@ import type { ButtonProps } from "@/src/ui/components/button/button";
 import { px2rem } from "@/src/ui/styles/utils";
 import { spacing } from "@/src/ui/styles/spacing";
 
-export const ButtonStyled = styled.button<ButtonProps>`
+const Wrapper = styled.button<ButtonProps>`
   border-radius: ${px2rem(16)};
   background-color: ${(props) => (props.disabled ? colors.gray20 : colors.gray90)};
   border: none;
@@ -17,3 +17,9 @@ export const ButtonStyled = styled.button<ButtonProps>`
     background-color: ${(props) => (props.disabled ? colors.gray20 : colors.gray70)};
   }
 `;
+
+const ButtonStyled = {
+  Wrapper
+};
+
+export default ButtonStyled;

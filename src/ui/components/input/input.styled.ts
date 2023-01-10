@@ -5,13 +5,13 @@ import { px2rem } from "@/src/ui/styles/utils";
 import { colors } from "../../styles/colors";
 import { includeMedia } from "@/src/ui/styles/breakpoints";
 
-export const InputStyledWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
 `;
 
-export const InputStyled = styled.label`
+const Input = styled.label`
   ${typography.bodyM};
   display: flex;
   flex-direction: column;
@@ -42,6 +42,14 @@ export const InputStyled = styled.label`
   }
 `;
 
-export const InputErrorStyled = styled.div`
+const Error = styled.div`
   color: ${colors.gray60};
 `;
+
+const InputStyled = {
+  Wrapper,
+  Input,
+  Error
+};
+
+export default InputStyled;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { animated } from "react-spring";
 
-export const MainLoaderStyled = styled(animated.div)`
+const Wrapper = styled(animated.div)`
   position: fixed;
   display: flex;
   align-items: center;
@@ -13,3 +13,9 @@ export const MainLoaderStyled = styled(animated.div)`
   top: 0;
   left: 0;
 `;
+
+const MainLoaderStyled = {
+  Wrapper
+};
+
+export default MainLoaderStyled;

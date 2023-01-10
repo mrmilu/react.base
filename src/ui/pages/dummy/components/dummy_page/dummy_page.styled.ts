@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { px2rem, wrapperStyles } from "@/src/ui/styles/utils";
 import { spacing } from "@/src/ui/styles/spacing";
-import { LoaderStyled } from "@/src/ui/components/loader/loader.styled";
+import LoaderStyled from "@/src/ui/components/loader/loader.styled";
 import type { SimpleCardProps } from "@/src/ui/components/simple_card/simple_card";
 import { SimpleCard } from "@/src/ui/components/simple_card/simple_card";
 
-export const DummyPageStyled = styled.div`
+const Wrapper = styled.div`
   ${wrapperStyles};
   display: flex;
   flex-direction: column;
@@ -17,6 +17,13 @@ export const DummyPageStyled = styled.div`
   }
 `;
 
-export const DummyPageSimpleCardStyled = styled(SimpleCard)<SimpleCardProps>`
+const SimpleCardStyled = styled(SimpleCard)<SimpleCardProps>`
   cursor: ${(props) => props.onClick && "pointer"};
 `;
+
+const DummyPageStyled = {
+  Wrapper,
+  SimpleCard: SimpleCardStyled
+};
+
+export default DummyPageStyled;

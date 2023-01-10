@@ -4,7 +4,7 @@ import { px2rem } from "@/src/ui/styles/utils";
 import { colors } from "../../styles/colors";
 import { IconButton } from "@/src/ui/components/icon_button/icon_button";
 
-export const ModalStyled = styled(animated.div)`
+const Wrapper = styled(animated.div)`
   position: fixed;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@ export const ModalStyled = styled(animated.div)`
   z-index: 9;
 `;
 
-export const ModalContentStyled = styled.div`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -29,6 +29,14 @@ export const ModalContentStyled = styled.div`
   max-width: 700px;
 `;
 
-export const ModalCloseBtn = styled(IconButton)`
+const CloseBtn = styled(IconButton)`
   align-self: flex-end;
 `;
+
+const ModalStyled = {
+  Wrapper,
+  Content,
+  CloseBtn
+};
+
+export default ModalStyled;

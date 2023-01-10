@@ -1,7 +1,7 @@
 import type { FieldInputProps, FieldMetaProps, FormikHandlers } from "formik";
 import { useField } from "formik";
 import type { BaseFormikProps } from "../../view_models/formik";
-import { InputErrorStyled, InputStyled, InputStyledWrapper } from "@/src/ui/components/input/input.styled";
+import Styled from "@/src/ui/components/input/input.styled";
 import type { FocusEventHandler, HTMLInputTypeAttribute, KeyboardEventHandler } from "react";
 
 interface InputProps {
@@ -53,17 +53,17 @@ export const Input = ({
   }
 
   return (
-    <InputStyledWrapper>
-      <InputStyled className={className} htmlFor={id}>
+    <Styled.Wrapper>
+      <Styled.Input className={className} htmlFor={id}>
         {label && <span>{label}</span>}
         <input type={type} id={id} placeholder={placeholder} onFocus={onFocus} onKeyDown={onKeyDown} onKeyPress={onKeyPress} {...field} />
-      </InputStyled>
+      </Styled.Input>
       {meta.error && meta.touched && (
-        <InputErrorStyled>
+        <Styled.Error>
           <p>{meta.error}</p>
-        </InputErrorStyled>
+        </Styled.Error>
       )}
-    </InputStyledWrapper>
+    </Styled.Wrapper>
   );
 };
 

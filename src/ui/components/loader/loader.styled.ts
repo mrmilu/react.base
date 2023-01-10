@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import { px2rem } from "@/src/ui/styles/utils";
 
-export const LoaderStyled = styled.div`
+const LoaderStyled = styled.div`
   position: relative;
   width: ${px2rem(10)};
   height: ${px2rem(10)};
@@ -53,3 +53,5 @@ export const LoaderStyled = styled.div`
     }
   }
 `;
+
+export default LoaderStyled;
