@@ -1,4 +1,4 @@
-export class DummyUser {
+export class User {
   id: string;
   name: string;
   email: string;

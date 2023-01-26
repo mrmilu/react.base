@@ -11,6 +11,6 @@ describe("Visit posts page", () => {
     cy.goToRoute("posts");
     cy.wait("@getPosts");
     cy.dataCy("posts-page").should("exist");
-    cy.dataCy("dummy-card").first().contains("h4", "This is a cool post title").should("exist");
+    cy.dataCy("posts-card").first().contains("h4", "This is a cool post title").should("exist");
   });
 });

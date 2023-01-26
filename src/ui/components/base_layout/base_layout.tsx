@@ -19,7 +19,7 @@ export const BaseLayout = () => {
             <Link to="/">home</Link>
           </li>
           <li>
-            <Link to="/dummy">dummy</Link>
+            <Link to="/users">users</Link>
           </li>
           <li>
             <Link to="/create-post">create post</Link>

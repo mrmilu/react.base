@@ -10,10 +10,11 @@ import { useUsersListProvider } from "@/src/ui/pages/users/views/users_list/prov
 import { usePostsProvider } from "@/src/ui/pages/posts/views/posts_list/providers/posts.provider";
 
 const HomePage = lazy(() => import("@/src/ui/pages/home/views/home_page/home_page"));
-const DummyPage = lazy(() => import("@/src/ui/pages/users/views/users_list/users_list_page"));
+const UsersListPage = lazy(() => import("@/src/ui/pages/users/views/users_list/users_list_page"));
 const PostsPage = lazy(() => import("@/src/ui/pages/posts/views/posts_list/posts_page"));
 const CreatePostPage = lazy(() => import("@/src/ui/pages/posts/views/create_post/create_post_page"));
 
+// TODO migrate to new DataRouter API
 export const routes: Array<RouteObject> = [
   {
     path: "/",
@@ -30,12 +31,12 @@ export const routes: Array<RouteObject> = [
         )
       },
       {
-        path: "/dummy",
+        path: "/users",
         element: (
           <RouteMiddleware validationHook={useAuthMiddleware}>
             <SuspenseMainLoader>
               <useUsersListProvider.State>
-                <DummyPage />
+                <UsersListPage />
               </useUsersListProvider.State>
             </SuspenseMainLoader>
           </RouteMiddleware>

@@ -1,16 +1,16 @@
 import { Expose } from "class-transformer";
-import { DummyUser } from "@/src/core/dummy/domain/models/dummy_user";
+import { User } from "@/src/core/users/domain/models/user";
 
 export class DummyUserDataModel {
   @Expose()
   id!: string;
-  @Expose({ name: "firstName" })
+  @Expose()
   name!: string;
   @Expose()
   email!: string;
 
-  toDomain(): DummyUser {
-    return new DummyUser({
+  toDomain(): User {
+    return new User({
       id: this.id,
       name: this.name,
       email: this.email

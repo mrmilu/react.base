@@ -3,11 +3,12 @@ import Styled from "@/src/ui/pages/posts/views/create_post/create_post_page.styl
 import { Button } from "@/src/ui/components/button/button";
 import { locator } from "@/src/core/app/ioc";
 import type { IocProvider } from "@/src/core/app/ioc/interfaces";
-import type { CreateDummyPostUseCase } from "@/src/core/dummy/domain/use_cases/create_dummy_post_use_case";
+
 import { TYPES } from "@/src/core/app/ioc/types";
 import { debounce } from "lodash";
 import { Switch } from "@/src/ui/components/switch/switch";
 import { useAsyncState } from "@front_web_mrmilu/hooks";
+import type { CreatePostUseCase } from "@/src/core/posts/domain/use_cases/create_post_use_case";
 
 export default function CreatePostPage() {
   const [postNumber, setPostNumber] = useState(1);
@@ -17,7 +18,7 @@ export default function CreatePostPage() {
   const { state: asyncState, setPromise } = useAsyncState();
 
   const createPost = async (isDebounce = false) => {
-    const useCase = await locator.get<IocProvider<CreateDummyPostUseCase>>(TYPES.CreteDummyPostUseCase)();
+    const useCase = await locator.get<IocProvider<CreatePostUseCase>>(TYPES.CretePostUseCase)();
     // Super important to set the promise in which you are doing side effects to maintain the promise chain
     const promise = useCase
       .execute(postNumber)

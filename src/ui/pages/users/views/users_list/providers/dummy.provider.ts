@@ -3,7 +3,7 @@ import type { IocProvider } from "@/src/core/app/ioc/interfaces";
 import { TYPES } from "@/src/core/app/ioc/types";
 import { makeCancelable, timeout } from "@front_web_mrmilu/utils";
 import { createProvider } from "@/src/common/utils/zustand";
-import type { GetDummyUsersUseCase } from "@/src/core/dummy/domain/use_cases/get_dummy_users_use_case";
+import type { GetDummyUsersUseCase } from "@/src/core/users/domain/use_cases/get_users_use_case";
 import { useEffectStrictMode } from "@front_web_mrmilu/hooks";
 import { uiProvider } from "@/src/ui/providers/ui.provider";
 import type { UsersListState } from "@/src/ui/pages/users/views/users_list/view_models/dummy_state";
@@ -16,7 +16,7 @@ export const useUsersListProvider = createProvider<UsersListState>((set) => ({
     try {
       uiState.setLoader(true);
       await timeout(1000);
-      const getDummyUsersUseCase = await locator.get<IocProvider<GetDummyUsersUseCase>>(TYPES.GetDummyUsersUseCase)();
+      const getDummyUsersUseCase = await locator.get<IocProvider<GetDummyUsersUseCase>>(TYPES.GetUsersUseCase)();
       const users = await getDummyUsersUseCase.execute();
       set({ users: users });
     } catch (e) {

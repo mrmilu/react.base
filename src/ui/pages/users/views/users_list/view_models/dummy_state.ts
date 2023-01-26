@@ -1,6 +1,6 @@
-import type { DummyUser } from "@/src/core/dummy/domain/models/dummy_user";
+import type { User } from "@/src/core/users/domain/models/user";
 
 export interface UsersListState {
-  users: Array<DummyUser>;
+  users: Array<User>;
   loadUsers(): Promise<void>;
 }

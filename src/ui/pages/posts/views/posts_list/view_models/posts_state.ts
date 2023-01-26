@@ -1,7 +1,7 @@
-import type { DummyPost } from "@/src/core/dummy/domain/models/dummy_post";
+import type { Post } from "@/src/core/posts/domain/models/post";
 
 export interface PostsState {
-  posts: DummyPost[];
+  posts: Array<Post>;
   isLoading: boolean;
   hasError: boolean;
   loadPosts(): Promise<void>;

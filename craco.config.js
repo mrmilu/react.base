@@ -1,18 +1,18 @@
-const { ESLINT_MODES } = require("@craco/craco");
-const CracoAlias = require("craco-alias");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { CracoAliasPlugin, configPaths } = require("react-app-alias");
+const aliasMap = configPaths("./tsconfig.paths.json");
 
 module.exports = {
   plugins: [
     {
-      plugin: CracoAlias,
+      plugin: CracoAliasPlugin,
       options: {
-        source: "tsconfig",
-        tsConfigPath: "./tsconfig.paths.json"
+        alias: aliasMap
       }
     }
   ],
   eslint: {
-    mode: ESLINT_MODES.file
+    mode: "file"
   },
   webpack: {
     configure: (webpackConfig, { env, paths }) => {

@@ -1,10 +1,10 @@
 import Styled from "@/src/ui/pages/dummy/components/user_modal/user_modal.styled";
-import type { DummyUser } from "@/src/core/dummy/domain/models/dummy_user";
+import type { User } from "@/src/core/users/domain/models/user";
 import { forwardRef } from "react";
 import type { CypressProps } from "@/src/ui/view_models/cypress";
 
 interface UserModalProps extends CypressProps {
-  user: DummyUser;
+  user: User;
 }
 
 export const UserModal = forwardRef<HTMLDivElement, UserModalProps>(({ user, "data-cy": dataCy }, ref) => {

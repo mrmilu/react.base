@@ -1,4 +1,4 @@
-import type { DummyUser } from "@/src/core/dummy/domain/models/dummy_user";
+import type { User } from "@/src/core/users/domain/models/user";
 import { UserModal } from "@/src/ui/pages/dummy/components/user_modal/user_modal";
 import { useBreakpointsMatch } from "@front_web_mrmilu/hooks";
 import { SimpleCard } from "@/src/ui/components/simple_card/simple_card";
@@ -12,7 +12,7 @@ export default function UsersListPage() {
   const showModal = useUiProvider((state) => state.showModal);
   const { mdAndUp } = useBreakpointsMatch();
 
-  const showUserModal = (user: DummyUser) => {
+  const showUserModal = (user: User) => {
     showModal(<UserModal user={user} data-cy="user-modal" />);
   };
 
