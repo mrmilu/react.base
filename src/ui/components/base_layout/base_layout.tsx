@@ -1,16 +1,14 @@
 import Styled from "@/src/ui/components/base_layout/base_layout.styled";
 import { Outlet, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { getLoggedState, setLogged } from "@/src/ui/state/user.slice";
-import { useAppDispatch } from "@/src/ui/state";
 import { Button } from "@/src/ui/components/button/button";
+import { useUserProvider } from "@/src/ui/providers/user.provider";
 
 export const BaseLayout = () => {
-  const dispatch = useAppDispatch();
-  const userLogged = useSelector(getLoggedState);
+  const userLogged = useUserProvider((state) => state.logged);
+  const setLogged = useUserProvider((state) => state.setLogged);
 
   const logUser = () => {
-    dispatch(setLogged(!userLogged));
+    setLogged(!userLogged);
   };
 
   return (
@@ -21,7 +19,7 @@ export const BaseLayout = () => {
             <Link to="/">home</Link>
           </li>
           <li>
-            <Link to="/dummy">dummy</Link>
+            <Link to="/users">users</Link>
           </li>
           <li>
             <Link to="/create-post">create post</Link>

@@ -1,6 +1,6 @@
 import { aliasQuery } from "../utils/graphql_test_utils";
 
-describe("Visit dummy page", () => {
+describe("Visit posts page", () => {
   before(() => {
     cy.visit("/");
     cy.login();
@@ -18,13 +18,13 @@ describe("Visit dummy page", () => {
   });
 
   it("should visit page", () => {
-    cy.goToRoute("dummy");
+    cy.goToRoute("posts");
     cy.wait("@gqlUsersQuery");
-    cy.dataCy("dummy-page").should("exist");
+    cy.dataCy("posts-page").should("exist");
   });
 
   it("should open user modal", () => {
-    cy.dataCy("dummy-card").first().click();
+    cy.dataCy("posts-card").first().click();
     cy.wait(500);
     cy.dataCy("modal").should("be.visible");
     cy.dataCy("user-modal").contains("Name").should("exist");
