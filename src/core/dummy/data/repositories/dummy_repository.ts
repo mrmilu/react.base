@@ -1,7 +1,7 @@
 import type { IDummyRepository } from "../../domain/interfaces/dummy_repository";
 import { inject, injectable } from "inversify";
 import { TYPES } from "@/src/core/app/ioc/types";
-import { DummyUser } from "@/src/core/dummy/domain/models/dummy_user";
+import type { DummyUser } from "@/src/core/dummy/domain/models/dummy_user";
 import UsersQueryOperation from "../graphql/queries/users.graphql";
 import CreateDummyPostMutationOperation from "../graphql/mutations/create_dummy_post.graphql";
 import type { UsersQuery } from "@/src/core/dummy/data/graphql/queries/__generated__/users";
@@ -13,6 +13,7 @@ import type { CreatePostInput } from "../../domain/interfaces/dummy_repository";
 import type { JSONPlaceholderService } from "@/src/core/app/data/services/json_placeholder_service";
 import type { DataPost } from "@/src/core/dummy/data/interfaces/data_post";
 import type { IocProvider } from "@/src/core/app/ioc/interfaces";
+import { DummyUserDataModel } from "@/src/core/dummy/data/models/dummy_user_data_model";
 
 @injectable()
 export class DummyRepository implements IDummyRepository {
@@ -22,7 +23,12 @@ export class DummyRepository implements IDummyRepository {
   async users(): Promise<Array<DummyUser>> {
     const mockService = await this.mockServiceProvider();
     const response = await mockService.query<UsersQuery>(UsersQueryOperation);
-    return response?.users?.data?.map((user) => plainToClass(DummyUser, user, { excludeExtraneousValues: true })) ?? [];
+    return (
+      response?.users?.data?.map((user) => {
+        const dataModel = plainToClass(DummyUserDataModel, user, { excludeExtraneousValues: true });
+        return dataModel.toDomain();
+      }) ?? []
+    );
   }
 
   async createPost(input: CreatePostInput): Promise<DummyPost | null> {

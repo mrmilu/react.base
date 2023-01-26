@@ -1,10 +1,9 @@
 import type { PropsWithChildren, ReactElement } from "react";
 import { cloneElement, forwardRef, useEffect, useRef, useState } from "react";
 import Styled from "@/src/ui/components/modal/modal.styled";
-import { useTransition, animated, easings } from "react-spring";
+import { useTransition, animated, easings } from "@react-spring/web";
 import { Close as CloseIcon } from "@/src/ui/assets/icons";
-import { useAppDispatch, useAppSelector } from "@/src/ui/state";
-import { getModalContent, getShowModal, hideModal } from "@/src/ui/state/ui.slice";
+import { useUiProvider } from "@/src/ui/providers/ui.provider";
 import { useClickOutside } from "@front_web_mrmilu/hooks";
 
 const MODAL_TRANSITION_CONFIG = {
@@ -13,19 +12,22 @@ const MODAL_TRANSITION_CONFIG = {
 };
 
 export const Modal = () => {
-  const dispatch = useAppDispatch();
+  const modalShowing = useUiProvider((state) => state.modal.show);
+  const modalContent = useUiProvider((state) => state.modal.content);
+  const hideModal = useUiProvider((state) => state.hideModal);
+
   const [showContent, setShowContent] = useState(false);
-  const showModal = useAppSelector(getShowModal);
-  const modalContent = useAppSelector(getModalContent);
   const modalRef = useRef<HTMLDivElement>(null);
   const modalContentRef = useRef<HTMLDivElement>(null);
-  const showModalTransition = useTransition(showModal, {
+
+  const showModalTransition = useTransition(modalShowing, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
-    reverse: showModal,
+    reverse: modalShowing,
     config: MODAL_TRANSITION_CONFIG
   });
+
   const showContentTransition = useTransition(showContent, {
     from: { opacity: 0, transform: "translate(0px, 300px)" },
     enter: { opacity: 1, transform: "translate(0px,0px)" },
@@ -35,20 +37,20 @@ export const Modal = () => {
   });
 
   useEffect(() => {
-    if (showModal) {
+    if (modalShowing) {
       setTimeout(() => {
         setShowContent(true);
       }, 80);
     } else {
       setShowContent(false);
     }
-  }, [showModal]);
+  }, [modalShowing]);
 
-  useClickOutside(modalContentRef, () => dispatch(hideModal()));
+  useClickOutside(modalContentRef, () => hideModal());
 
   const escapeKeyUpListener = (e: KeyboardEvent) => {
-    if (showModal && (e.key === "Escape" || e.keyCode === 27)) {
-      dispatch(hideModal());
+    if (modalShowing && (e.key === "Escape" || e.keyCode === 27)) {
+      hideModal();
     }
   };
 
@@ -59,7 +61,7 @@ export const Modal = () => {
       document.removeEventListener("keyup", escapeKeyUpListener);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showModal]);
+  }, [modalShowing]);
 
   return showModalTransition(
     (styles, item) =>
@@ -78,11 +80,11 @@ export const Modal = () => {
 
 // eslint-disable-next-line react/display-name
 export const ModalContent = forwardRef<HTMLDivElement, PropsWithChildren<{ className?: string }>>(({ children, className }, ref) => {
-  const dispatch = useAppDispatch();
+  const hideModal = useUiProvider((state) => state.hideModal);
 
   return (
     <Styled.Content ref={ref} className={className}>
-      <Styled.CloseBtn icon={<CloseIcon />} onClick={() => dispatch(hideModal())} />
+      <Styled.CloseBtn icon={<CloseIcon />} onClick={() => hideModal()} />
       {children}
     </Styled.Content>
   );

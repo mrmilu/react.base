@@ -1,18 +1,16 @@
 import type { MiddlewareHook } from "@/src/ui/router/route_middleware";
-import { useSelector } from "react-redux";
-import { getLoggedState } from "@/src/ui/state/user.slice";
 import { useEffect } from "react";
-import { showModal } from "@/src/ui/state/ui.slice";
-import { LoggingModal } from "@/src/ui/pages/dummy/components/logging_modal/logging_modal";
-import { useAppDispatch } from "@/src/ui/state";
+import { useUiProvider } from "@/src/ui/providers/ui.provider";
+import { LoggingModal } from "@/src/ui/pages/misc/components/logging_modal/logging_modal";
+import { useUserProvider } from "@/src/ui/providers/user.provider";
 
 export const useAuthMiddleware: MiddlewareHook = () => {
-  const dispatch = useAppDispatch();
-  const isLogged = useSelector(getLoggedState);
+  const showModal = useUiProvider((state) => state.showModal);
+  const isLogged = useUserProvider((state) => state.logged);
 
   useEffect(() => {
-    if (!isLogged) dispatch(showModal(<LoggingModal />));
-  }, [dispatch, isLogged]);
+    if (!isLogged) showModal(<LoggingModal />);
+  }, [isLogged, showModal]);
 
   return {
     redirectUrl: isLogged ? undefined : "/"

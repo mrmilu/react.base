@@ -7,7 +7,6 @@ interface UserModalProps extends CypressProps {
   user: DummyUser;
 }
 
-// eslint-disable-next-line react/display-name
 export const UserModal = forwardRef<HTMLDivElement, UserModalProps>(({ user, "data-cy": dataCy }, ref) => {
   return (
     <Styled.Wrapper data-cy={dataCy} id={user.id} ref={ref}>

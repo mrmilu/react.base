@@ -1,10 +1,11 @@
-import { Expose } from "class-transformer";
-
 export class DummyUser {
-  @Expose()
-  id!: string;
-  @Expose()
-  name!: string;
-  @Expose()
-  email!: string;
+  id: string;
+  name: string;
+  email: string;
+
+  constructor(params: { id: string; name: string; email: string }) {
+    this.id = params.id;
+    this.name = params.name;
+    this.email = params.email;
+  }
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { animated } from "react-spring";
+import { animated } from "@react-spring/web";
 import { px2rem } from "@/src/ui/styles/utils";
 import { colors } from "../../styles/colors";
 import { IconButton } from "@/src/ui/components/icon_button/icon_button";

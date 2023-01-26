@@ -4,8 +4,9 @@ import { spacing } from "@/src/ui/styles/spacing";
 import { colors } from "../../styles/colors";
 import { shadows } from "@/src/ui/styles/shadows";
 import { typography } from "@/src/ui/styles/typography";
+import type { SimpleCardProps } from "@/src/ui/components/simple_card/simple_card";
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ onClick: SimpleCardProps["onClick"] }>`
   display: flex;
   min-width: 0;
   align-items: center;
@@ -13,6 +14,7 @@ const Wrapper = styled.div`
   background-color: ${colors.white};
   box-shadow: ${shadows.one};
   border-radius: ${px2rem(8)};
+  cursor: ${(props) => props.onClick && "pointer"};
 `;
 
 const Content = styled.div`

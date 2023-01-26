@@ -3,9 +3,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createRoot } from "react-dom/client";
 import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import { Provider } from "react-redux";
 import App from "@/src/ui/app";
-import { store } from "@/src/ui/state";
 import "@/src/ui/i18n/index";
 import * as Sentry from "@sentry/react";
 import { BrowserTracing } from "@sentry/tracing";
@@ -33,9 +31,7 @@ root.render(
   // Un comment strict mode when libraries like redux and react spring support react 18v in a stable way
   <StrictMode>
     <HistoryRouter history={history}>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <App />
     </HistoryRouter>
   </StrictMode>
 );
