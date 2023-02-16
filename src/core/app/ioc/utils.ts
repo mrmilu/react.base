@@ -6,26 +6,30 @@ export const bindDynamicModule = <P, T>(identifier: symbol, dynamicImport: () =>
     return async () => {
       const module = identifier.description;
       const resolvedModule = await dynamicImport();
-      const repo = resolvedModule[module as string];
+      const dependency = Object.values(resolvedModule)[0] as new (...args: never[]) => any;
+      const resolvedIdentifier = `${module}_resolved`;
 
-      const resolvedIdentifier = `${identifier.toString()}_resolved`;
       if (!context.container.isBound(resolvedIdentifier)) {
-        context.container.bind<T>(resolvedIdentifier).to(repo);
+        context.container.bind<T>(resolvedIdentifier).to(dependency);
       }
+
       return context.container.get<T>(resolvedIdentifier);
     };
   });
 };
 
-export const bindSingletonDynamicModule = <P, T>(identifier: symbol, toResolveModule: () => Promise<new (...args: never[]) => T>) => {
+export const bindSingletonDynamicModule = <P, T>(identifier: symbol, dynamicImport: () => Promise<any>) => {
   locator.bind<P>(identifier).toProvider<T>((context) => {
     return async () => {
-      const repo = await toResolveModule();
+      const module = identifier.description;
+      const resolvedModule = await dynamicImport();
+      const dependency = Object.values(resolvedModule)[0] as new (...args: never[]) => any;
+      const resolvedIdentifier = `${module}_resolved`;
 
-      const resolvedIdentifier = `${identifier.toString()}_resolved`;
       if (!context.container.isBound(resolvedIdentifier)) {
-        context.container.bind<T>(resolvedIdentifier).to(repo).inSingletonScope();
+        context.container.bind<T>(resolvedIdentifier).to(dependency).inSingletonScope();
       }
+
       return context.container.get<T>(resolvedIdentifier);
     };
   });

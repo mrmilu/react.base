@@ -2,10 +2,6 @@ Cypress.Commands.add("dataCy", (value: string, log = true) => {
   return cy.get(`[data-cy=${value}]`, { log });
 });
 
-Cypress.Commands.add("goToRoute", (route = "") => {
-  return cy.window().its("tgHistory").invoke("push", route);
-});
-
 Cypress.Commands.add("login", () => {
   cy.dataCy("login-btn", false).then((el) => {
     // here perform login actions either by ui o cy.request

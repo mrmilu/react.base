@@ -6,7 +6,7 @@ import { lazy } from "react";
 import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
 import { RouteMiddleware } from "@/src/ui/router/route_middleware";
 import { useAuthMiddleware } from "@/src/ui/router/middlewares/auth_middleware.hook";
-import { useUsersListProvider } from "@/src/ui/pages/users/views/users_list/providers/dummy.provider";
+import { useUsersListProvider } from "@/src/ui/pages/users/views/users_list/providers/users_list.provider";
 import { usePostsProvider } from "@/src/ui/pages/posts/views/posts_list/providers/posts.provider";
 
 const HomePage = lazy(() => import("@/src/ui/pages/home/views/home_page/home_page"));

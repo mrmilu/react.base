@@ -13,12 +13,12 @@ describe("Visit posts page", () => {
   });
 
   after(() => {
-    cy.goToRoute("/");
+    cy.visit("/");
     cy.logout();
   });
 
   it("should visit page", () => {
-    cy.goToRoute("posts");
+    cy.visit("/users");
     cy.wait("@gqlUsersQuery");
     cy.dataCy("posts-page").should("exist");
   });

@@ -4,7 +4,7 @@ import { useBreakpointsMatch } from "@front_web_mrmilu/hooks";
 import { SimpleCard } from "@/src/ui/components/simple_card/simple_card";
 import BasePageStyled from "@/src/ui/pages/misc/components/base_page.styled";
 import { useUiProvider } from "@/src/ui/providers/ui.provider";
-import { useUsersListProvider, useInitUsersListProvider } from "@/src/ui/pages/users/views/users_list/providers/dummy.provider";
+import { useUsersListProvider, useInitUsersListProvider } from "@/src/ui/pages/users/views/users_list/providers/users_list.provider";
 
 export default function UsersListPage() {
   useInitUsersListProvider();

@@ -5,7 +5,7 @@ import { TYPES } from "@/src/core/app/ioc/types";
 import type { IUsersRepository } from "@/src/core/users/domain/interfaces/users_repository";
 
 @injectable()
-export class GetDummyUsersUseCase {
+export class GetUsersUseCase {
   @inject(TYPES.IUsersRepository) private readonly usersRepositoryProvider!: IocProvider<IUsersRepository>;
 
   async execute(): Promise<Array<User>> {

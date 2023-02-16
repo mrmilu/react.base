@@ -1,0 +1,8 @@
+{
+  "version": "v1",
+  "packages": {
+    "@front_web_mrmilu/hooks": {
+      "signature": "3c4f6a90e26147696bdbf9a3348b7c8d"
+    }
+  }
+}

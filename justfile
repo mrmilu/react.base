@@ -11,7 +11,11 @@ install-deps:
 
 # Starts React development server
 dev:
-    ./nvm_exec.sh yarn start
+    ./nvm_exec.sh yarn dev
+
+# Starts React debug server
+debug:
+    ./nvm_exec.sh yarn debug
 
 # Builds React application
 build:
