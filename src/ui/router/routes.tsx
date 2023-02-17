@@ -23,7 +23,7 @@ export const routes: Array<RouteObject> = [
       {
         index: true,
         element: (
-          <AppErrorBoundary>
+          <AppErrorBoundary key="home">
             <SuspenseMainLoader>
               <HomePage />
             </SuspenseMainLoader>
@@ -33,31 +33,31 @@ export const routes: Array<RouteObject> = [
       {
         path: "/users",
         element: (
-          <RouteMiddleware validationHook={useAuthMiddleware}>
-            <SuspenseMainLoader>
+          <AppErrorBoundary key="users">
+            <RouteMiddleware validationHook={useAuthMiddleware}>
               <useUsersListProvider.State>
                 <UsersListPage />
               </useUsersListProvider.State>
-            </SuspenseMainLoader>
-          </RouteMiddleware>
+            </RouteMiddleware>
+          </AppErrorBoundary>
         )
       },
       {
         path: "/posts",
         element: (
-          <SuspenseMainLoader>
+          <AppErrorBoundary key="posts">
             <usePostsProvider.State>
               <PostsPage />
             </usePostsProvider.State>
-          </SuspenseMainLoader>
+          </AppErrorBoundary>
         )
       },
       {
         path: "/create-post",
         element: (
-          <SuspenseMainLoader>
+          <AppErrorBoundary key="create-posts">
             <CreatePostPage />
-          </SuspenseMainLoader>
+          </AppErrorBoundary>
         )
       },
       { path: "*", element: <Page404 /> }

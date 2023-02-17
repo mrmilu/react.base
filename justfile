@@ -21,6 +21,14 @@ debug:
 build:
     ./nvm_exec.sh yarn build
 
+# Preview Vite build
+preview:
+    ./nvm_exec.sh yarn preview
+
+# Clean Vite cache
+clean:
+    rm -rf node_modules/.vite
+
 # Downloads schema and generates corresponding ts types
 graphql-codegen:
     ./nvm_exec.sh yarn graphql

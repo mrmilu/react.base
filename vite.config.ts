@@ -12,11 +12,13 @@ export default ({ mode }: any) => {
     plugins: [
       svgr({
         svgrOptions: {
+          dimensions: false,
           svgoConfig: {
             plugins: [{ name: "removeViewBox", active: false }]
           }
         }
       }),
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       graphql(),
       react({

@@ -2,6 +2,7 @@ import Styled from "@/src/ui/components/base_layout/base_layout.styled";
 import { Outlet, Link } from "react-router-dom";
 import { Button } from "@/src/ui/components/button/button";
 import { useUserProvider } from "@/src/ui/providers/user.provider";
+import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
 
 export const BaseLayout = () => {
   const userLogged = useUserProvider((state) => state.logged);
@@ -33,7 +34,9 @@ export const BaseLayout = () => {
         </Button>
       </Styled.Nav>
       <main>
-        <Outlet />
+        <SuspenseMainLoader>
+          <Outlet />
+        </SuspenseMainLoader>
       </main>
       <Styled.Footer>cool footer</Styled.Footer>
     </Styled.Wrapper>
