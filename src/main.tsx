@@ -27,9 +27,6 @@ const router = createBrowserRouter([
   // match everything with "*"
   { path: "*", element: <App /> }
 ]);
-if (window.Cypress) {
-  window.tgHistory = history;
-}
 root.render(
   // Un comment strict mode when libraries like redux and react spring support react 18v in a stable way
   <StrictMode>
@@ -45,6 +42,5 @@ reportWebVitals();
 declare global {
   interface Window {
     Cypress: boolean;
-    tgHistory: unknown;
   }
 }

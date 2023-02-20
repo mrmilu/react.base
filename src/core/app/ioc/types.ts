@@ -2,10 +2,10 @@
 export const TYPES = {
   MockService: Symbol("MockService"),
   JSONPlaceholderService: Symbol("JSONPlaceholderService"),
-  IEnvVars: Symbol("EnvVars"),
-  IPostsRepository: Symbol("PostsRepository"),
-  IUsersRepository: Symbol("UsersRepository"),
-  GetUsersUseCase: Symbol("GetDummyUsersUseCase"),
-  GetPostsUseCase: Symbol("GetDummyPostsUseCase"),
+  IEnvVars: Symbol("IEnvVars"),
+  IPostsRepository: Symbol("IPostsRepository"),
+  IUsersRepository: Symbol("IUsersRepository"),
+  GetUsersUseCase: Symbol("GetUsersUseCase"),
+  GetPostsUseCase: Symbol("GetPostsUseCase"),
   CretePostUseCase: Symbol("CreteDummyPostUseCase")
 };

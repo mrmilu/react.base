@@ -12,7 +12,7 @@ describe("Create post", () => {
   });
 
   it("should create post", () => {
-    cy.goToRoute("create-post");
+    cy.visit("/create-post");
     cy.dataCy("create-post-btn").click();
     cy.wait("@gqlCreateDummyPostMutation").its("response.body.data.createPost.body").should("to.equal", "This is a cool body for post number 1");
   });

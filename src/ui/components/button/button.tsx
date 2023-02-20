@@ -1,16 +1,17 @@
 import type { MouseEventHandler, PropsWithChildren } from "react";
 import Styled from "@/src/ui/components/button/button.styled";
+import type { CypressProps } from "@/src/ui/view_models/cypress";
 
-export interface ButtonProps {
+export interface ButtonProps extends CypressProps {
   onClick?: MouseEventHandler;
   type?: "submit" | "reset" | "button";
   disabled?: boolean;
   className?: string;
 }
 
-export const Button = ({ className, children, onClick, type, disabled }: PropsWithChildren<ButtonProps>) => {
+export const Button = ({ className, children, onClick, type, disabled, "data-cy": dataCy }: PropsWithChildren<ButtonProps>) => {
   return (
-    <Styled.Wrapper className={className} type={type} onClick={onClick} disabled={disabled}>
+    <Styled.Wrapper className={className} type={type} onClick={onClick} disabled={disabled} data-cy={dataCy}>
       {children}
     </Styled.Wrapper>
   );

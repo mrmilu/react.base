@@ -12,6 +12,7 @@ bindDynamicModule(TYPES.JSONPlaceholderService, () => import("../data/services/j
 
 // Repositories
 bindDynamicModule(TYPES.IUsersRepository, () => import("../../users/data/repositories/users_repository"));
+bindDynamicModule(TYPES.IPostsRepository, () => import("../../posts/data/repositories/posts_repository"));
 
 // Use cases
 bindDynamicModule(TYPES.GetUsersUseCase, () => import("../../users/domain/use_cases/get_users_use_case"));

@@ -6,7 +6,7 @@ import { lazy } from "react";
 import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
 import { RouteMiddleware } from "@/src/ui/router/route_middleware";
 import { useAuthMiddleware } from "@/src/ui/router/middlewares/auth_middleware.hook";
-import { useUsersListProvider } from "@/src/ui/pages/users/views/users_list/providers/dummy.provider";
+import { useUsersListProvider } from "@/src/ui/pages/users/views/users_list/providers/users_list.provider";
 import { usePostsProvider } from "@/src/ui/pages/posts/views/posts_list/providers/posts.provider";
 
 const HomePage = lazy(() => import("@/src/ui/pages/home/views/home_page/home_page"));
@@ -23,7 +23,7 @@ export const routes: Array<RouteObject> = [
       {
         index: true,
         element: (
-          <AppErrorBoundary>
+          <AppErrorBoundary key="home">
             <SuspenseMainLoader>
               <HomePage />
             </SuspenseMainLoader>
@@ -33,31 +33,31 @@ export const routes: Array<RouteObject> = [
       {
         path: "/users",
         element: (
-          <RouteMiddleware validationHook={useAuthMiddleware}>
-            <SuspenseMainLoader>
+          <AppErrorBoundary key="users">
+            <RouteMiddleware validationHook={useAuthMiddleware}>
               <useUsersListProvider.State>
                 <UsersListPage />
               </useUsersListProvider.State>
-            </SuspenseMainLoader>
-          </RouteMiddleware>
+            </RouteMiddleware>
+          </AppErrorBoundary>
         )
       },
       {
         path: "/posts",
         element: (
-          <SuspenseMainLoader>
+          <AppErrorBoundary key="posts">
             <usePostsProvider.State>
               <PostsPage />
             </usePostsProvider.State>
-          </SuspenseMainLoader>
+          </AppErrorBoundary>
         )
       },
       {
         path: "/create-post",
         element: (
-          <SuspenseMainLoader>
+          <AppErrorBoundary key="create-posts">
             <CreatePostPage />
-          </SuspenseMainLoader>
+          </AppErrorBoundary>
         )
       },
       { path: "*", element: <Page404 /> }

@@ -1,7 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules
+dist
+dist-ssr
+*.local
 /.pnp
 .pnp.js
 .yarn
@@ -20,12 +23,33 @@ tests/e2e/videos
 .env.development.local
 .env.test.local
 .env.production.local
-
-.idea
 __generated__
 .yalc
 yalc.lock
 
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+
+

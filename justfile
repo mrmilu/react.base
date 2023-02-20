@@ -11,11 +11,23 @@ install-deps:
 
 # Starts React development server
 dev:
-    ./nvm_exec.sh yarn start
+    ./nvm_exec.sh yarn dev
+
+# Starts React debug server
+debug:
+    ./nvm_exec.sh yarn debug
 
 # Builds React application
 build:
     ./nvm_exec.sh yarn build
+
+# Preview Vite build
+preview:
+    ./nvm_exec.sh yarn preview
+
+# Clean Vite cache
+clean:
+    rm -rf node_modules/.vite
 
 # Downloads schema and generates corresponding ts types
 graphql-codegen:

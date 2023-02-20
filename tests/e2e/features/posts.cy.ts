@@ -8,7 +8,7 @@ describe("Visit posts page", () => {
   });
 
   it("should render post list", () => {
-    cy.goToRoute("posts");
+    cy.visit("/posts");
     cy.wait("@getPosts");
     cy.dataCy("posts-page").should("exist");
     cy.dataCy("posts-card").first().contains("h4", "This is a cool post title").should("exist");

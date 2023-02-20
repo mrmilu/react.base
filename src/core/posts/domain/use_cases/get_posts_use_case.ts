@@ -10,6 +10,7 @@ export class GetPostsUseCase {
 
   async execute(): Promise<Array<Post>> {
     const repository = await this.postsRepositoryProvider();
-    return repository.posts();
+    const pagePosts = await repository.posts();
+    return pagePosts.items;
   }
 }
