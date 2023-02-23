@@ -23,9 +23,9 @@ const ClearButton = styled(Button)`
   background-color: darkred;
 `;
 
-const CreatePostPageStyled = {
+const CreatePostViewStyled = {
   Wrapper,
   ClearButton
 };
 
-export default CreatePostPageStyled;
+export default CreatePostViewStyled;

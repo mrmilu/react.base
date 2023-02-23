@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import Styled from "@/src/ui/pages/posts/views/create_post/create_post_page.styled";
+import Styled from "@/src/ui/pages/posts/views/create_post_view/create_post_view.styled";
 import { Button } from "@/src/ui/components/button/button";
 import { locator } from "@/src/core/app/ioc";
 import type { IocProvider } from "@/src/core/app/ioc/interfaces";

@@ -6,7 +6,7 @@ import { createProvider } from "@/src/common/utils/zustand";
 import type { GetUsersUseCase } from "@/src/core/users/domain/use_cases/get_users_use_case";
 import { useEffectStrictMode } from "@front_web_mrmilu/hooks";
 import { uiProvider } from "@/src/ui/providers/ui.provider";
-import type { UsersListState } from "@/src/ui/pages/users/views/users_list/view_models/dummy_state";
+import type { UsersListState } from "@/src/ui/pages/users/views/users_list_view/view_models/dummy_state";
 
 export const useUsersListProvider = createProvider<UsersListState>((set) => ({
   users: [],

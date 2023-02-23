@@ -1,6 +1,6 @@
 import { aliasQuery } from "../utils/graphql_test_utils";
 
-describe("Visit posts page", () => {
+describe("Visit users page", () => {
   before(() => {
     cy.visit("/");
     cy.login();
@@ -20,7 +20,7 @@ describe("Visit posts page", () => {
   it("should visit page", () => {
     cy.visit("/users");
     cy.wait("@gqlUsersQuery");
-    cy.dataCy("posts-page").should("exist");
+    cy.dataCy("users-list-view").should("exist");
   });
 
   it("should open user modal", () => {

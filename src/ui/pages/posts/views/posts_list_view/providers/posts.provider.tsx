@@ -4,7 +4,7 @@ import { TYPES } from "@/src/core/app/ioc/types";
 import { timeout } from "@front_web_mrmilu/utils";
 import { createProvider } from "@/src/common/utils/zustand";
 import { useEffectStrictMode } from "@front_web_mrmilu/hooks";
-import type { PostsState } from "@/src/ui/pages/posts/views/posts_list/view_models/posts_state";
+import type { PostsState } from "@/src/ui/pages/posts/views/posts_list_view/view_models/posts_state";
 import type { GetPostsUseCase } from "@/src/core/posts/domain/use_cases/get_posts_use_case";
 
 export const usePostsProvider = createProvider<PostsState>((set) => ({
