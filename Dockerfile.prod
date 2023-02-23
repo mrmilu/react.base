@@ -16,4 +16,4 @@ FROM alpine as build
 
 WORKDIR /app
 
-COPY --from=builder /app/build .
+COPY --from=builder /app/dist .
