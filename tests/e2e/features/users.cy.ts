@@ -20,7 +20,7 @@ describe("Visit users page", () => {
   it("should visit page", () => {
     cy.visit("/users");
     cy.wait("@gqlUsersQuery");
-    cy.dataCy("users-list-view").should("exist");
+    cy.dataCy("users-page").should("exist");
   });
 
   it("should open user modal", () => {

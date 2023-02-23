@@ -2,7 +2,7 @@ import { FormikProvider, useFormik } from "formik";
 import { InputFormik } from "@/src/ui/components/input/input";
 import { Button } from "@/src/ui/components/button/button";
 import { useEffect, useMemo, useState } from "react";
-import Styled from "@/src/ui/pages/home/views/home_view/home_view.styled";
+import Styled from "@/src/ui/pages/home/views/home_page/home_page.styled";
 import yup from "@/src/common/utils/yup_extended";
 import { BaseError } from "make-error";
 import { useTranslation } from "react-i18next";
@@ -20,7 +20,7 @@ const formValues: FormValues = {
   age: ""
 };
 
-export default function HomeView() {
+export default function HomePage() {
   const { t, i18n } = useTranslation("home");
   const [firstSubmit, setFirstSubmit] = useState(false);
   const validationSchema = useMemo(

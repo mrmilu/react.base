@@ -6,13 +6,13 @@ import { lazy } from "react";
 import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
 import { RouteMiddleware } from "@/src/ui/router/route_middleware";
 import { useAuthMiddleware } from "@/src/ui/router/middlewares/auth_middleware.hook";
-import { useUsersListProvider } from "@/src/ui/pages/users/views/users_list_view/providers/users_list.provider";
-import { usePostsProvider } from "@/src/ui/pages/posts/views/posts_list_view/providers/posts.provider";
+import { useUsersListProvider } from "@/src/ui/pages/users/views/users_list_page/providers/users_list.provider";
+import { usePostsProvider } from "@/src/ui/pages/posts/views/posts_list_page/providers/posts.provider";
 
-const HomeView = lazy(() => import("@/src/ui/pages/home/views/home_view/home_view"));
-const UsersListView = lazy(() => import("@/src/ui/pages/users/views/users_list_view/users_list_view"));
-const PostsListView = lazy(() => import("@/src/ui/pages/posts/views/posts_list_view/posts_list_view"));
-const CreatePostView = lazy(() => import("@/src/ui/pages/posts/views/create_post_view/create_post_view"));
+const HomePage = lazy(() => import("@/src/ui/pages/home/views/home_page/home_page"));
+const UsersListPage = lazy(() => import("@/src/ui/pages/users/views/users_list_page/users_list_page"));
+const PostsListPage = lazy(() => import("@/src/ui/pages/posts/views/posts_list_page/posts_list_page"));
+const CreatePostPage = lazy(() => import("@/src/ui/pages/posts/views/create_post_page/create_post_page"));
 
 // TODO migrate to new DataRouter API
 export const routes: Array<RouteObject> = [
@@ -25,7 +25,7 @@ export const routes: Array<RouteObject> = [
         element: (
           <AppErrorBoundary key="home">
             <SuspenseMainLoader>
-              <HomeView />
+              <HomePage />
             </SuspenseMainLoader>
           </AppErrorBoundary>
         )
@@ -36,7 +36,7 @@ export const routes: Array<RouteObject> = [
           <AppErrorBoundary key="users">
             <RouteMiddleware validationHook={useAuthMiddleware}>
               <useUsersListProvider.State>
-                <UsersListView />
+                <UsersListPage />
               </useUsersListProvider.State>
             </RouteMiddleware>
           </AppErrorBoundary>
@@ -47,7 +47,7 @@ export const routes: Array<RouteObject> = [
         element: (
           <AppErrorBoundary key="posts">
             <usePostsProvider.State>
-              <PostsListView />
+              <PostsListPage />
             </usePostsProvider.State>
           </AppErrorBoundary>
         )
@@ -56,7 +56,7 @@ export const routes: Array<RouteObject> = [
         path: "/create-post",
         element: (
           <AppErrorBoundary key="create-post">
-            <CreatePostView />
+            <CreatePostPage />
           </AppErrorBoundary>
         )
       },

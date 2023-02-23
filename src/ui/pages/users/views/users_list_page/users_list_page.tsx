@@ -4,9 +4,9 @@ import { useBreakpointsMatch } from "@front_web_mrmilu/hooks";
 import { SimpleCard } from "@/src/ui/components/simple_card/simple_card";
 import BasePageStyled from "@/src/ui/pages/misc/components/base_page.styled";
 import { useUiProvider } from "@/src/ui/providers/ui.provider";
-import { useUsersListProvider, useInitUsersListProvider } from "@/src/ui/pages/users/views/users_list_view/providers/users_list.provider";
+import { useUsersListProvider, useInitUsersListProvider } from "@/src/ui/pages/users/views/users_list_page/providers/users_list.provider";
 
-export default function UsersListView() {
+export default function UsersListPage() {
   useInitUsersListProvider();
   const users = useUsersListProvider((state) => state.users);
   const showModal = useUiProvider((state) => state.showModal);
@@ -17,7 +17,7 @@ export default function UsersListView() {
   };
 
   return (
-    <BasePageStyled.Wrapper data-cy="users-list-view">
+    <BasePageStyled.Wrapper data-cy="users-page">
       {mdAndUp && <h2>Dummy page</h2>}
       {users.map((user, idx) => (
         <SimpleCard data-cy="dummy-card" onClick={() => showUserModal(user)} key={`${user.id}_${idx}`} title={user.name} subtitle={user.email} />
