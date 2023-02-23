@@ -1,4 +1,4 @@
-import { usePostsProvider } from "@/src/ui/pages/posts/views/posts_list/providers/posts.provider";
+import { usePostsProvider } from "@/src/ui/pages/posts/views/posts_list_page/providers/posts.provider";
 import { SimpleCard } from "@/src/ui/components/simple_card/simple_card";
 
 export function PostsResults() {

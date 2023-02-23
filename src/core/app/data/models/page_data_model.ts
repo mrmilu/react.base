@@ -1,15 +1,16 @@
 import { Exclude, Expose, Type } from "class-transformer";
 import { Page } from "@/src/core/app/domain/models/page";
+import type { DataModel } from "@/src/common/interfaces/data_model";
 
-export class PageDataModel<T extends { toDomain(): any }> {
+export class PageDataModel<ItemDataType extends DataModel<ItemDomainType>, ItemDomainType> {
   @Exclude()
   private type: new (...args: any[]) => any;
 
   @Expose({ name: "results" })
   @Type((options) => {
-    return (options?.newObject as PageDataModel<T>).type;
+    return (options?.newObject as PageDataModel<ItemDataType, ItemDomainType>).type;
   })
-  items: Array<T> = [];
+  items: Array<ItemDataType> = [];
   @Expose()
   totalCount?: number;
   @Expose()
@@ -23,8 +24,8 @@ export class PageDataModel<T extends { toDomain(): any }> {
     this.type = type;
   }
 
-  toDomain<D>(): Page<D> {
-    return new Page<D>({
+  toDomain(): Page<ItemDomainType> {
+    return new Page<ItemDomainType>({
       items: this.items.map((i) => i.toDomain()),
       totalCount: this.totalCount,
       page: this.page,

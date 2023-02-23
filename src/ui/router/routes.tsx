@@ -6,13 +6,13 @@ import { lazy } from "react";
 import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
 import { RouteMiddleware } from "@/src/ui/router/route_middleware";
 import { useAuthMiddleware } from "@/src/ui/router/middlewares/auth_middleware.hook";
-import { useUsersListProvider } from "@/src/ui/pages/users/views/users_list/providers/users_list.provider";
-import { usePostsProvider } from "@/src/ui/pages/posts/views/posts_list/providers/posts.provider";
+import { useUsersListProvider } from "@/src/ui/pages/users/views/users_list_page/providers/users_list.provider";
+import { usePostsProvider } from "@/src/ui/pages/posts/views/posts_list_page/providers/posts.provider";
 
 const HomePage = lazy(() => import("@/src/ui/pages/home/views/home_page/home_page"));
-const UsersListPage = lazy(() => import("@/src/ui/pages/users/views/users_list/users_list_page"));
-const PostsPage = lazy(() => import("@/src/ui/pages/posts/views/posts_list/posts_page"));
-const CreatePostPage = lazy(() => import("@/src/ui/pages/posts/views/create_post/create_post_page"));
+const UsersListPage = lazy(() => import("@/src/ui/pages/users/views/users_list_page/users_list_page"));
+const PostsListPage = lazy(() => import("@/src/ui/pages/posts/views/posts_list_page/posts_list_page"));
+const CreatePostPage = lazy(() => import("@/src/ui/pages/posts/views/create_post_page/create_post_page"));
 
 // TODO migrate to new DataRouter API
 export const routes: Array<RouteObject> = [
@@ -47,7 +47,7 @@ export const routes: Array<RouteObject> = [
         element: (
           <AppErrorBoundary key="posts">
             <usePostsProvider.State>
-              <PostsPage />
+              <PostsListPage />
             </usePostsProvider.State>
           </AppErrorBoundary>
         )
@@ -55,7 +55,7 @@ export const routes: Array<RouteObject> = [
       {
         path: "/create-post",
         element: (
-          <AppErrorBoundary key="create-posts">
+          <AppErrorBoundary key="create-post">
             <CreatePostPage />
           </AppErrorBoundary>
         )

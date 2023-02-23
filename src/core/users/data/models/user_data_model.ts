@@ -1,7 +1,8 @@
 import { Expose } from "class-transformer";
 import { User } from "@/src/core/users/domain/models/user";
+import type { DataModel } from "@/src/common/interfaces/data_model";
 
-export class DummyUserDataModel {
+export class DummyUserDataModel implements DataModel<User> {
   @Expose()
   id!: string;
   @Expose()
@@ -9,7 +10,7 @@ export class DummyUserDataModel {
   @Expose()
   email!: string;
 
-  toDomain(): User {
+  toDomain() {
     return new User({
       id: this.id,
       name: this.name,

@@ -3,14 +3,14 @@ import { inject, injectable } from "inversify";
 import { TYPES } from "@/src/core/app/ioc/types";
 import CreateDummyPostMutationOperation from "../../../users/data/graphql/mutations/create_dummy_post.graphql";
 import type { MockService } from "@/src/core/app/data/services/mock_service";
-import type { CreateDummyPostMutation } from "@/src/core/users/data/graphql/mutations/__generated__/create_dummy_post";
-import type { IocProvider } from "@/src/core/app/ioc/interfaces";
 import type { CreatePostInput } from "@/src/__generated__/graphql";
 import type { Post } from "@/src/core/posts/domain/models/post";
 import type { JSONPlaceholderService } from "@/src/core/app/data/services/json_placeholder_service";
 import { PostDataModel } from "@/src/core/posts/data/models/post_data_model";
 import { fromJson, fromJsonPage } from "@/src/common/utils/class-transformer";
 import type { Page } from "@/src/core/app/domain/models/page";
+import type { IocProvider } from "@/src/core/app/ioc/interfaces";
+import type { CreateDummyPostMutation } from "@/src/core/dummy/data/graphql/mutations/__generated__/create_dummy_post";
 
 @injectable()
 export class PostsRepository implements IPostsRepository {
@@ -31,6 +31,6 @@ export class PostsRepository implements IPostsRepository {
       totalCount: dataPostList.length,
       page: 1
     };
-    return fromJsonPage<PostDataModel>(PostDataModel, fakePage).toDomain<Post>();
+    return fromJsonPage<PostDataModel, Post>(PostDataModel, fakePage).toDomain();
   }
 }

@@ -1,7 +1,8 @@
 import { Expose } from "class-transformer";
 import { Post } from "@/src/core/posts/domain/models/post";
+import type { DataModel } from "@/src/common/interfaces/data_model";
 
-export class PostDataModel {
+export class PostDataModel implements DataModel<Post> {
   @Expose()
   id!: string;
   @Expose()
@@ -11,7 +12,7 @@ export class PostDataModel {
   @Expose()
   userId!: string;
 
-  toDomain(): Post {
+  toDomain() {
     return new Post({
       id: this.id,
       title: this.title,
