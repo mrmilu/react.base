@@ -17,7 +17,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["reflect-metadata"],
-    "typeRoots": ["node_modules/@types", "src/@types", "src/common/@types"],
+    "typeRoots": ["node_modules/@types", "src/ui/@types", "src/common/@types"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
