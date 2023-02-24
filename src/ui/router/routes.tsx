@@ -34,7 +34,7 @@ export const routes: Array<RouteObject> = [
         path: "/users",
         element: (
           <AppErrorBoundary key="users">
-            <RouteMiddleware validationHook={useAuthMiddleware}>
+            <RouteMiddleware key="auth-middleware" validationHook={useAuthMiddleware}>
               <useUsersListProvider.State>
                 <UsersListPage />
               </useUsersListProvider.State>
