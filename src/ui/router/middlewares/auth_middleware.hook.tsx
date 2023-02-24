@@ -12,7 +12,16 @@ export const useAuthMiddleware: MiddlewareHook = () => {
     if (!isLogged) showModal(<LoggingModal />);
   }, [isLogged, showModal]);
 
+  const fakePromise = async () => {
+    if (isLogged) {
+      return "Logged";
+    } else {
+      throw "Not logged";
+    }
+  };
+
   return {
-    redirectUrl: isLogged ? undefined : "/"
+    errorRedirectUrl: "/",
+    promise: fakePromise()
   };
 };
