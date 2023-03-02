@@ -2,52 +2,44 @@
 import type { UiState } from "../view_models/ui_state";
 import type { ReactNode } from "react";
 import { createStore, useStore } from "zustand";
-import produce from "immer";
+import { immer } from "zustand/middleware/immer";
 
-export const uiProvider = createStore<UiState>((set) => ({
-  showLoader: false,
-  modal: {
-    show: false,
-    content: null
-  },
-  showModal(modalContent: ReactNode) {
-    set(
-      produce((state) => {
+export const uiProvider = createStore<UiState>()(
+  immer((set) => ({
+    showLoader: false,
+    modal: {
+      show: false,
+      content: null
+    },
+    showModal(modalContent: ReactNode) {
+      set((state) => {
         state.modal.content = modalContent;
-      })
-    );
+      });
 
-    setTimeout(() => {
-      set(
-        produce((state) => {
+      setTimeout(() => {
+        set((state) => {
           state.modal.show = true;
-        })
-      );
-    }, 150);
-  },
-  setLoader(value: boolean) {
-    set(
-      produce((state) => {
+        });
+      }, 150);
+    },
+    setLoader(value: boolean) {
+      set((state) => {
         state.showLoader = value;
-      })
-    );
-  },
-  hideModal() {
-    set(
-      produce((state) => {
+      });
+    },
+    hideModal() {
+      set((state) => {
         state.modal.show = false;
-      })
-    );
+      });
 
-    setTimeout(() => {
-      set(
-        produce((state) => {
+      setTimeout(() => {
+        set((state) => {
           state.modal.content = null;
-        })
-      );
-    }, 150);
-  }
-}));
+        });
+      }, 150);
+    }
+  }))
+);
 
 export function useUiProvider(): UiState;
 export function useUiProvider<T>(selector: (state: UiState) => T, equals?: (a: T, b: T) => boolean): T;

@@ -17,7 +17,10 @@ export const usePostsProvider = createProvider<PostsState>((set) => ({
     try {
       await timeout(1000);
       const getDummyPostsUseCase = await locator.get<IocProvider<GetPostsUseCase>>(TYPES.GetPostsUseCase)();
-      set({ posts: await getDummyPostsUseCase.execute() });
+      const posts = await getDummyPostsUseCase.execute();
+      set((state) => {
+        state.posts = posts;
+      });
     } catch (e) {
       console.error(e);
       set({ hasError: true });

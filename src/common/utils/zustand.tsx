@@ -1,16 +1,19 @@
 import type { StateCreator } from "zustand";
 import { createStore, useStore } from "zustand";
-import type { StoreApi, StoreMutatorIdentifier } from "zustand/vanilla";
+import type { StoreMutatorIdentifier } from "zustand/vanilla";
 import type { PropsWithChildren } from "react";
 import { createContext, useContext, useRef } from "react";
+import { immer } from "zustand/middleware/immer";
 
 /**
  * Returns a hook that lets you access Zustand state within a Provider.
  * The state auto disposes when the Provider unmounts. This way, the memory is freed by the garbage collector.
  */
-export function createProvider<T, Mos extends [StoreMutatorIdentifier, unknown][] = []>(initializer: StateCreator<T, [], Mos>) {
-  const storeFactory = () => createStore(initializer);
-  type StoreType = StoreApi<T>;
+export function createProvider<T, Mos extends [StoreMutatorIdentifier, unknown][] = []>(
+  initializer: StateCreator<T, [["zustand/immer", never]], Mos>
+) {
+  const storeFactory = () => createStore<T>()(immer(initializer));
+  type StoreType = ReturnType<typeof storeFactory>;
   const Context = createContext<StoreType | null>(null);
 
   const State = ({ children }: PropsWithChildren) => {
