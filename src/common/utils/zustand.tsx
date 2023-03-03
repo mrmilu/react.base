@@ -16,8 +16,14 @@ export function createProvider<T, Mos extends [StoreMutatorIdentifier, unknown][
   type StoreType = ReturnType<typeof storeFactory>;
   const Context = createContext<StoreType | null>(null);
 
-  const State = ({ children }: PropsWithChildren) => {
+  const State = ({ children, initialState }: PropsWithChildren<{ initialState?: Partial<T> }>) => {
     const store = useRef(storeFactory()).current;
+    if (initialState) {
+      // TODO: Set state is not inferring the correct setState implementation
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      store.setState(initialState);
+    }
     return <Context.Provider value={store}>{children}</Context.Provider>;
   };
 
