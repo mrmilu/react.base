@@ -1,4 +1,4 @@
-import type { StateCreator } from "zustand";
+import type { StateCreator, StoreApi } from "zustand";
 import { createStore, useStore } from "zustand";
 import type { StoreMutatorIdentifier } from "zustand/vanilla";
 import type { PropsWithChildren } from "react";
@@ -19,10 +19,7 @@ export function createProvider<T, Mos extends [StoreMutatorIdentifier, unknown][
   const State = ({ children, initialState }: PropsWithChildren<{ initialState?: Partial<T> }>) => {
     const store = useRef(storeFactory()).current;
     if (initialState) {
-      // TODO: Set state is not inferring the correct setState implementation
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      store.setState(initialState);
+      (store as StoreApi<T>).setState(initialState);
     }
     return <Context.Provider value={store}>{children}</Context.Provider>;
   };
