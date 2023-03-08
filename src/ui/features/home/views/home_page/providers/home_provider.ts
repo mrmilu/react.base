@@ -5,9 +5,19 @@ interface HomeProviderBuilderProps {
   amount: "none" | "twenty" | "thirty";
 }
 
-export const useHomeProvider = createProvider<HomeStateViewModel, HomeProviderBuilderProps>(
-  (set) => ({
-    counter: 0,
+export const useHomeProvider = createProvider<HomeStateViewModel, HomeProviderBuilderProps>(({ amount }) => {
+  let counter = 0;
+  switch (amount) {
+    case "twenty":
+      counter = 20;
+      break;
+    case "thirty":
+      counter = 30;
+      break;
+  }
+
+  return (set) => ({
+    counter,
     add() {
       set((state) => {
         state.counter++;
@@ -18,17 +28,19 @@ export const useHomeProvider = createProvider<HomeStateViewModel, HomeProviderBu
         state.counter--;
       });
     }
-  }),
-  ({ amount }) => {
-    switch (amount) {
-      case "twenty":
-        return {
-          counter: 20
-        };
-      case "thirty":
-        return { counter: 30 };
-      case "none":
-        return { counter: 0 };
-    }
+  });
+});
+
+export const useHomeProviderBis = createProvider<HomeStateViewModel, HomeProviderBuilderProps>(() => (set) => ({
+  counter: 0,
+  add() {
+    set((state) => {
+      state.counter++;
+    });
+  },
+  subtract() {
+    set((state) => {
+      state.counter--;
+    });
   }
-);
+}));

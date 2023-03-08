@@ -7,7 +7,7 @@ import yup from "@/src/common/utils/yup_extended";
 import { BaseError } from "make-error";
 import { useTranslation } from "react-i18next";
 import { timeout } from "@front_web_mrmilu/utils";
-import { useHomeProvider } from "@/src/ui/features/home/views/home_page/providers/home_provider";
+import { useHomeProvider, useHomeProviderBis } from "@/src/ui/features/home/views/home_page/providers/home_provider";
 
 interface FormValues {
   name: string;
@@ -79,9 +79,9 @@ export default function HomePage() {
           </Button>
         </Styled.Form>
       </FormikProvider>
-      <useHomeProvider.State>
-        <Counter />
-      </useHomeProvider.State>
+      <useHomeProviderBis.State>
+        <CounterBis />
+      </useHomeProviderBis.State>
       <useHomeProvider.State initialState={{ counter: 10 }}>
         <Counter />
       </useHomeProvider.State>
@@ -91,6 +91,19 @@ export default function HomePage() {
     </Styled.Wrapper>
   );
 }
+
+const CounterBis = () => {
+  const counter = useHomeProviderBis((state) => state.counter);
+  const add = useHomeProviderBis((state) => state.add);
+  const subtract = useHomeProviderBis((state) => state.subtract);
+  return (
+    <div>
+      <h4>{counter}</h4>
+      <button onClick={add}>Add</button>
+      <button onClick={subtract}>Subtract</button>
+    </div>
+  );
+};
 
 const Counter = () => {
   const counter = useHomeProvider((state) => state.counter);

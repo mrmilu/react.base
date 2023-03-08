@@ -8,7 +8,7 @@ import { useEffectStrictMode } from "@front_web_mrmilu/hooks";
 import { uiProvider } from "@/src/ui/providers/ui.provider";
 import type { UsersListStateViewModel } from "@/src/ui/features/users/views/users_list_page/view_models/users_list_state";
 
-export const useUsersListProvider = createProvider<UsersListStateViewModel>((set) => ({
+export const useUsersListProvider = createProvider<UsersListStateViewModel>(() => (set) => ({
   users: [],
 
   async loadUsers() {

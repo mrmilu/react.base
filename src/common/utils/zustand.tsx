@@ -5,24 +5,15 @@ import { createContext, useContext, useRef } from "react";
 import { immer } from "zustand/middleware/immer";
 import type { ConstructorType } from "@/src/common/interfaces/constructor_type";
 
-type PartialState<T> = ConstructorType<T>;
-type Builder<P, T> = (props: P) => PartialState<T>;
 interface StateProviderProps<T extends object, P> {
   initialState?: ConstructorType<T>;
   builderProps?: P;
 }
 
-type Write<T, U> = Omit<T, keyof U> & U;
-
-type Merge = <
-  T extends object,
-  U extends object,
-  Mps extends [StoreMutatorIdentifier, unknown][] = [],
-  Mcs extends [StoreMutatorIdentifier, unknown][] = []
->(
+type Merge = <T extends object, Mps extends [StoreMutatorIdentifier, unknown][] = [], Mcs extends [StoreMutatorIdentifier, unknown][] = []>(
   initialState: T,
-  additionalStateCreator: StateCreator<T, Mps, Mcs, U>
-) => StateCreator<Write<T, U>, Mps, Mcs>;
+  additionalStateCreator: StateCreator<T, Mps, Mcs>
+) => StateCreator<T, Mps, Mcs>;
 
 /**
  * Returns a hook that lets you access Zustand state within a Provider.
@@ -34,26 +25,45 @@ export const merge: Merge =
     // eslint-disable-next-line
     Object.assign((create as any)(...a), initialState);
 
-export function createProvider<T extends object, P = never>(
-  initializer: StateCreator<T, [["zustand/immer", never]]>,
-  builder?: Builder<P, PartialState<T>>
+type BuilderMiddleware = <T, P, Mps extends [StoreMutatorIdentifier, unknown][] = [], Mcs extends [StoreMutatorIdentifier, unknown][] = []>(
+  props: P,
+  builder: (props: P) => StateCreator<T, Mps, Mcs>
+) => StateCreator<T, Mps, Mcs>;
+
+const builderMiddleware: BuilderMiddleware = (props, builder) => {
+  return builder(props);
+};
+
+interface FactoryInitializerParams<T, P> {
+  initialState?: T;
+  builderProps?: P;
+}
+
+export function createProvider<T extends object, P extends object = never>(
+  builderInitializer: (props: P) => StateCreator<T, [["zustand/immer", never]]>
 ) {
-  const combinedInitializer = (providerInitialState?: PartialState<T>) => {
-    const initialState = providerInitialState as T | undefined;
+  const factoryInitializer = ({ initialState, builderProps }: FactoryInitializerParams<T, P>) => {
+    if (initialState && builderProps) throw new Error("Both initialState and builderProps can't be used at the same time");
+    const base = builderMiddleware(builderProps || ({} as P), builderInitializer);
     if (initialState) {
-      return immer(merge(initialState, initializer));
+      return immer(merge(initialState, base));
     } else {
-      return immer(initializer);
+      return immer(base);
     }
   };
-  const storeFactory = (providerInitialState?: PartialState<T>) => createStore<T>()(combinedInitializer(providerInitialState));
+  const storeFactory = ({ initialState, builderProps }: FactoryInitializerParams<T, P>) =>
+    createStore<T>()(
+      factoryInitializer({
+        initialState,
+        builderProps
+      })
+    );
   type StoreType = ReturnType<typeof storeFactory>;
   const Context = createContext<StoreType | null>(null);
 
   const State = ({ children, initialState, builderProps }: PropsWithChildren<StateProviderProps<T, P>>) => {
-    if (initialState && builderProps) throw new Error("Both initialState and builderProps can't be used at the same time");
-    const _initialState = (builderProps && builder ? builder(builderProps) : initialState) as T | undefined;
-    const store = useRef(storeFactory(_initialState)).current;
+    const _initialState = initialState as T | undefined;
+    const store = useRef(storeFactory({ initialState: _initialState, builderProps })).current;
     return <Context.Provider value={store}>{children}</Context.Provider>;
   };
 
