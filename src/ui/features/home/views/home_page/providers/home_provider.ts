@@ -31,7 +31,7 @@ export const useHomeProvider = createProvider<HomeStateViewModel, HomeProviderBu
   });
 });
 
-export const useHomeProviderBis = createProvider<HomeStateViewModel, HomeProviderBuilderProps>(() => (set) => ({
+export const useHomeProviderBis = createProvider<HomeStateViewModel>(() => (set) => ({
   counter: 0,
   add() {
     set((state) => {
