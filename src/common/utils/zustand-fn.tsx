@@ -1,5 +1,5 @@
-import type { StateCreator } from "zustand";
-import { createStore, useStore, State } from "zustand";
+import type { StateCreator, State } from "zustand";
+import { createStore, useStore } from "zustand";
 import type { StoreMutatorIdentifier } from "zustand/vanilla";
 import type { PropsWithChildren } from "react";
 import { createContext, useContext, useRef } from "react";
@@ -17,16 +17,14 @@ type FnMiddleware = <
   P = any
 >(
   props: P,
-  f: (props: P) => StateCreator<T, Mps, Mcs>,
-) => StateCreator<T, Mps, Mcs>
+  f: (props: P) => StateCreator<T, Mps, Mcs>
+) => StateCreator<T, Mps, Mcs>;
 
-const fnMiddleware : FnMiddleware = (props, f) => {
+const fnMiddleware: FnMiddleware = (props, f) => {
   return f(props);
-}
+};
 
-export function createProviderFn<T, P>(
-  initializer: (props: P) => StateCreator<T, [["zustand/immer", never]]>
-) {
+export function createProviderFn<T, P>(initializer: (props: P) => StateCreator<T, [["zustand/immer", never]]>) {
   const storeFactory = (props: P) => {
     return createStore<T>()(immer(fnMiddleware(props, initializer)));
   };

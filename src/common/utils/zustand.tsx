@@ -1,26 +1,59 @@
-import type { StateCreator, StoreApi } from "zustand";
+import type { StateCreator, StoreMutatorIdentifier } from "zustand";
 import { createStore, useStore } from "zustand";
-import type { StoreMutatorIdentifier } from "zustand/vanilla";
 import type { PropsWithChildren } from "react";
 import { createContext, useContext, useRef } from "react";
 import { immer } from "zustand/middleware/immer";
+import type { ConstructorType } from "@/src/common/interfaces/constructor_type";
+
+type PartialState<T> = ConstructorType<T>;
+type Builder<P, T> = (props: P) => PartialState<T>;
+interface StateProviderProps<T extends object, P> {
+  initialState?: ConstructorType<T>;
+  builderProps?: P;
+}
+
+type Write<T, U> = Omit<T, keyof U> & U;
+
+type Merge = <
+  T extends object,
+  U extends object,
+  Mps extends [StoreMutatorIdentifier, unknown][] = [],
+  Mcs extends [StoreMutatorIdentifier, unknown][] = []
+>(
+  initialState: T,
+  additionalStateCreator: StateCreator<T, Mps, Mcs, U>
+) => StateCreator<Write<T, U>, Mps, Mcs>;
 
 /**
  * Returns a hook that lets you access Zustand state within a Provider.
  * The state auto disposes when the Provider unmounts. This way, the memory is freed by the garbage collector.
  */
-export function createProvider<T, Mos extends [StoreMutatorIdentifier, unknown][] = []>(
-  initializer: StateCreator<T, [["zustand/immer", never]], Mos>
+export const merge: Merge =
+  (initialState, create) =>
+  (...a) =>
+    // eslint-disable-next-line
+    Object.assign((create as any)(...a), initialState);
+
+export function createProvider<T extends object, P = never>(
+  initializer: StateCreator<T, [["zustand/immer", never]]>,
+  builder?: Builder<P, PartialState<T>>
 ) {
-  const storeFactory = () => createStore<T>()(immer(initializer));
+  const combinedInitializer = (providerInitialState?: PartialState<T>) => {
+    const initialState = providerInitialState as T | undefined;
+    if (initialState) {
+      return immer(merge(initialState, initializer));
+    } else {
+      return immer(initializer);
+    }
+  };
+  const storeFactory = (providerInitialState?: PartialState<T>) => createStore<T>()(combinedInitializer(providerInitialState));
   type StoreType = ReturnType<typeof storeFactory>;
   const Context = createContext<StoreType | null>(null);
 
-  const State = ({ children, initialState }: PropsWithChildren<{ initialState?: Partial<T> }>) => {
-    const store = useRef(storeFactory()).current;
-    if (initialState) {
-      (store as StoreApi<T>).setState(initialState);
-    }
+  const State = ({ children, initialState, builderProps }: PropsWithChildren<StateProviderProps<T, P>>) => {
+    if (initialState && builderProps) throw new Error("Both initialState and builderProps can't be used at the same time");
+    const _initialState = (builderProps && builder ? builder(builderProps) : initialState) as T | undefined;
+    const store = useRef(storeFactory(_initialState)).current;
     return <Context.Provider value={store}>{children}</Context.Provider>;
   };
 

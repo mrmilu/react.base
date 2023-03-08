@@ -85,6 +85,9 @@ export default function HomePage() {
       <useHomeProvider.State initialState={{ counter: 10 }}>
         <Counter />
       </useHomeProvider.State>
+      <useHomeProvider.State builderProps={{ amount: "twenty" }}>
+        <Counter />
+      </useHomeProvider.State>
     </Styled.Wrapper>
   );
 }
@@ -93,7 +96,6 @@ const Counter = () => {
   const counter = useHomeProvider((state) => state.counter);
   const add = useHomeProvider((state) => state.add);
   const subtract = useHomeProvider((state) => state.subtract);
-  console.log("render");
   return (
     <div>
       <h4>{counter}</h4>
