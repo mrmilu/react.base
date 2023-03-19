@@ -1,12 +1,13 @@
-import { FormikProvider, useFormik } from "formik";
-import { InputFormik } from "@/src/ui/components/input/input";
+import { ControlledInput } from "@/src/ui/components/input/input";
 import { Button } from "@/src/ui/components/button/button";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import Styled from "@/src/ui/pages/home/views/home_page/home_page.styled";
 import yup from "@/src/common/utils/yup_extended";
 import { BaseError } from "make-error";
 import { useTranslation } from "react-i18next";
 import { timeout } from "@front_web_mrmilu/utils";
+import { FormProvider, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 interface FormValues {
   name: string;
@@ -14,7 +15,7 @@ interface FormValues {
   age: string;
 }
 
-const formValues: FormValues = {
+const defaultValues: FormValues = {
   name: "",
   email: "",
   age: ""
@@ -22,7 +23,6 @@ const formValues: FormValues = {
 
 export default function HomePage() {
   const { t, i18n } = useTranslation("home");
-  const [firstSubmit, setFirstSubmit] = useState(false);
   const validationSchema = useMemo(
     () =>
       yup.object().shape({
@@ -36,27 +36,29 @@ export default function HomePage() {
       }),
     [t]
   );
-
-  const formik = useFormik({
-    initialValues: formValues,
-    validationSchema,
-    validateOnBlur: firstSubmit,
-    validateOnChange: firstSubmit,
-    onSubmit: async (values: FormValues) => {
-      await timeout(3000);
-      alert(`name: ${values.name}, email: ${values.email}, age: ${values.age}`);
-    }
+  const form = useForm({
+    defaultValues,
+    resolver: yupResolver(validationSchema, { abortEarly: false }),
+    reValidateMode: "onChange",
+    mode: "all"
   });
+
+  const handleSubmit = async (values: FormValues) => {
+    await timeout(3000);
+    alert(`name: ${values.name}, email: ${values.email}, age: ${values.age}`);
+  };
 
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
   };
 
+  const age = form.watch("age");
+
   useEffect(() => {
-    if (Number(formik.values.age) > 40) {
+    if (Number(age) > 40) {
       throw new BaseError("The user is too old xD");
     }
-  }, [formik.values.age]);
+  }, [age]);
 
   return (
     <Styled.Wrapper>
@@ -68,16 +70,16 @@ export default function HomePage() {
           <option value="en">EN</option>
         </select>
       </Styled.Locale>
-      <FormikProvider value={formik}>
-        <Styled.Form>
-          <InputFormik name="name" label={t("form.fields.name.label")} placeholder={t("form.fields.name.placeholder")} />
-          <InputFormik name="email" label={t("form.fields.email.label")} placeholder={t("form.fields.email.placeholder")} />
-          <InputFormik name="age" type="number" label={t("form.fields.age.label")} placeholder={t("form.fields.age.placeholder")} />
-          <Button type="submit" disabled={formik.isSubmitting} onClick={() => setFirstSubmit(true)}>
+      <FormProvider {...form}>
+        <Styled.Form onSubmit={form.handleSubmit(handleSubmit)}>
+          <ControlledInput name="name" label={t("form.fields.name.label")} placeholder={t("form.fields.name.placeholder")} />
+          <ControlledInput name="email" label={t("form.fields.email.label")} placeholder={t("form.fields.email.placeholder")} />
+          <ControlledInput name="age" type="number" label={t("form.fields.age.label")} placeholder={t("form.fields.age.placeholder")} />
+          <Button type="submit" disabled={form.formState.isSubmitting}>
             {t("form.submit")}
           </Button>
         </Styled.Form>
-      </FormikProvider>
+      </FormProvider>
     </Styled.Wrapper>
   );
 }

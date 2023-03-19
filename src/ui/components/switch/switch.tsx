@@ -1,37 +1,22 @@
 import Styled from "@/src/ui/components/switch/switch.styled";
-import type { FieldInputProps, FormikHandlers } from "formik";
-import { useField } from "formik";
-import type { KeyboardEvent } from "react";
+import type { ChangeEventHandler, FocusEventHandler, KeyboardEvent, RefObject } from "react";
+import { forwardRef } from "react";
 import { useRef } from "react";
-import type { BaseFormikProps } from "@/src/ui/view_models/formik";
+import { useController } from "react-hook-form";
 
 interface SwitchProps {
   label?: string;
   id: string;
   name?: string;
-  onChange?: FormikHandlers["handleChange"];
-  formik?: BaseFormikProps<string | undefined>;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
   value?: string;
-  defaultChecked?: boolean;
   className?: string;
 }
 
-export const Switch = ({ value, label, onChange, formik, name, id, defaultChecked, className }: SwitchProps) => {
-  const innerRef = useRef<HTMLInputElement>(null);
-  let field: FieldInputProps<string | undefined>;
-  if (formik) {
-    field = formik.field;
-  } else {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const emptyHandler = () => {};
-    field = {
-      onBlur: emptyHandler,
-      value: value || undefined,
-      onChange: onChange || emptyHandler,
-      checked: defaultChecked,
-      name: name || ""
-    };
-  }
+export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ value, label, onChange, onBlur, name, id, className }, ref) => {
+  const _ref = useRef<HTMLInputElement>(null);
+  const innerRef = (ref ?? _ref) as RefObject<HTMLInputElement>;
 
   const handleKeypress = (e: KeyboardEvent<HTMLLabelElement>) => {
     if (e.key === "Enter" || e.keyCode === 13) {
@@ -43,25 +28,16 @@ export const Switch = ({ value, label, onChange, formik, name, id, defaultChecke
     <Styled.Wrapper>
       {label && <p>{label}</p>}
       <Styled.Switch htmlFor={id} tabIndex={0} className={className} onKeyPress={handleKeypress}>
-        <input
-          ref={innerRef}
-          id={id}
-          name={field.name}
-          type="checkbox"
-          onChange={field.onChange}
-          value={field.value}
-          defaultChecked={field.checked}
-        />
+        <input ref={innerRef} id={id} name={name} type="checkbox" onChange={onChange} onBlur={onBlur} value={value} />
         <span />
       </Styled.Switch>
     </Styled.Wrapper>
   );
-};
+});
 
-type SwitchFormikProps = Omit<SwitchProps, "formik" | "name" | "id"> & { name: string; id?: string };
+type ControlledSwitchProps = Omit<SwitchProps, "name" | "id" | "onChange"> & { name: string; id?: string };
 
-export const SwitchFormik = ({ id, label, name, value, onChange, className, defaultChecked }: SwitchFormikProps) => {
-  const [field, meta] = useField({ name, value, defaultChecked, type: "checkbox" });
-  if (onChange) field.onChange = onChange;
-  return <Switch id={id ?? name} formik={{ field, meta }} label={label} className={className} />;
+export const ControlledSwitch = ({ id, name, ...props }: ControlledSwitchProps) => {
+  const controller = useController({ name });
+  return <Switch id={id ?? name} {...props} {...controller.field} />;
 };

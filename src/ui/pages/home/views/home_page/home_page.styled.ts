@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Form } from "formik";
 import { px2rem, wrapperStyles } from "@/src/ui/styles/utils";
 import { colors } from "@/src/ui/styles/colors";
 import { spacing } from "@/src/ui/styles/spacing";
@@ -14,7 +13,7 @@ const Wrapper = styled.div`
   gap: ${px2rem(spacing.size2)};
 `;
 
-const FormStyled = styled(Form)`
+const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   gap: ${px2rem(spacing.size4)};
