@@ -40,7 +40,6 @@ export default function HomePage() {
     defaultValues,
     resolver: yupResolver(validationSchema, { abortEarly: false }),
     reValidateMode: "onChange",
-    mode: "all"
   });
 
   const handleSubmit = async (values: FormValues) => {
