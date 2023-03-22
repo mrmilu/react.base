@@ -15,10 +15,6 @@ type Merge = <T extends object, Mps extends [StoreMutatorIdentifier, unknown][] 
   additionalStateCreator: StateCreator<T, Mps, Mcs>
 ) => StateCreator<T, Mps, Mcs>;
 
-/**
- * Returns a hook that lets you access Zustand state within a Provider.
- * The state auto disposes when the Provider unmounts. This way, the memory is freed by the garbage collector.
- */
 export const merge: Merge =
   (initialState, create) =>
   (...a) =>
@@ -39,6 +35,10 @@ interface FactoryInitializerParams<T, P> {
   builderProps?: P;
 }
 
+/**
+ * Returns a hook that lets you access Zustand state within a Provider.
+ * The state auto disposes when the Provider unmounts. This way, the memory is freed by the garbage collector.
+ */
 export function createProvider<T extends object, P extends object = never>(
   builderInitializer: (props: P) => StateCreator<T, [["zustand/immer", never]]>
 ) {
