@@ -82,10 +82,10 @@ export default function HomePage() {
       <useHomeProviderBis.State>
         <CounterBis />
       </useHomeProviderBis.State>
-      <useHomeProvider.State initialState={{ counter: 10 }}>
+      <useHomeProvider.State initialState={{ counter: 100 }}>
         <Counter />
       </useHomeProvider.State>
-      <useHomeProvider.State builderProps={{ amount: "twenty" }}>
+      <useHomeProvider.State builderProps={{ amount: "thirty" }}>
         <Counter />
       </useHomeProvider.State>
     </Styled.Wrapper>
