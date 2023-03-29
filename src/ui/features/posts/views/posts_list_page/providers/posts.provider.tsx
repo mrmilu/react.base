@@ -10,11 +10,10 @@ import { wrapPromisePending } from "@front_web_mrmilu/utils";
 
 export const usePostsProvider = createProvider<PostsState>(() => (set) => ({
   posts: wrapPromisePending(),
-  isLoading: true,
   hasError: false,
 
   async loadPosts() {
-    set({ isLoading: true, hasError: false });
+    set({ hasError: false });
     try {
       await timeout(1000);
       const getDummyPostsUseCase = await locator.get<IocProvider<GetPostsUseCase>>(TYPES.GetPostsUseCase)();
@@ -27,7 +26,6 @@ export const usePostsProvider = createProvider<PostsState>(() => (set) => ({
       console.error(e);
       set({ hasError: true });
     }
-    set({ isLoading: false });
   }
 }));
 
