@@ -9,6 +9,7 @@ import { locator } from "@/src/core/app/ioc";
 import type { IEnvVars } from "@/src/core/app/domain/interfaces/env_vars";
 import { TYPES } from "@/src/core/app/ioc/types";
 import App from "@/src/ui/app";
+import "@/src/common/utils/yup_extensions";
 
 if (locator.get<IEnvVars>(TYPES.IEnvVars).sentryEnabled) {
   Sentry.init({

@@ -3,11 +3,11 @@ import { InputFormik } from "@/src/ui/components/input/input";
 import { Button } from "@/src/ui/components/button/button";
 import { useEffect, useMemo, useState } from "react";
 import Styled from "@/src/ui/features/home/views/home_page/home_page.styled";
-import yup from "@/src/common/utils/yup_extended";
 import { BaseError } from "make-error";
 import { useTranslation } from "react-i18next";
 import { timeout } from "@front_web_mrmilu/utils";
 import { useHomeProvider, useHomeProviderBis } from "@/src/ui/features/home/views/home_page/providers/home_provider";
+import { object, string } from "yup";
 
 interface FormValues {
   name: string;
@@ -26,14 +26,10 @@ export default function HomePage() {
   const [firstSubmit, setFirstSubmit] = useState(false);
   const validationSchema = useMemo(
     () =>
-      yup.object().shape({
-        name: yup.string().required(t("form.errors.required")),
-        email: yup.string().required(t("form.errors.required")).email(t("form.errors.email")),
-        age: yup
-          .number()
-          .typeError(t("form.errors.number") ?? "")
-          .required(t("form.errors.required"))
-          .isNotUnderAge(t("form.errors.underAge"))
+      object().shape({
+        name: string().required(t("form.errors.required")),
+        email: string().required(t("form.errors.required")).email(t("form.errors.email")),
+        age: string().isNumber(t("form.errors.number")).required(t("form.errors.required")).isNotUnderAge(t("form.errors.underAge"))
       }),
     [t]
   );

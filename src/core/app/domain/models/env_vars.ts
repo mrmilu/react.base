@@ -10,7 +10,7 @@ export class EnvVars implements IEnvVars {
     : "";
 
   get isProduction() {
-    return import.meta.env.NODE_ENV === "production";
+    return import.meta.env.MODE === "production";
   }
 
   sentryDSN?: string = import.meta.env.SENTRY_DSN || import.meta.env.VITE_APP_SENTRY_DSN;

@@ -79,13 +79,3 @@ VITE_APP_SENTRY_DSN=project_dsn
 VITE_APP_SENTRY_ENABLED=false
 SENTRY_ENVIRONMENT=dev
 ```
-
-Also create a `.env.production.local` file with your environment variables with the following defaults for production build
-
-```
-VITE_APP_API_URL=https://graphqlzero.almansi.me
-VITE_APP_ANOTHER_API_URL=https://jsonplaceholder.typicode.com
-VITE_APP_SENTRY_DSN=project_dsn
-VITE_APP_SENTRY_ENABLED=false
-SENTRY_ENVIRONMENT=dev
-```
