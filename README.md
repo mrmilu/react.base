@@ -16,7 +16,7 @@
 - [Error boundary](docs/error_boundary.md)
 - [react-i18next](docs/i18next.md) ([i18next react official documentation](https://react.i18next.com/))
 - [Development proxy server](docs/dev_proxy.md)
-- [React Router 6](https://reactrouter.com/docs/en/v6/api)
+- [React Router 6](https://reactrouter.com/en/main)
 - Sentry
 
 ### Prerequisites
