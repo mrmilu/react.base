@@ -7,8 +7,8 @@ styling components as declarative as possible.
   If you would like to style a child component: either create a new styled component or use the corresponding
   HTML tag as and a selector.
 
-- Every styled component name **MUST suffix with the word STYLED**. This will be our convention to quickly
-  differentiate normal components from styled ones. Ex.: _ButtonStyled_, this component is a styled component _only_
+- Every styled component **MUST be a property of an object that it is 'default' exported, that later will be imported with the name 'Styled'**. This will be our convention to quickly
+  differentiate normal components from styled ones. Ex.: _<Styled.Button/>_, this component is a styled component _only_
   and not a functional component of our own implementation.
 
 - All custom components (not styled) [**MUST have the prop _className_**](https://styled-components.com/docs/basics#styling-any-component)
