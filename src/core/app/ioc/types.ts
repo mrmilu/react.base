@@ -7,5 +7,5 @@ export const TYPES = {
   IUsersRepository: Symbol("IUsersRepository"),
   GetUsersUseCase: Symbol("GetUsersUseCase"),
   GetPostsUseCase: Symbol("GetPostsUseCase"),
-  CretePostUseCase: Symbol("CreteDummyPostUseCase")
+  CretePostUseCase: Symbol("CretePostUseCase")
 };

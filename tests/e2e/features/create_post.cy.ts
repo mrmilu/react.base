@@ -7,13 +7,13 @@ describe("Create post", () => {
 
   beforeEach(() => {
     cy.intercept("POST", "http://localhost:3000/s/graphql", (req) => {
-      aliasMutation(req, "CreateDummyPost");
+      aliasMutation(req, "CreatePost");
     });
   });
 
   it("should create post", () => {
     cy.visit("/create-post");
     cy.dataCy("create-post-btn").click();
-    cy.wait("@gqlCreateDummyPostMutation").its("response.body.data.createPost.body").should("to.equal", "This is a cool body for post number 1");
+    cy.wait("@gqlCreatePostMutation").its("response.body.data.createPost.body").should("to.equal", "This is a cool body for post number 1");
   });
 });

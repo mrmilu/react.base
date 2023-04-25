@@ -16,8 +16,8 @@ export const useUsersListProvider = createProvider<UsersListStateViewModel>(() =
     try {
       uiState.setLoader(true);
       await timeout(1000);
-      const getDummyUsersUseCase = await locator.get<IocProvider<GetUsersUseCase>>(TYPES.GetUsersUseCase)();
-      const users = await getDummyUsersUseCase.execute();
+      const getUsersUseCase = await locator.get<IocProvider<GetUsersUseCase>>(TYPES.GetUsersUseCase)();
+      const users = await getUsersUseCase.execute();
       set({ users: users });
     } catch (e) {
       console.error(e);

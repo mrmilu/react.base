@@ -1,4 +1,4 @@
-import Styled from "@/src/ui/features/dummy/components/user_modal/user_modal.styled";
+import Styled from "@/src/ui/features/users/components/user_modal/user_modal.styled";
 import type { User } from "@/src/core/users/domain/models/user";
 import { forwardRef } from "react";
 import type { CypressProps } from "@/src/ui/view_models/cypress";

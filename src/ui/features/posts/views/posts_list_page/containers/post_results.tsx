@@ -26,7 +26,7 @@ function PostsList() {
     return (
       <>
         {posts?.map((post, idx) => (
-          <SimpleCard data-cy="dummy-card" key={`${post.id}_${idx}`} title={post.title} subtitle={post.body} />
+          <SimpleCard data-cy="user-card" key={`${post.id}_${idx}`} title={post.title} subtitle={post.body} />
         ))}
       </>
     );

@@ -5,7 +5,7 @@ import UsersQueryOperation from "../graphql/queries/users.graphql";
 import { plainToClass } from "class-transformer";
 import type { MockService } from "@/src/core/app/data/services/mock_service";
 import type { IocProvider } from "@/src/core/app/ioc/interfaces";
-import { DummyUserDataModel } from "@/src/core/users/data/models/user_data_model";
+import { UserDataModel } from "@/src/core/users/data/models/user_data_model";
 import type { IUsersRepository } from "@/src/core/users/domain/interfaces/users_repository";
 import type { UsersQuery } from "@/src/core/users/data/graphql/queries/__generated__/users";
 
@@ -18,7 +18,7 @@ export class UsersRepository implements IUsersRepository {
     const response = await mockService.query<UsersQuery>(UsersQueryOperation);
     return (
       response?.users?.data?.map((user) => {
-        const dataModel = plainToClass(DummyUserDataModel, user, { excludeExtraneousValues: true });
+        const dataModel = plainToClass(UserDataModel, user, { excludeExtraneousValues: true });
         return dataModel.toDomain();
       }) ?? []
     );
