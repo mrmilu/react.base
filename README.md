@@ -3,7 +3,7 @@
 ### Index and features
 
 - [Vite](https://github.com/vitejs/vite)
-- [Clean architecture](https://www.notion.so/mrmilu/Arquitectura-7e45973fc107487294a63bac9f5c3aa4) <-- READ THIS!
+- Clean architecture
 - Dependency Injection ([Inversify](https://github.com/inversify/InversifyJS))
 - Typescript
 - [Class transformers](https://github.com/typestack/class-transformer)
@@ -16,7 +16,7 @@
 - [Error boundary](docs/error_boundary.md)
 - [react-i18next](docs/i18next.md) ([i18next react official documentation](https://react.i18next.com/))
 - [Development proxy server](docs/dev_proxy.md)
-- [React Router 6](https://reactrouter.com/docs/en/v6/api)
+- [React Router 6](https://reactrouter.com/en/main)
 - Sentry
 
 ### Prerequisites
