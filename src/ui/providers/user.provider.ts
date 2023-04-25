@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createStore, useStore } from "zustand";
-import type { UserState } from "@/src/ui/view_models/user.slice";
+import type { UserState } from "@/src/ui/view_models/user_state";
 
 export const userProvider = createStore<UserState>((set) => ({
   logged: false,
