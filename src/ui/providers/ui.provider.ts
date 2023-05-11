@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { UiState } from "../view_models/ui_state";
+import type { UiStateViewModel } from "../view_models/ui_state";
 import type { ReactNode } from "react";
 import { createStore, useStore } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
-export const uiProvider = createStore<UiState>()(
+export const uiProvider = createStore<UiStateViewModel>()(
   immer((set) => ({
     showLoader: false,
     modal: {
@@ -41,8 +41,8 @@ export const uiProvider = createStore<UiState>()(
   }))
 );
 
-export function useUiProvider(): UiState;
-export function useUiProvider<T>(selector: (state: UiState) => T, equals?: (a: T, b: T) => boolean): T;
+export function useUiProvider(): UiStateViewModel;
+export function useUiProvider<T>(selector: (state: UiStateViewModel) => T, equals?: (a: T, b: T) => boolean): T;
 export function useUiProvider(selector?: any, equals?: any) {
   return useStore(uiProvider, selector, equals);
 }

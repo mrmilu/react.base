@@ -5,7 +5,7 @@ export interface ModalContentState {
   content: ReactElement | ReactNode | null;
 }
 
-export interface UiState {
+export interface UiStateViewModel {
   showLoader: boolean;
   modal: ModalContentState;
   hideModal(): void;

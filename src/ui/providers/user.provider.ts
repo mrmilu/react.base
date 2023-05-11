@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createStore, useStore } from "zustand";
-import type { UserState } from "@/src/ui/view_models/user_state";
+import type { UserStateViewModel } from "@/src/ui/view_models/user_state";
 
-export const userProvider = createStore<UserState>((set) => ({
+export const userProvider = createStore<UserStateViewModel>((set) => ({
   logged: false,
   setLogged(value: boolean) {
     set({
@@ -11,8 +11,8 @@ export const userProvider = createStore<UserState>((set) => ({
   }
 }));
 
-export function useUserProvider(): UserState;
-export function useUserProvider<T>(selector: (state: UserState) => T, equals?: (a: T, b: T) => boolean): T;
+export function useUserProvider(): UserStateViewModel;
+export function useUserProvider<T>(selector: (state: UserStateViewModel) => T, equals?: (a: T, b: T) => boolean): T;
 export function useUserProvider(selector?: any, equals?: any) {
   return useStore(userProvider, selector, equals);
 }
