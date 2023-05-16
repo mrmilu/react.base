@@ -1,24 +1,21 @@
-import Styled from "@/src/ui/features/users/components/user_modal/user_modal.styled";
-import type { User } from "@/src/core/users/domain/models/user";
+import Styled from "./user_modal.styled";
 import { forwardRef } from "react";
-import type { CypressProps } from "@/src/ui/view_models/cypress";
+import type { User } from "@/src/core/users/domain/models/user";
 
-interface UserModalProps extends CypressProps {
+interface UserModalProps {
   user: User;
 }
 
-export const UserModal = forwardRef<HTMLDivElement, UserModalProps>(({ user, "data-cy": dataCy }, ref) => {
+export const UserModal = forwardRef<HTMLDivElement, UserModalProps>(({ user }, ref) => {
   return (
-    <Styled.Wrapper data-cy={dataCy} id={user.id} ref={ref}>
-      <Styled.Content>
-        <h3>
-          <b>Name:</b> {user.name}
-        </h3>
-        <p>
-          <b>Email</b>: {user.email}
-        </p>
-        <small>ID: {user.id}</small>
-      </Styled.Content>
-    </Styled.Wrapper>
+    <Styled.Content id={user.id} ref={ref}>
+      <h3>
+        <b>Name:</b> {user.name}
+      </h3>
+      <p>
+        <b>Email</b>: {user.email}
+      </p>
+      <small>ID: {user.id}</small>
+    </Styled.Content>
   );
 });

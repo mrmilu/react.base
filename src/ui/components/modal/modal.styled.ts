@@ -21,11 +21,9 @@ const Content = styled.div`
   position: relative;
   z-index: 900;
   min-height: ${px2rem(100)};
-  margin: ${px2rem(16)};
   padding: ${px2rem(16)};
   background-color: ${colors.white};
   pointer-events: all;
-  width: 93%;
   max-width: 700px;
 `;
 

@@ -78,7 +78,6 @@ export const Modal = () => {
   );
 };
 
-// eslint-disable-next-line react/display-name
 export const ModalContent = forwardRef<HTMLDivElement, PropsWithChildren<{ className?: string }>>(({ children, className }, ref) => {
   const hideModal = useUiProvider((state) => state.hideModal);
 
