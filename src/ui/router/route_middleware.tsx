@@ -21,13 +21,6 @@ interface Props {
 // IMPORTANT!! Tracked promise must return a value always it can't be null or undefined.
 export const trackPromise = <T,>(promise: Promise<T>): TrackedPromise => defer({ promise }).data.promise as TrackedPromise;
 
-type WrappedPromiseStatus = "pending" | "success" | "error";
-
-interface WrappedPromise {
-  read: () => any;
-  status: () => WrappedPromiseStatus;
-}
-
 export const RouteMiddleware = ({ children, validationHook }: Props) => {
   const location = useLocation();
   if (location.state?.skipMiddleware) {
