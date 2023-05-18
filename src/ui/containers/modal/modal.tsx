@@ -1,6 +1,6 @@
 import type { PropsWithChildren, ReactElement } from "react";
 import { cloneElement, forwardRef, useEffect, useRef, useState } from "react";
-import Styled from "@/src/ui/components/modal/modal.styled";
+import Styled from "@/src/ui/containers/modal/modal.styled";
 import { useTransition, animated, easings } from "@react-spring/web";
 import { ReactComponent as CloseIcon } from "@/src/ui/assets/icons/close.svg";
 import { useUiProvider } from "@/src/ui/providers/ui.provider";

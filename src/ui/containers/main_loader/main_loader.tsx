@@ -1,5 +1,5 @@
 import LoaderStyled from "@/src/ui/components/loader/loader.styled";
-import Styled from "@/src/ui/components/main_loader/main_loader.styled";
+import Styled from "@/src/ui/containers/main_loader/main_loader.styled";
 import { easings, useTransition } from "@react-spring/web";
 import { useUiProvider } from "@/src/ui/providers/ui.provider";
 

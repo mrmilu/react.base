@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ModalContent } from "@/src/ui/components/modal/modal";
+import { ModalContent } from "@/src/ui/containers/modal/modal";
 import { colors } from "@/src/ui/styles/colors";
 
 const Content = styled(ModalContent)<{ id: string }>`
