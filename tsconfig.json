@@ -16,7 +16,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": [],
+    "types": ["reflect-metadata"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
