@@ -12,7 +12,6 @@ export interface IconButtonProps extends CypressProps {
   asLink?: boolean;
 }
 
-// eslint-disable-next-line react/display-name
 export const IconButton = forwardRef<HTMLAnchorElement, IconButtonProps>(
   ({ href, onClick, icon, disabled = false, className, asLink = false, "data-cy": dataCy }, ref) => {
     if (asLink) {

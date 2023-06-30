@@ -1,7 +1,7 @@
 import type { IPostsRepository } from "../../domain/interfaces/posts_repository";
 import { inject, injectable } from "inversify";
 import { TYPES } from "@/src/core/app/ioc/types";
-import CreateDummyPostMutationOperation from "../graphql/mutations/create_post.graphql";
+import CreatePostMutationOperation from "../graphql/mutations/create_post.graphql";
 import type { MockService } from "@/src/core/app/data/services/mock_service";
 import type { CreatePostInput } from "@/src/__generated__/graphql";
 import type { Post } from "@/src/core/posts/domain/models/post";
@@ -19,7 +19,7 @@ export class PostsRepository implements IPostsRepository {
 
   async createPost(input: CreatePostInput): Promise<Post | null> {
     const mockService = await this.mockServiceProvider();
-    const response = await mockService.mutate<CreatePostMutation>(CreateDummyPostMutationOperation, { input });
+    const response = await mockService.mutate<CreatePostMutation>(CreatePostMutationOperation, { input });
     return response?.createPost ? fromJson<PostDataModel>(PostDataModel, response.createPost).toDomain() : null;
   }
 

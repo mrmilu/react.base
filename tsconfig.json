@@ -17,11 +17,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["reflect-metadata"],
-    "typeRoots": ["node_modules/@types", "src/ui/@types", "src/common/@types"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "files": ["src/common/@types/graphql.d.ts"],
   "include": ["src"],
   "exclude": ["node_modules"]
 }

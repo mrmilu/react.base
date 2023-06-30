@@ -3,7 +3,7 @@
 ### Index and features
 
 - [Vite](https://github.com/vitejs/vite)
-- [Clean architecture](https://www.notion.so/mrmilu/Arquitectura-7e45973fc107487294a63bac9f5c3aa4) <-- READ THIS!
+- Clean architecture
 - Dependency Injection ([Inversify](https://github.com/inversify/InversifyJS))
 - Typescript
 - [Class transformers](https://github.com/typestack/class-transformer)
@@ -16,7 +16,7 @@
 - [Error boundary](docs/error_boundary.md)
 - [react-i18next](docs/i18next.md) ([i18next react official documentation](https://react.i18next.com/))
 - [Development proxy server](docs/dev_proxy.md)
-- [React Router 6](https://reactrouter.com/docs/en/v6/api)
+- [React Router 6](https://reactrouter.com/en/main)
 - Sentry
 
 ### Prerequisites
@@ -75,16 +75,6 @@ VITE_APP_API_URL=http://localhost:3000
 VITE_APP_ANOTHER_API_URL=http://localhost:3000
 VITE_APP_GRAPHQL_PROXY_ENDPOINT=https://graphqlzero.almansi.me
 VITE_APP_REST_PROXY_ENDPOINT=https://jsonplaceholder.typicode.com
-VITE_APP_SENTRY_DSN=project_dsn
-VITE_APP_SENTRY_ENABLED=false
-SENTRY_ENVIRONMENT=dev
-```
-
-Also create a `.env.production.local` file with your environment variables with the following defaults for production build
-
-```
-VITE_APP_API_URL=https://graphqlzero.almansi.me
-VITE_APP_ANOTHER_API_URL=https://jsonplaceholder.typicode.com
 VITE_APP_SENTRY_DSN=project_dsn
 VITE_APP_SENTRY_ENABLED=false
 SENTRY_ENVIRONMENT=dev

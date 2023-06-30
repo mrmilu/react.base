@@ -2,7 +2,7 @@ import { Expose } from "class-transformer";
 import { User } from "@/src/core/users/domain/models/user";
 import type { DataModel } from "@/src/common/interfaces/data_model";
 
-export class DummyUserDataModel implements DataModel<User> {
+export class UserDataModel implements DataModel<User> {
   @Expose()
   id!: string;
   @Expose()
