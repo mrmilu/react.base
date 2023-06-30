@@ -12398,13 +12398,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash-es@npm:^4.17.21":
-  version: 4.17.21
-  resolution: "lodash-es@npm:4.17.21"
-  checksum: 05cbffad6e2adbb331a4e16fbd826e7faee403a1a04873b82b42c0f22090f280839f85b95393f487c1303c8a3d2a010048bf06151a6cbe03eee4d388fb0a12d2
-  languageName: node
-  linkType: hard
-
 "lodash.camelcase@npm:^4.3.0":
   version: 4.3.0
   resolution: "lodash.camelcase@npm:4.3.0"
@@ -15236,6 +15229,7 @@ __metadata:
     "@graphql-codegen/typescript": 3.0.4
     "@graphql-codegen/typescript-graphql-files-modules": 2.2.1
     "@graphql-codegen/typescript-operations": 3.0.4
+    "@hookform/resolvers": ^2.9.11
     "@react-spring/web": 9.7.2
     "@rollup/plugin-graphql": 2.0.3
     "@sentry/react": 7.51.2
@@ -15276,6 +15270,7 @@ __metadata:
     react: 18.2.0
     react-app-alias: 2.2.2
     react-dom: 18.2.0
+    react-hook-form: ^7.43.7
     react-i18next: 12.2.2
     react-router-dom: 6.11.1
     react-scripts: 5.0.1
@@ -17082,13 +17077,6 @@ __metadata:
   version: 1.0.3
   resolution: "tiny-case@npm:1.0.3"
   checksum: 3f7a30c39d5b0e1bc097b0b271bec14eb5b836093db034f35a0de26c14422380b50dc12bfd37498cf35b192f5df06f28a710712c87ead68872a9e37ad6f6049d
-  languageName: node
-  linkType: hard
-
-"tiny-warning@npm:^1.0.2":
-  version: 1.0.3
-  resolution: "tiny-warning@npm:1.0.3"
-  checksum: da62c4acac565902f0624b123eed6dd3509bc9a8d30c06e017104bedcf5d35810da8ff72864400ad19c5c7806fc0a8323c68baf3e326af7cb7d969f846100d71
   languageName: node
   linkType: hard
 
