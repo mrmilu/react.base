@@ -12,9 +12,10 @@ interface SwitchProps {
   onBlur?: FocusEventHandler<HTMLInputElement>;
   value?: string;
   className?: string;
+  defaultChecked?: boolean;
 }
 
-export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ value, label, onChange, onBlur, name, id, className }, ref) => {
+export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ value, label, onChange, onBlur, name, id, className, defaultChecked }, ref) => {
   const _ref = useRef<HTMLInputElement>(null);
   const innerRef = (ref ?? _ref) as RefObject<HTMLInputElement>;
 
@@ -28,7 +29,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ value, label,
     <Styled.Wrapper>
       {label && <p>{label}</p>}
       <Styled.Switch htmlFor={id} tabIndex={0} className={className} onKeyPress={handleKeypress}>
-        <input ref={innerRef} id={id} name={name} type="checkbox" onChange={onChange} onBlur={onBlur} value={value} />
+        <input ref={innerRef} id={id} name={name} type="checkbox" onChange={onChange} onBlur={onBlur} value={value} defaultChecked={defaultChecked} />
         <span />
       </Styled.Switch>
     </Styled.Wrapper>
