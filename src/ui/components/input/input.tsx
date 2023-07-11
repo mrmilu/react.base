@@ -1,76 +1,57 @@
-import type { FieldInputProps, FieldMetaProps, FormikHandlers } from "formik";
-import { useField } from "formik";
-import type { BaseFormikProps } from "../../view_models/formik";
 import Styled from "@/src/ui/components/input/input.styled";
-import type { FocusEventHandler, HTMLInputTypeAttribute, KeyboardEventHandler } from "react";
+import type { ChangeEventHandler, FocusEventHandler, HTMLInputTypeAttribute, KeyboardEventHandler } from "react";
+import { forwardRef } from "react";
+import { useController } from "react-hook-form";
 
 interface InputProps {
   label?: string;
   id: string;
   name?: string;
-  onChange?: FormikHandlers["handleChange"];
+  onChange?: ChangeEventHandler<HTMLInputElement>;
   onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler<HTMLInputElement>;
-  onBlur?: FormikHandlers["handleBlur"];
+  onBlur?: FocusEventHandler<HTMLInputElement>;
   onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
   placeholder?: string;
-  formik?: BaseFormikProps<string | undefined>;
   value?: string;
   className?: string;
   type?: HTMLInputTypeAttribute;
+  error?: string;
 }
 
-export const Input = ({
-  value,
-  label,
-  onChange,
-  onKeyPress,
-  onFocus,
-  onBlur,
-  onKeyDown,
-  placeholder,
-  formik,
-  name,
-  id,
-  className,
-  type
-}: InputProps) => {
-  let field: FieldInputProps<string | undefined>;
-  let meta: FieldMetaProps<string | undefined>;
-  if (formik) {
-    field = formik.field;
-    meta = formik.meta;
-  } else {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const emptyHandler = () => {};
-    field = {
-      onBlur: onBlur || emptyHandler,
-      value: value,
-      onChange: onChange || emptyHandler,
-      name: name || ""
-    };
-    meta = { initialTouched: false, initialValue: undefined, value: undefined, touched: false };
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ value, label, onChange, onKeyPress, onFocus, onBlur, onKeyDown, placeholder, name, id, className, type, error }, ref) => {
+    return (
+      <Styled.Wrapper>
+        <Styled.Input className={className} htmlFor={id}>
+          {label && <span>{label}</span>}
+          <input
+            type={type}
+            id={id}
+            placeholder={placeholder}
+            onFocus={onFocus}
+            onKeyDown={onKeyDown}
+            onKeyPress={onKeyPress}
+            onBlur={onBlur}
+            onChange={onChange}
+            name={name}
+            value={value}
+            ref={ref}
+          />
+        </Styled.Input>
+        {error && (
+          <Styled.Error>
+            <p>{error}</p>
+          </Styled.Error>
+        )}
+      </Styled.Wrapper>
+    );
   }
+);
 
-  return (
-    <Styled.Wrapper>
-      <Styled.Input className={className} htmlFor={id}>
-        {label && <span>{label}</span>}
-        <input type={type} id={id} placeholder={placeholder} onFocus={onFocus} onKeyDown={onKeyDown} onKeyPress={onKeyPress} {...field} />
-      </Styled.Input>
-      {meta.error && meta.touched && (
-        <Styled.Error>
-          <p>{meta.error}</p>
-        </Styled.Error>
-      )}
-    </Styled.Wrapper>
-  );
-};
+type ControlledInputProps = Omit<InputProps, "name" | "id" | "onChange"> & { name: string; id?: string };
 
-type InputFormikProps = Omit<InputProps, "formik" | "name" | "id"> & { name: string; id?: string };
-
-export const InputFormik = ({ id, label, name, onChange, placeholder, className, type }: InputFormikProps) => {
-  const [field, meta] = useField({ name, type });
-  if (onChange) field.onChange = onChange;
-  return <Input id={id ?? name} formik={{ field, meta }} label={label} placeholder={placeholder} className={className} />;
+export const ControlledInput = ({ id, name, ...props }: ControlledInputProps) => {
+  const controller = useController({ name });
+  return <Input id={id ?? name} {...props} {...controller.field} error={controller.fieldState.error?.message} />;
 };
