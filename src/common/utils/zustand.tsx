@@ -10,7 +10,7 @@ interface StateProviderProps<T extends object, P> {
   builderProps?: P;
 }
 
-type Merge = <T extends object, Mps extends [StoreMutatorIdentifier, unknown][] = [], Mcs extends [StoreMutatorIdentifier, unknown][] = []>(
+type Merge = <T extends object, Mps extends Array<[StoreMutatorIdentifier, unknown]> = [], Mcs extends Array<[StoreMutatorIdentifier, unknown]> = []>(
   initialState: T,
   additionalStateCreator: StateCreator<T, Mps, Mcs>
 ) => StateCreator<T, Mps, Mcs>;
@@ -21,7 +21,7 @@ export const merge: Merge =
     // eslint-disable-next-line
     Object.assign((create as any)(...a), initialState);
 
-type BuilderMiddleware = <T, P, Mps extends [StoreMutatorIdentifier, unknown][] = [], Mcs extends [StoreMutatorIdentifier, unknown][] = []>(
+type BuilderMiddleware = <T, P, Mps extends Array<[StoreMutatorIdentifier, unknown]> = [], Mcs extends Array<[StoreMutatorIdentifier, unknown]> = []>(
   props: P,
   builder: (props: P) => StateCreator<T, Mps, Mcs>
 ) => StateCreator<T, Mps, Mcs>;

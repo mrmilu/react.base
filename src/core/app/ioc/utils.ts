@@ -20,7 +20,7 @@ export const bindDynamicModule = <P, T>(identifier: symbol, dynamicImport: () =>
     return async () => {
       const module = identifier.description;
       const resolvedModule = await dynamicImport();
-      const dependency = Object.values(resolvedModule)[0] as new (...args: never[]) => any;
+      const dependency = Object.values(resolvedModule)[0] as new (...args: Array<never>) => any;
       const resolvedIdentifier = `${module}_resolved`;
 
       if (!context.container.isBound(resolvedIdentifier)) {
@@ -38,7 +38,7 @@ export const bindSingletonDynamicModule = <P, T>(identifier: symbol, dynamicImpo
     return async () => {
       const module = identifier.description;
       const resolvedModule = await dynamicImport();
-      const dependency = Object.values(resolvedModule)[0] as new (...args: never[]) => any;
+      const dependency = Object.values(resolvedModule)[0] as new (...args: Array<never>) => any;
       const resolvedIdentifier = `${module}_resolved`;
 
       if (!context.container.isBound(resolvedIdentifier)) {

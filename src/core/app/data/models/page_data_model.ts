@@ -4,7 +4,7 @@ import type { DataModel } from "@/src/common/interfaces/data_model";
 
 export class PageDataModel<ItemDataType extends DataModel<ItemDomainType>, ItemDomainType> {
   @Exclude()
-  private type: new (...args: unknown[]) => unknown;
+  private type: new (...args: Array<unknown>) => unknown;
 
   @Expose({ name: "results" })
   @Type((options) => {
@@ -20,7 +20,7 @@ export class PageDataModel<ItemDataType extends DataModel<ItemDomainType>, ItemD
   @Expose()
   next?: number;
 
-  constructor(type: new (...args: unknown[]) => unknown) {
+  constructor(type: new (...args: Array<unknown>) => unknown) {
     this.type = type;
   }
 
