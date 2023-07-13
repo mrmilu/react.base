@@ -7,7 +7,7 @@ import type { CreatePostInput } from "@/src/__generated__/graphql";
 import type { Post } from "@/src/core/posts/domain/models/post";
 import type { JSONPlaceholderService } from "@/src/core/app/data/services/json_placeholder_service";
 import { PostDataModel } from "@/src/core/posts/data/models/post_data_model";
-import { fromJson, fromJsonPage } from "@/src/common/utils/class-transformer";
+import { fromJson, fromJsonPage } from "@/src/common/utils/class_transformer";
 import type { Page } from "@/src/core/app/domain/models/page";
 import type { IocProvider } from "@/src/core/app/ioc/interfaces";
 import type { CreatePostMutation } from "@/src/core/posts/data/graphql/mutations/__generated__/create_post";

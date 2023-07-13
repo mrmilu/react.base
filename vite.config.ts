@@ -11,6 +11,15 @@ export default ({ mode }: any) => {
   process.env = Object.assign(process.env, loadEnv(mode, process.cwd(), ""));
 
   return defineConfig({
+    optimizeDeps: {
+      esbuildOptions: {
+        tsconfigRaw: {
+          compilerOptions: {
+            experimentalDecorators: true
+          }
+        }
+      }
+    },
     plugins: [
       svgr({
         svgrOptions: {
