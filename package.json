@@ -11,7 +11,6 @@
     "graphql": "graphql-codegen --config graphql_codegen.yml",
     "lint": "eslint --fix --ext js,ts,tsx src",
     "check-types": "tsc --project tsconfig.json",
-    "prepare": "husky install",
     "commit": "commit",
     "e2e:run": "cypress run",
     "e2e:open": "cypress open"
