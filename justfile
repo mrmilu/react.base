@@ -25,6 +25,9 @@ debug:
 build:
     ./nvm_exec.sh yarn build
 
+ioc-generate:
+    ./nvm_exec.sh yarn ioc-generate
+
 # Preview Vite build
 preview:
     ./nvm_exec.sh yarn preview
