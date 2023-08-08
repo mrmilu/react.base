@@ -18,7 +18,7 @@ export default function CreatePostPage() {
   const { state: asyncState, setPromise } = useAsyncState();
 
   const createPost = async (isDebounce = false) => {
-    const useCase = await locator.get<IocProvider<CreatePostUseCase>>(TYPES.CretePostUseCase)();
+    const useCase = await locator.get<IocProvider<CreatePostUseCase>>(TYPES.CreatePostUseCase)();
     // Super important to set the promise in which you are doing side effects to maintain the promise chain
     const promise = useCase
       .execute(postNumber)

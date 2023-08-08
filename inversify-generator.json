@@ -1,0 +1,4 @@
+{
+  "output": "./src/core/app/ioc",
+  "binding": "dynamic"
+}

@@ -5,8 +5,10 @@ import { TYPES } from "../../ioc/types";
 import type { NetworkInterfaces } from "@front_web_mrmilu/network";
 import { GraphqlClient } from "@front_web_mrmilu/network";
 import generatedIntrospection from "../__generated__/graphql_introspection";
+import { generatorConf } from "inversify-generator/decorators";
 
 @injectable()
+@generatorConf({ typeName: "MockService" })
 export class MockService implements NetworkInterfaces.IGraphqlDataSource {
   private graphqlClient: GraphqlClient;
 

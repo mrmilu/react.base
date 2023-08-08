@@ -14,6 +14,9 @@ install-deps:
 dev:
     ./nvm_exec.sh yarn dev
 
+ioc-generate-watch:
+    ./nvm_exec.sh yarn ioc-generate --watch
+
 # Starts React debug server
 debug:
     ./nvm_exec.sh yarn debug

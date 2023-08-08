@@ -50,8 +50,16 @@ just install-deps
 
 **Run project**
 
+In one terminal shell
+
 ```shell
 just dev
+```
+
+And in another shell
+
+```shell
+just ioc-generate-watch
 ```
 
 **See a list of available commands**
