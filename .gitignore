@@ -51,5 +51,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-
-
+# Inversify
+src/core/app/ioc/index.ts
+src/core/app/ioc/types.ts
