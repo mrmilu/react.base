@@ -26,6 +26,6 @@ const Wrapper = styled.div`
 
 const AppErrorBoundaryStyled = {
   Wrapper
-}
+};
 
 export default AppErrorBoundaryStyled;
