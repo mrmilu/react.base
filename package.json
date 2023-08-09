@@ -14,7 +14,8 @@
     "commit": "commit",
     "e2e:run": "cypress run",
     "e2e:open": "cypress open",
-    "ioc-generate": "inversify-generator"
+    "ioc-generate": "inversify-generator",
+    "prettier-fix": "prettier ./src --write --ignore-unknown"
   },
   "dependencies": {
     "@apollo/client": "~3.8.0",

@@ -36,6 +36,10 @@ preview:
 clean:
     rm -rf node_modules/.vite
 
+# Styles files following prettier guidelines
+prettier-fix:
+    ./nvm_exec.sh yarn prettier-fix
+
 # Downloads schema and generates corresponding ts types
 graphql-codegen:
     ./nvm_exec.sh yarn graphql
