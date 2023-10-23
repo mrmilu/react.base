@@ -8,6 +8,7 @@ import { RouteMiddleware } from "@/src/ui/router/route_middleware";
 import { useAuthMiddleware } from "@/src/ui/router/middlewares/auth_middleware.hook";
 import { useUsersListProvider } from "@/src/ui/features/users/views/users_list_page/providers/users_list.provider";
 import { usePostsProvider } from "@/src/ui/features/posts/views/posts_list_page/providers/posts.provider";
+import ComponentsShowcasePage from "../features/components_showcase/views/components_showcase_page";
 
 const HomePage = lazy(() => import("@/src/ui/features/home/views/home_page/home_page"));
 const UsersListPage = lazy(() => import("@/src/ui/features/users/views/users_list_page/users_list_page"));
@@ -39,6 +40,14 @@ export const routes: Array<RouteObject> = [
                 <UsersListPage />
               </useUsersListProvider.State>
             </RouteMiddleware>
+          </AppErrorBoundary>
+        )
+      },
+      {
+        path: "/components-showcase",
+        element: (
+          <AppErrorBoundary key="users">
+            <ComponentsShowcasePage />
           </AppErrorBoundary>
         )
       },
