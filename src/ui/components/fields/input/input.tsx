@@ -1,4 +1,4 @@
-import Styled from "@/src/ui/components/input/input.styled";
+import Styled from "./input.styled";
 import type { ChangeEventHandler, FocusEventHandler, HTMLInputTypeAttribute, KeyboardEventHandler } from "react";
 import { forwardRef } from "react";
 import { useController } from "react-hook-form";

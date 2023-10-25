@@ -1,4 +1,4 @@
-import { ControlledInput } from "@/src/ui/components/input/input";
+import { ControlledInput } from "@/src/ui/components/fields/input/input";
 import { Button } from "@/src/ui/components/button/button";
 import { useEffect, useMemo } from "react";
 import Styled from "@/src/ui/features/home/views/home_page/home_page.styled";

@@ -2,8 +2,8 @@ import styled, { css } from "styled-components";
 import { typography } from "@/src/ui/styles/typography";
 import { spacing } from "@/src/ui/styles/spacing";
 import { px2rem } from "@/src/ui/styles/utils";
-import { colors } from "../../styles/colors";
 import { includeMedia } from "@/src/ui/styles/breakpoints";
+import { colors } from "@/src/ui/styles/colors";
 
 const Wrapper = styled.div`
   display: flex;
