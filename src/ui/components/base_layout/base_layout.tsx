@@ -1,8 +1,8 @@
-import Styled from "@/src/ui/components/base_layout/base_layout.styled";
-import { Outlet, Link } from "react-router-dom";
 import { Button } from "@/src/ui/components/button/button";
-import { useUserProvider } from "@/src/ui/providers/user.provider";
 import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
+import { useUserProvider } from "@/src/ui/providers/user.provider";
+import { Link, Outlet } from "react-router-dom";
+import css from "./base_layout.css";
 
 export const BaseLayout = () => {
   const userLogged = useUserProvider((state) => state.logged);
@@ -13,9 +13,9 @@ export const BaseLayout = () => {
   };
 
   return (
-    <Styled.Wrapper>
-      <Styled.Nav>
-        <ul>
+    <div className={css.wrapper}>
+      <nav className={css.nav}>
+        <ul className={css.ul}>
           <li>
             <Link to="/">home</Link>
           </li>
@@ -32,13 +32,13 @@ export const BaseLayout = () => {
         <Button data-cy="login-btn" onClick={logUser}>
           {userLogged ? "Log out" : "Log in"}
         </Button>
-      </Styled.Nav>
-      <main>
+      </nav>
+      <main className={css.main}>
         <SuspenseMainLoader>
           <Outlet />
         </SuspenseMainLoader>
       </main>
-      <Styled.Footer>cool footer</Styled.Footer>
-    </Styled.Wrapper>
+      <footer className={css.footer}>cool footer</footer>
+    </div>
   );
 };
