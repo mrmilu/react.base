@@ -1,7 +1,7 @@
+import { px2rem } from "@/src/ui/styles/utils.css";
 import styled from "styled-components";
-import { px2rem } from "@/src/ui/styles/utils";
-import { spacing } from "../../styles/spacing";
 import { colors } from "../../styles/colors";
+import { spacing } from "../../styles/spacing";
 
 const Wrapper = styled.button`
   display: flex;

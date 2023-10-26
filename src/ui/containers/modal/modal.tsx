@@ -1,10 +1,11 @@
-import type { PropsWithChildren, ReactElement } from "react";
-import { cloneElement, forwardRef, useEffect, useRef, useState } from "react";
-import Styled from "@/src/ui/containers/modal/modal.styled";
-import { useTransition, animated, easings } from "@react-spring/web";
 import { ReactComponent as CloseIcon } from "@/src/ui/assets/icons/close.svg";
+import { IconButton } from "@/src/ui/components/icon_button/icon_button";
 import { useUiProvider } from "@/src/ui/providers/ui.provider";
 import { useClickOutside } from "@front_web_mrmilu/hooks";
+import { animated, easings, useTransition } from "@react-spring/web";
+import type { PropsWithChildren, ReactElement } from "react";
+import { cloneElement, forwardRef, useEffect, useRef, useState } from "react";
+import css from "./modal.css";
 
 const MODAL_TRANSITION_CONFIG = {
   duration: 450,
@@ -66,14 +67,14 @@ export const Modal = () => {
   return showModalTransition(
     (styles, item) =>
       item && (
-        <Styled.Wrapper ref={modalRef} style={styles}>
+        <animated.div ref={modalRef} className={css.wrapper} style={styles}>
           {showContentTransition(
             (styles, item) =>
               item && (
                 <animated.div style={styles}>{modalContent && cloneElement(modalContent as ReactElement, { ref: modalContentRef })}</animated.div>
               )
           )}
-        </Styled.Wrapper>
+        </animated.div>
       )
   );
 };
@@ -82,9 +83,9 @@ export const ModalContent = forwardRef<HTMLDivElement, PropsWithChildren<{ class
   const hideModal = useUiProvider((state) => state.hideModal);
 
   return (
-    <Styled.Content ref={ref} className={className}>
-      <Styled.CloseBtn icon={<CloseIcon />} onClick={() => hideModal()} />
+    <div ref={ref} className={`${css.modalContent} ${className ?? ""}`}>
+      <IconButton className={css.closeBtn} icon={<CloseIcon />} onClick={() => hideModal()} />
       {children}
-    </Styled.Content>
+    </div>
   );
 });

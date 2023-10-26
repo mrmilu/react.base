@@ -1,7 +1,7 @@
 import { colors } from "@/src/ui/styles/colors";
-import styled from "styled-components";
 import { spacing } from "@/src/ui/styles/spacing";
-import { px2rem } from "@/src/ui/styles/utils";
+import { px2rem } from "@/src/ui/styles/utils.css";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;

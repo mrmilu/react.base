@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { px2rem } from "@/src/ui/styles/utils";
-import { spacing } from "@/src/ui/styles/spacing";
-import { colors } from "../../styles/colors";
-import { shadows } from "@/src/ui/styles/shadows";
-import { typography } from "@/src/ui/styles/typography";
 import type { SimpleCardProps } from "@/src/ui/components/simple_card/simple_card";
+import { shadows } from "@/src/ui/styles/shadows";
+import { spacing } from "@/src/ui/styles/spacing";
+import { typography } from "@/src/ui/styles/typography.css";
+import { px2rem } from "@/src/ui/styles/utils.css";
+import styled from "styled-components";
+import { colors } from "../../styles/colors";
 
 const Wrapper = styled.div<{ onClick: SimpleCardProps["onClick"] }>`
   display: flex;

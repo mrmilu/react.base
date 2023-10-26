@@ -1,6 +1,6 @@
+import { px2rem } from "@/src/ui/styles/utils.css";
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
-import { px2rem } from "@/src/ui/styles/utils";
 
 const LoaderStyled = styled.div`
   position: relative;

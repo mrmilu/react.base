@@ -1,13 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { defineConfig, loadEnv } from "vite";
+import graphql from "@rollup/plugin-graphql";
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 import react from "@vitejs/plugin-react";
 import * as path from "path";
+import { defineConfig, loadEnv } from "vite";
 import svgr from "vite-plugin-svgr";
-import graphql from "@rollup/plugin-graphql";
 
 // https://vitejs.dev/config/
-export default ({ mode }: any) => {
+export default defineConfig(({ mode }) => {
   process.env = Object.assign(process.env, loadEnv(mode, process.cwd(), ""));
 
   return defineConfig({
@@ -35,21 +36,14 @@ export default ({ mode }: any) => {
           plugins: [
             "babel-plugin-transform-typescript-metadata",
             ["@babel/plugin-proposal-decorators", { legacy: true }],
-            "@babel/plugin-proposal-class-properties",
-            [
-              "styled-components",
-              {
-                ssr: false,
-                displayName: true,
-                preprocess: false
-              }
-            ]
+            "@babel/plugin-proposal-class-properties"
           ],
           parserOpts: {
             plugins: ["decorators-legacy", "classProperties"]
           }
         }
-      })
+      }),
+      vanillaExtractPlugin()
     ],
     resolve: {
       alias: [
@@ -79,4 +73,4 @@ export default ({ mode }: any) => {
       }
     }
   });
-};
+});

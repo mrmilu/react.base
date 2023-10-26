@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { spacing } from "@/src/ui/styles/spacing";
-import { px2rem, wrapperStyles } from "@/src/ui/styles/utils";
 import { Button } from "@/src/ui/components/button/button";
+import { spacing } from "@/src/ui/styles/spacing";
+import { px2rem, wrapperStyles } from "@/src/ui/styles/utils.css";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   ${wrapperStyles};
