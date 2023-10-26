@@ -1,10 +1,10 @@
 import type { User } from "@/src/core/users/domain/models/user";
-import { UserModal } from "@/src/ui/features/users/components/user_modal/user_modal";
-import { useBreakpointsMatch } from "@front_web_mrmilu/hooks";
+import BasePage from "@/src/ui/components/base_page/base_page";
 import { SimpleCard } from "@/src/ui/components/simple_card/simple_card";
-import BasePageStyled from "@/src/ui/features/misc/components/base_page.styled";
+import { useInitUsersListProvider, useUsersListProvider } from "@/src/ui/features/users/views/users_list_page/providers/users_list.provider";
 import { useUiProvider } from "@/src/ui/providers/ui.provider";
-import { useUsersListProvider, useInitUsersListProvider } from "@/src/ui/features/users/views/users_list_page/providers/users_list.provider";
+import { useBreakpointsMatch } from "@front_web_mrmilu/hooks";
+import { UserModal } from "../../components/user_modal/user_modal";
 
 export default function UsersListPage() {
   useInitUsersListProvider();
@@ -17,11 +17,11 @@ export default function UsersListPage() {
   };
 
   return (
-    <BasePageStyled.Wrapper data-cy="users-page">
+    <BasePage data-cy="users-page">
       {mdAndUp && <h2>Users page</h2>}
       {users.map((user, idx) => (
         <SimpleCard data-cy="user-card" onClick={() => showUserModal(user)} key={`${user.id}_${idx}`} title={user.name} subtitle={user.email} />
       ))}
-    </BasePageStyled.Wrapper>
+    </BasePage>
   );
 }

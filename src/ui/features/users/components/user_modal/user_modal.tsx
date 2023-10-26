@@ -1,6 +1,7 @@
-import Styled from "./user_modal.styled";
-import { forwardRef } from "react";
 import type { User } from "@/src/core/users/domain/models/user";
+import { ModalContent } from "@/src/ui/containers/modal/modal";
+import { forwardRef } from "react";
+import css from "./user_modal.css";
 
 interface UserModalProps {
   user: User;
@@ -8,7 +9,7 @@ interface UserModalProps {
 
 export const UserModal = forwardRef<HTMLDivElement, UserModalProps>(({ user }, ref) => {
   return (
-    <Styled.Content id={user.id} ref={ref}>
+    <ModalContent className={css.content({ oddEven: Number(user.id) % 2 ? "odd" : "even" })} ref={ref}>
       <h3>
         <b>Name:</b> {user.name}
       </h3>
@@ -16,6 +17,6 @@ export const UserModal = forwardRef<HTMLDivElement, UserModalProps>(({ user }, r
         <b>Email</b>: {user.email}
       </p>
       <small>ID: {user.id}</small>
-    </Styled.Content>
+    </ModalContent>
   );
 });

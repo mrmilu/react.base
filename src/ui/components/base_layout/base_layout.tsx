@@ -1,7 +1,7 @@
 import { Button } from "@/src/ui/components/button/button";
-import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
 import { useUserProvider } from "@/src/ui/providers/user.provider";
 import { Link, Outlet } from "react-router-dom";
+import { SuspenseMainLoader } from "../suspense_main_loader/suspense_main_loader";
 import css from "./base_layout.css";
 
 export const BaseLayout = () => {

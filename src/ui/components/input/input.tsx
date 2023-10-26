@@ -1,7 +1,7 @@
-import Styled from "@/src/ui/components/input/input.styled";
 import type { ChangeEventHandler, FocusEventHandler, HTMLInputTypeAttribute, KeyboardEventHandler } from "react";
 import { forwardRef } from "react";
 import { useController } from "react-hook-form";
+import css from "./input.css";
 
 interface InputProps {
   label?: string;
@@ -14,17 +14,16 @@ interface InputProps {
   onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
   placeholder?: string;
   value?: string;
-  className?: string;
   type?: HTMLInputTypeAttribute;
   error?: string;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ value, label, onChange, onKeyPress, onFocus, onBlur, onKeyDown, placeholder, name, id, className, type, error }, ref) => {
+  ({ value, label, onChange, onKeyPress, onFocus, onBlur, onKeyDown, placeholder, name, id, type, error }, ref) => {
     return (
-      <Styled.Wrapper>
-        <Styled.Input className={className} htmlFor={id}>
-          {label && <span>{label}</span>}
+      <div className={css.wrapper}>
+        <label className={css.label} htmlFor={id}>
+          {label && <span className={css.span}>{label}</span>}
           <input
             type={type}
             id={id}
@@ -38,13 +37,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             value={value}
             ref={ref}
           />
-        </Styled.Input>
+        </label>
         {error && (
-          <Styled.Error>
+          <div className={css.error}>
             <p>{error}</p>
-          </Styled.Error>
+          </div>
         )}
-      </Styled.Wrapper>
+      </div>
     );
   }
 );

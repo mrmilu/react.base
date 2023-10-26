@@ -1,7 +1,7 @@
-import LoaderStyled from "@/src/ui/components/loader/loader.styled";
-import Styled from "@/src/ui/containers/main_loader/main_loader.styled";
-import { easings, useTransition } from "@react-spring/web";
+import css from "./main_loader.css";
+import { easings, useTransition, animated } from "@react-spring/web";
 import { useUiProvider } from "@/src/ui/providers/ui.provider";
+import { Loader } from "@/src/ui/components/loader/loader";
 
 export const MainLoader = () => {
   const showLoader = useUiProvider((state) => state.showLoader);
@@ -19,9 +19,9 @@ export const MainLoader = () => {
   return showModalTransition(
     (styles, item) =>
       item && (
-        <Styled.Wrapper style={styles}>
-          <LoaderStyled />
-        </Styled.Wrapper>
+        <animated.div style={styles} className={css.wrapper}>
+          <Loader />
+        </animated.div>
       )
   );
 };

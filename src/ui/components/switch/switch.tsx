@@ -1,8 +1,8 @@
-import Styled from "@/src/ui/components/switch/switch.styled";
 import type { ChangeEventHandler, FocusEventHandler, KeyboardEvent, RefObject } from "react";
 import { forwardRef } from "react";
 import { useRef } from "react";
 import { useController } from "react-hook-form";
+import css from "./switch.css";
 
 interface SwitchProps {
   label?: string;
@@ -11,11 +11,10 @@ interface SwitchProps {
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   value?: string;
-  className?: string;
   defaultChecked?: boolean;
 }
 
-export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ value, label, onChange, onBlur, name, id, className, defaultChecked }, ref) => {
+export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ value, label, onChange, onBlur, name, id, defaultChecked }, ref) => {
   const _ref = useRef<HTMLInputElement>(null);
   const innerRef = (ref ?? _ref) as RefObject<HTMLInputElement>;
 
@@ -26,13 +25,23 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ value, label,
   };
 
   return (
-    <Styled.Wrapper>
+    <div className={css.wrapper}>
       {label && <p>{label}</p>}
-      <Styled.Switch htmlFor={id} tabIndex={0} className={className} onKeyPress={handleKeypress}>
-        <input ref={innerRef} id={id} name={name} type="checkbox" onChange={onChange} onBlur={onBlur} value={value} defaultChecked={defaultChecked} />
-        <span />
-      </Styled.Switch>
-    </Styled.Wrapper>
+      <label className={css.label} htmlFor={id} tabIndex={0} onKeyPress={handleKeypress}>
+        <input
+          className={css.input}
+          ref={innerRef}
+          id={id}
+          name={name}
+          type="checkbox"
+          onChange={onChange}
+          onBlur={onBlur}
+          value={value}
+          defaultChecked={defaultChecked}
+        />
+        <span className={css.span} />
+      </label>
+    </div>
   );
 });
 

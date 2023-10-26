@@ -1,14 +1,15 @@
+import type { ReactElement } from "react";
 import { useCallback, useState } from "react";
-import Styled from "@/src/ui/features/posts/views/create_post_page/create_post_page.styled";
+import { BaseLayout } from "@/src/ui/components/base_layout/base_layout";
 import { Button } from "@/src/ui/components/button/button";
-import { locator } from "@/src/core/app/ioc";
 import type { IocProvider } from "@/src/core/app/ioc/interfaces";
-
-import { TYPES } from "@/src/core/app/ioc/types";
 import { debounce } from "lodash";
 import { Switch } from "@/src/ui/components/switch/switch";
 import { useAsyncState } from "@front_web_mrmilu/hooks";
 import type { CreatePostUseCase } from "@/src/core/posts/domain/use_cases/create_post_use_case";
+import css from "./create_post_page.css";
+import { locator } from "@/src/core/app/ioc";
+import { TYPES } from "@/src/core/app/ioc/types";
 
 export default function CreatePostPage() {
   const [postNumber, setPostNumber] = useState(1);
@@ -36,8 +37,8 @@ export default function CreatePostPage() {
   const debounceCreatePost = useCallback(debounce(createPost, 400), [postNumber]);
 
   return (
-    <Styled.Wrapper>
-      <div>
+    <div className={css.wrapper}>
+      <div className={css.wrapperChild}>
         <h3>Create a random debounce post</h3>
         <Switch
           id="switch_off_debounce"
@@ -48,10 +49,8 @@ export default function CreatePostPage() {
           }}
         />
       </div>
-      <Button data-cy="create-post-btn" onClick={debounceOn ? () => debounceCreatePost(true) : () => createPost()}>
-        Create
-      </Button>
-      <div>
+      <Button onClick={debounceOn ? () => debounceCreatePost(true) : () => createPost()}>Create</Button>
+      <div className={css.wrapperChild}>
         <h3>Create a random disable button state post</h3>
         <Switch
           id="switch_off_async_state"
@@ -68,7 +67,13 @@ export default function CreatePostPage() {
       {postTitles.map((title, idx) => {
         return <p key={idx}>{title}</p>;
       })}
-      <Styled.ClearButton onClick={() => setPostTitle([])}>Clear list</Styled.ClearButton>
-    </Styled.Wrapper>
+      <Button variants={{ type: "danger" }} onClick={() => setPostTitle([])}>
+        Clear list
+      </Button>
+    </div>
   );
 }
+
+CreatePostPage.getLayout = function getLayout(page: ReactElement) {
+  return <BaseLayout logged={page.props.logged}>{page}</BaseLayout>;
+};
