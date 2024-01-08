@@ -1,13 +1,13 @@
-import { ControlledInput } from "@/src/ui/components/input/input";
 import { Button } from "@/src/ui/components/button/button";
-import { useEffect, useMemo } from "react";
-import Styled from "@/src/ui/features/home/views/home_page/home_page.styled";
-import { useTranslation } from "react-i18next";
-import { timeout } from "@front_web_mrmilu/utils";
+import { ControlledInput } from "@/src/ui/components/input/input";
 import { useHomeProvider, useHomeProviderBis } from "@/src/ui/features/home/views/home_page/providers/home_provider";
-import { object, string } from "yup";
-import { FormProvider, useForm } from "react-hook-form";
+import { timeout } from "@front_web_mrmilu/utils";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useEffect, useMemo } from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import { object, string } from "yup";
+import css from "./home_page.css";
 import { BaseError } from "@/src/core/app/domain/models/base_error";
 
 interface FormValues {
@@ -57,24 +57,24 @@ export default function HomePage() {
   }, [age]);
 
   return (
-    <Styled.Wrapper>
+    <div className={css.wrapper}>
       <h1>{t("homeTitle")}</h1>
-      <Styled.Locale>
+      <div className={css.locale}>
         <p>{t("helloWorld")}</p>
         <select aria-label="Languages" name="language" value={i18n.language} onChange={(e) => changeLanguage(e.target.value)}>
           <option value="es">ES</option>
           <option value="en">EN</option>
         </select>
-      </Styled.Locale>
+      </div>
       <FormProvider {...form}>
-        <Styled.Form onSubmit={form.handleSubmit(handleSubmit)}>
+        <form className={css.form} onSubmit={form.handleSubmit(handleSubmit)}>
           <ControlledInput name="name" label={t("form.fields.name.label")} placeholder={t("form.fields.name.placeholder")} />
           <ControlledInput name="email" label={t("form.fields.email.label")} placeholder={t("form.fields.email.placeholder")} />
           <ControlledInput name="age" type="number" label={t("form.fields.age.label")} placeholder={t("form.fields.age.placeholder")} />
           <Button type="submit" disabled={form.formState.isSubmitting}>
             {t("form.submit")}
           </Button>
-        </Styled.Form>
+        </form>
       </FormProvider>
       <useHomeProviderBis.State>
         <CounterBis />
@@ -85,7 +85,7 @@ export default function HomePage() {
       <useHomeProvider.State builderProps={{ amount: "thirty" }}>
         <Counter />
       </useHomeProvider.State>
-    </Styled.Wrapper>
+    </div>
   );
 }
 

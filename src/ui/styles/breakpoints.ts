@@ -1,6 +1,3 @@
-import type { FlattenSimpleInterpolation } from "styled-components";
-import { css } from "styled-components";
-
 export const breakpoints: Record<BreakpointTypes, number> = {
   sm: 480,
   md: 768,
@@ -8,8 +5,4 @@ export const breakpoints: Record<BreakpointTypes, number> = {
 };
 
 export type BreakpointTypes = "sm" | "md" | "lg";
-export const includeMedia = (type: BreakpointTypes, styles: FlattenSimpleInterpolation) => css`
-  @media (min-width: ${breakpoints[type]}px) {
-    ${styles}
-  }
-`;
+export const getBreakpoint = (type: BreakpointTypes) => `(min-width: ${breakpoints[type]}px)`;

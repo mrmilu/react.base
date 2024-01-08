@@ -10,7 +10,7 @@
 - [Zustand](https://github.com/pmndrs/zustand)
 - [Apollo Client (GraphQL)](https://github.com/apollographql/apollo-client)
 - [Commitlint](docs/comitlint.md) (with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) config)
-- [Styled components](docs/styled_components.md)
+- [Vanilla extract](https://vanilla-extract.style/)
 - ESLint (with TypeScript config)
 - Prettier
 - [Error boundary](docs/error_boundary.md)
