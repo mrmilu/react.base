@@ -2,13 +2,13 @@ import { ControlledInput } from "@/src/ui/components/input/input";
 import { Button } from "@/src/ui/components/button/button";
 import { useEffect, useMemo } from "react";
 import Styled from "@/src/ui/features/home/views/home_page/home_page.styled";
-import { BaseError } from "make-error";
 import { useTranslation } from "react-i18next";
 import { timeout } from "@front_web_mrmilu/utils";
 import { useHomeProvider, useHomeProviderBis } from "@/src/ui/features/home/views/home_page/providers/home_provider";
 import { object, string } from "yup";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { BaseError } from "@/src/core/app/domain/models/base_error";
 
 interface FormValues {
   name: string;
