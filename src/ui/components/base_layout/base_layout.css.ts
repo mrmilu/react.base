@@ -1,6 +1,6 @@
 import { px2rem } from "@/src/ui/styles/utils.css";
 import { spacing } from "../../styles/spacing";
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 import { vars } from "@/src/ui/styles/theme.css";
 import { getBreakpoint } from "@/src/ui/styles/breakpoints";
 
@@ -51,7 +51,7 @@ const ul = style({
   alignItems: "center"
 });
 
-const li = style({
+globalStyle(`${ul} > li`, {
   marginLeft: px2rem(8),
   listStyle: "none"
 });
@@ -61,8 +61,7 @@ const classes = {
   main,
   footer,
   nav,
-  ul,
-  li
+  ul
 };
 
 export default classes;

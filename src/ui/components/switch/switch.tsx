@@ -27,6 +27,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ value, label,
   return (
     <div className={css.wrapper}>
       {label && <p>{label}</p>}
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control,jsx-a11y/no-noninteractive-element-interactions,jsx-a11y/no-noninteractive-tabindex */}
       <label className={css.label} htmlFor={id} tabIndex={0} onKeyPress={handleKeypress}>
         <input
           className={css.input}

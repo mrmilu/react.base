@@ -25,6 +25,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <label className={css.label} htmlFor={id}>
           {label && <span className={css.span}>{label}</span>}
           <input
+            className={css.input}
             type={type}
             id={id}
             placeholder={placeholder}

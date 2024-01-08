@@ -10,6 +10,7 @@ export interface SimpleCardProps {
 
 export const SimpleCard = ({ title, subtitle, onClick }: SimpleCardProps) => {
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div onClick={onClick} className={css.wrapper({ onClick: Boolean(onClick) })}>
       <div className={css.avatar} />
       <div className={css.content}>

@@ -3,12 +3,12 @@ import { ControlledInput } from "@/src/ui/components/input/input";
 import { useHomeProvider, useHomeProviderBis } from "@/src/ui/features/home/views/home_page/providers/home_provider";
 import { timeout } from "@front_web_mrmilu/utils";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { BaseError } from "make-error";
 import { useEffect, useMemo } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { object, string } from "yup";
 import css from "./home_page.css";
+import { BaseError } from "@/src/core/app/domain/models/base_error";
 
 interface FormValues {
   name: string;

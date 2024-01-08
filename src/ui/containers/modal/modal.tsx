@@ -1,4 +1,4 @@
-import { ReactComponent as CloseIcon } from "@/src/ui/assets/icons/close.svg";
+import CloseIcon from "@/src/ui/assets/icons/close.svg?react";
 import { IconButton } from "@/src/ui/components/icon_button/icon_button";
 import { useUiProvider } from "@/src/ui/providers/ui.provider";
 import { useClickOutside } from "@front_web_mrmilu/hooks";
