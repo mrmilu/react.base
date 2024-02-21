@@ -59,7 +59,7 @@ export default function CreatePostPage() {
           }}
         />
       </div>
-      <Button onClick={() => createPost()} disabled={asyncState === "pending"}>
+      <Button data-cy="create-post-btn" onClick={() => createPost()} disabled={asyncState === "pending"}>
         Create
       </Button>
       {postTitles.map((title, idx) => {

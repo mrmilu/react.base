@@ -9,7 +9,7 @@ interface UserModalProps {
 
 export const UserModal = forwardRef<HTMLDivElement, UserModalProps>(({ user }, ref) => {
   return (
-    <ModalContent className={css.content({ oddEven: Number(user.id) % 2 ? "odd" : "even" })} ref={ref}>
+    <ModalContent className={css.content({ oddEven: Number(user.id) % 2 ? "odd" : "even" })} ref={ref} data-cy="user-modal">
       <h3>
         <b>Name:</b> {user.name}
       </h3>

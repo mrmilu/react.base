@@ -6,6 +6,7 @@ import { animated, easings, useTransition } from "@react-spring/web";
 import type { PropsWithChildren, ReactElement } from "react";
 import { cloneElement, forwardRef, useEffect, useRef, useState } from "react";
 import css from "./modal.css";
+import type { CypressProps } from "@/src/ui/view_models/cypress";
 
 const MODAL_TRANSITION_CONFIG = {
   duration: 450,
@@ -79,13 +80,15 @@ export const Modal = () => {
   );
 };
 
-export const ModalContent = forwardRef<HTMLDivElement, PropsWithChildren<{ className?: string }>>(({ children, className }, ref) => {
-  const hideModal = useUiProvider((state) => state.hideModal);
+export const ModalContent = forwardRef<HTMLDivElement, PropsWithChildren<{ className?: string } & CypressProps>>(
+  ({ children, className, ...rest }, ref) => {
+    const hideModal = useUiProvider((state) => state.hideModal);
 
-  return (
-    <div ref={ref} className={`${css.modalContent} ${className ?? ""}`}>
-      <IconButton className={css.closeBtn} icon={<CloseIcon />} onClick={() => hideModal()} />
-      {children}
-    </div>
-  );
-});
+    return (
+      <div ref={ref} className={`${css.modalContent} ${className ?? ""}`} {...rest}>
+        <IconButton className={css.closeBtn} icon={<CloseIcon />} onClick={() => hideModal()} data-cy="modal-close" />
+        {children}
+      </div>
+    );
+  }
+);

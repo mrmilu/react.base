@@ -5,8 +5,8 @@ Cypress.Commands.add("dataCy", (value: string, log = true) => {
 Cypress.Commands.add("login", () => {
   cy.dataCy("login-btn", false).then((el) => {
     // here perform login actions either by ui o cy.request
-    if (el.text().toLowerCase().includes("log in")) {
-      el.trigger("click");
+    if (el.first().text().toLowerCase().includes("log in")) {
+      el.first().trigger("click");
     }
   });
   Cypress.log({
@@ -18,8 +18,8 @@ Cypress.Commands.add("login", () => {
 Cypress.Commands.add("logout", () => {
   cy.dataCy("login-btn", false).then((el) => {
     // here perform logout actions either by ui o cy.request
-    if (el.text().toLowerCase().includes("log out")) {
-      el.trigger("click");
+    if (el.first().text().toLowerCase().includes("log out")) {
+      el.first().trigger("click");
     }
   });
   Cypress.log({

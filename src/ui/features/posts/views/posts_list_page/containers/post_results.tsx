@@ -23,7 +23,7 @@ function PostsList() {
   const posts = usePostsProvider((state) => state.posts)?.read();
 
   if (posts?.length)
-    return <>{posts?.map((post, idx) => <SimpleCard data-cy="user-card" key={`${post.id}_${idx}`} title={post.title} subtitle={post.body} />)}</>;
+    return <>{posts?.map((post, idx) => <SimpleCard data-cy="post-card" key={`${post.id}_${idx}`} title={post.title} subtitle={post.body} />)}</>;
 
   if (posts?.length == 0) return <p>There are no posts</p>;
 
