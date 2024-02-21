@@ -1,3 +1,4 @@
+
 ## Base Mr. Milu: React.js
 
 ### Index and features
@@ -72,14 +73,6 @@ just
 
 ```shell
 just nvm-exec "yarn add @front_web_mrmilu/hooks"
-```
-
-### CI/CD build commands
-
-```shell
-yarn install
-yarn ioc-generate
-yarn build
 ```
 
 ### Environment variables

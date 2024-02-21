@@ -6,8 +6,6 @@ RUN corepack enable
 
 COPY ./yarn.lock ./package.json ./.yarnrc.yml ./
 
-COPY patches/ ./patches
-
 RUN yarn install
 
 COPY . .
@@ -17,9 +15,10 @@ RUN --mount=type=secret,id=env_variables \
 
 RUN yarn ioc-generate
 
-RUN yarn graphql
+# Un comment if using graphql instead of REST
+# RUN yarn graphql
 
-RUN yarn build --base=/clientes/payments/
+RUN yarn build
 
 FROM nginx
 
