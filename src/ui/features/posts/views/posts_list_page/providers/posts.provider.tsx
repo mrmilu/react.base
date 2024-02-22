@@ -1,6 +1,6 @@
-import { locator } from "@/src/core/app/ioc";
+import { locator } from "@/src/core/app/ioc/__generated__";
 import type { IocProvider } from "@/src/core/app/ioc/interfaces";
-import { TYPES } from "@/src/core/app/ioc/types";
+import { TYPES } from "@/src/core/app/ioc/__generated__/types";
 import { timeout, wrapPromise } from "@front_web_mrmilu/utils";
 import { createProvider } from "@/src/common/utils/zustand";
 import { useEffectStrictMode } from "@front_web_mrmilu/hooks";

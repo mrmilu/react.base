@@ -1,6 +1,6 @@
 import type { IPostsRepository } from "../../domain/interfaces/posts_repository";
 import { inject, injectable } from "inversify";
-import { TYPES } from "@/src/core/app/ioc/types";
+import { TYPES } from "@/src/core/app/ioc/__generated__/types";
 import CreatePostMutationOperation from "../graphql/mutations/create_post.graphql";
 import type { MockService } from "@/src/core/app/data/services/mock_service";
 import type { CreatePostInput } from "@/src/__generated__/graphql";

@@ -5,9 +5,9 @@ import { RouterProvider } from "react-router-dom";
 import "@/src/ui/i18n/index";
 import * as Sentry from "@sentry/react";
 import { BrowserTracing } from "@sentry/tracing";
-import { locator } from "@/src/core/app/ioc";
+import { locator } from "@/src/core/app/ioc/__generated__";
 import type { IEnvVars } from "@/src/core/app/domain/interfaces/env_vars";
-import { TYPES } from "@/src/core/app/ioc/types";
+import { TYPES } from "@/src/core/app/ioc/__generated__/types";
 import "@/src/common/utils/yup_extensions";
 import { router } from "@/src/ui/router/routes";
 

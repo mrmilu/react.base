@@ -1,5 +1,5 @@
 import { inject, injectable } from "inversify";
-import { TYPES } from "@/src/core/app/ioc/types";
+import { TYPES } from "@/src/core/app/ioc/__generated__/types";
 import type { User } from "@/src/core/users/domain/models/user";
 import UsersQueryOperation from "../graphql/queries/users.graphql";
 import { plainToClass } from "class-transformer";
