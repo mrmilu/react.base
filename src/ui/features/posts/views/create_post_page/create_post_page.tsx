@@ -6,7 +6,7 @@ import { Switch } from "@/src/ui/components/switch/switch";
 import { useAsyncState } from "@front_web_mrmilu/hooks";
 import type { CreatePostUseCase } from "@/src/core/posts/domain/use_cases/create_post_use_case";
 import css from "./create_post_page.css";
-import { locator } from "@/src/core/app/ioc/__generated__/";
+import { locator } from "@/src/core/app/ioc/__generated__";
 import { TYPES } from "@/src/core/app/ioc/__generated__/types";
 
 export default function CreatePostPage() {
