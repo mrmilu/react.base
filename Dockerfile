@@ -4,21 +4,21 @@ WORKDIR /app
 
 RUN corepack enable
 
-COPY ./yarn.lock ./package.json ./.yarnrc.yml ./
+COPY ./pnpm-lock.yaml ./package.json ./
 
-RUN yarn install
+RUN pnpm install
 
 COPY . .
 
 RUN --mount=type=secret,id=env_variables \
     cat /run/secrets/env_variables > .env
 
-RUN yarn ioc-generate
+RUN pnpm ioc-generate
 
 # Un comment if using graphql instead of REST
-# RUN yarn graphql
+# RUN pnpm graphql
 
-RUN yarn build
+RUN pnpm build
 
 FROM nginx
 

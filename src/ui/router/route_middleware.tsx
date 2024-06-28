@@ -1,7 +1,11 @@
-import { Await, Navigate, useLocation } from "react-router-dom";
-import type { TrackedPromise } from "@remix-run/router";
-import { defer } from "react-router-dom";
+import { Await, Navigate, useLocation, defer } from "react-router-dom";
 import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
+
+export interface TrackedPromise<T> extends Promise<T> {
+  _tracked?: boolean;
+  _data?: T;
+  _error?: T;
+}
 
 export interface ValidationHookOutput {
   errorRedirectUrl?: string;
@@ -19,7 +23,7 @@ interface Props {
 }
 
 // IMPORTANT!! Tracked promise must return a value always it can't be null or undefined.
-export const trackPromise = <T,>(promise: Promise<T>): TrackedPromise => defer({ promise }).data.promise as TrackedPromise;
+export const trackPromise = <T,>(promise: Promise<T>): TrackedPromise<T> => defer({ promise }).data.promise as TrackedPromise<T>;
 
 export const RouteMiddleware = ({ children, validationHook }: Props) => {
   const { errorRedirectUrl, replace = true, successRedirectUrl, promise, skipMiddleware } = validationHook();

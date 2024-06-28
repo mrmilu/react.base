@@ -1,6 +1,7 @@
 build
 coverage
-yarn.lock
+./.husky/install.mjs
+*.yaml
 *.yml
 *.json
 *.md
