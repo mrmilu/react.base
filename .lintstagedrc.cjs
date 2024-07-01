@@ -1,3 +1,3 @@
 module.exports = {
-  "**/*": [() => "just nvm-exec 'yarn check-types'", () => "just nvm-exec 'yarn lint'", "yarn prettier-check"]
+  "**/*": [() => "just nvm-exec 'pnpm check-types'", () => "just nvm-exec 'pnpm lint'", () => "just nvm-exec 'pnpm prettier-check'"]
 };

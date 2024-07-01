@@ -20,15 +20,15 @@ jobs:
       - name: Install dependencies and config
         run: |
           corepack enable
-          yarn
-          yarn graphql
-          yarn ioc-generate
+          pnpm install
+          pnpm graphql
+          pnpm ioc-generate
 
       - name: Check types
-        run: yarn check-types
+        run: pnpm check-types
 
       - name: ESlint
-        run: yarn lint
+        run: pnpm lint
 
       - name: Check formatting
-        run: yarn prettier-check
+        run: pnpm prettier-check
