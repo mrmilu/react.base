@@ -1,4 +1,4 @@
-## Error boundaries
+# Error boundaries
 
 To avoid ui errors breaking the app and make it unusable we are going to implement error boundaries at
 page level (in our routes object). This way we can guarantee if a page breaks the user can still navigate it's way out and the application

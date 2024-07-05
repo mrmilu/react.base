@@ -1,4 +1,4 @@
-## Development Proxy
+# Development Proxy
 
 Due to the nature of front end development and their tooling (hot reload, bundlers, dependency installation)
 most of the time our development server will run better in our local machines; in comparison with a docker environment.
