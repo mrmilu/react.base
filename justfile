@@ -51,7 +51,7 @@ e2e-run:
 e2e-open:
     ./nvm_exec.sh pnpm e2e:open
 
-# Opens E2E tests UI
+# Commits changes using commitlint.
 commit:
     ./nvm_exec.sh pnpm commit
 

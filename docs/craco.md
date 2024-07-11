@@ -1,4 +1,4 @@
-## CRACO
+# CRACO
 
 CRACO stands for: **Create React App Configuration Override**. This boilerplate is created with CRA to get all the
 benefits from `react-scripts`. The issue with CRA configured projects it's that, although they offer many out of the box
