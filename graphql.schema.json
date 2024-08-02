@@ -11,11 +11,11 @@
       {
         "kind": "OBJECT",
         "name": "Address",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "city",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -27,7 +27,7 @@
           },
           {
             "name": "geo",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -39,7 +39,7 @@
           },
           {
             "name": "street",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -51,7 +51,7 @@
           },
           {
             "name": "suite",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -63,7 +63,7 @@
           },
           {
             "name": "zipcode",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -82,12 +82,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "AddressInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "city",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -99,7 +99,7 @@
           },
           {
             "name": "geo",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "GeoInput",
@@ -111,7 +111,7 @@
           },
           {
             "name": "street",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -123,7 +123,7 @@
           },
           {
             "name": "suite",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -135,7 +135,7 @@
           },
           {
             "name": "zipcode",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -153,11 +153,11 @@
       {
         "kind": "OBJECT",
         "name": "Album",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "id",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -169,11 +169,11 @@
           },
           {
             "name": "photos",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -194,7 +194,7 @@
           },
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -206,7 +206,7 @@
           },
           {
             "name": "user",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -225,11 +225,11 @@
       {
         "kind": "OBJECT",
         "name": "AlbumsPage",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "data",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "LIST",
@@ -245,7 +245,7 @@
           },
           {
             "name": "links",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -257,7 +257,7 @@
           },
           {
             "name": "meta",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -284,36 +284,13 @@
         "possibleTypes": null
       },
       {
-        "kind": "ENUM",
-        "name": "CacheControlScope",
-        "description": "",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": [
-          {
-            "name": "PRIVATE",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "PUBLIC",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "possibleTypes": null
-      },
-      {
         "kind": "OBJECT",
         "name": "Comment",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "body",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -325,7 +302,7 @@
           },
           {
             "name": "email",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -337,7 +314,7 @@
           },
           {
             "name": "id",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -349,7 +326,7 @@
           },
           {
             "name": "name",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -361,7 +338,7 @@
           },
           {
             "name": "post",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -380,11 +357,11 @@
       {
         "kind": "OBJECT",
         "name": "CommentsPage",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "data",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "LIST",
@@ -400,7 +377,7 @@
           },
           {
             "name": "links",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -412,7 +389,7 @@
           },
           {
             "name": "meta",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -431,11 +408,11 @@
       {
         "kind": "OBJECT",
         "name": "Company",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "bs",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -447,7 +424,7 @@
           },
           {
             "name": "catchPhrase",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -459,7 +436,7 @@
           },
           {
             "name": "name",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -478,12 +455,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "CompanyInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "bs",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -495,7 +472,7 @@
           },
           {
             "name": "catchPhrase",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -507,7 +484,7 @@
           },
           {
             "name": "name",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -525,12 +502,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "CreateAlbumInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -546,7 +523,7 @@
           },
           {
             "name": "userId",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -568,12 +545,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "CreateCommentInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "body",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -589,7 +566,7 @@
           },
           {
             "name": "email",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -605,7 +582,7 @@
           },
           {
             "name": "name",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -627,12 +604,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "CreatePhotoInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "thumbnailUrl",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -648,7 +625,7 @@
           },
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -664,7 +641,7 @@
           },
           {
             "name": "url",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -686,12 +663,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "CreatePostInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "body",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -707,7 +684,7 @@
           },
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -729,12 +706,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "CreateTodoInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "completed",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -750,7 +727,7 @@
           },
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -772,12 +749,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "CreateUserInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "address",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "AddressInput",
@@ -789,7 +766,7 @@
           },
           {
             "name": "company",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "CompanyInput",
@@ -801,7 +778,7 @@
           },
           {
             "name": "email",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -817,7 +794,7 @@
           },
           {
             "name": "name",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -833,7 +810,7 @@
           },
           {
             "name": "phone",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -845,7 +822,7 @@
           },
           {
             "name": "username",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -861,7 +838,7 @@
           },
           {
             "name": "website",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -889,11 +866,11 @@
       {
         "kind": "OBJECT",
         "name": "Geo",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "lat",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -905,7 +882,7 @@
           },
           {
             "name": "lng",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -924,12 +901,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "GeoInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "lat",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "Float",
@@ -941,7 +918,7 @@
           },
           {
             "name": "lng",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "Float",
@@ -979,11 +956,11 @@
       {
         "kind": "OBJECT",
         "name": "Mutation",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "_",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -995,11 +972,11 @@
           },
           {
             "name": "createAlbum",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1024,11 +1001,11 @@
           },
           {
             "name": "createComment",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1053,11 +1030,11 @@
           },
           {
             "name": "createPhoto",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1082,11 +1059,11 @@
           },
           {
             "name": "createPost",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1111,11 +1088,11 @@
           },
           {
             "name": "createTodo",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1140,11 +1117,11 @@
           },
           {
             "name": "createUser",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1169,11 +1146,11 @@
           },
           {
             "name": "deleteAlbum",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1198,11 +1175,11 @@
           },
           {
             "name": "deleteComment",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1227,11 +1204,11 @@
           },
           {
             "name": "deletePhoto",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1256,11 +1233,11 @@
           },
           {
             "name": "deletePost",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1285,11 +1262,11 @@
           },
           {
             "name": "deleteTodo",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1314,11 +1291,11 @@
           },
           {
             "name": "deleteUser",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1343,11 +1320,11 @@
           },
           {
             "name": "updateAlbum",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1363,7 +1340,7 @@
               },
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1388,11 +1365,11 @@
           },
           {
             "name": "updateComment",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1408,7 +1385,7 @@
               },
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1433,11 +1410,11 @@
           },
           {
             "name": "updatePhoto",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1453,7 +1430,7 @@
               },
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1478,11 +1455,11 @@
           },
           {
             "name": "updatePost",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1498,7 +1475,7 @@
               },
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1523,11 +1500,11 @@
           },
           {
             "name": "updateTodo",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1543,7 +1520,7 @@
               },
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1568,11 +1545,11 @@
           },
           {
             "name": "updateUser",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1588,7 +1565,7 @@
               },
               {
                 "name": "input",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1620,32 +1597,32 @@
       {
         "kind": "ENUM",
         "name": "OperatorKindEnum",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": null,
         "interfaces": null,
         "enumValues": [
           {
             "name": "GTE",
-            "description": "",
+            "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
             "name": "LIKE",
-            "description": "",
+            "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
             "name": "LTE",
-            "description": "",
+            "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
             "name": "NE",
-            "description": "",
+            "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           }
@@ -1655,12 +1632,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "OperatorOptions",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "field",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -1672,7 +1649,7 @@
           },
           {
             "name": "kind",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "ENUM",
               "name": "OperatorKindEnum",
@@ -1684,7 +1661,7 @@
           },
           {
             "name": "value",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -1702,11 +1679,11 @@
       {
         "kind": "OBJECT",
         "name": "PageLimitPair",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "limit",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -1718,7 +1695,7 @@
           },
           {
             "name": "page",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -1737,11 +1714,11 @@
       {
         "kind": "OBJECT",
         "name": "PageMetadata",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "totalCount",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -1760,12 +1737,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "PageQueryOptions",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "operators",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "LIST",
               "name": null,
@@ -1781,7 +1758,7 @@
           },
           {
             "name": "paginate",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "PaginateOptions",
@@ -1793,7 +1770,7 @@
           },
           {
             "name": "search",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "SearchOptions",
@@ -1805,7 +1782,7 @@
           },
           {
             "name": "slice",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "SliceOptions",
@@ -1817,7 +1794,7 @@
           },
           {
             "name": "sort",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "LIST",
               "name": null,
@@ -1839,12 +1816,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "PaginateOptions",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "limit",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "Int",
@@ -1856,7 +1833,7 @@
           },
           {
             "name": "page",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "Int",
@@ -1874,11 +1851,11 @@
       {
         "kind": "OBJECT",
         "name": "PaginationLinks",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "first",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -1890,7 +1867,7 @@
           },
           {
             "name": "last",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -1902,7 +1879,7 @@
           },
           {
             "name": "next",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -1914,7 +1891,7 @@
           },
           {
             "name": "prev",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -1933,11 +1910,11 @@
       {
         "kind": "OBJECT",
         "name": "Photo",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "album",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -1949,7 +1926,7 @@
           },
           {
             "name": "id",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -1961,7 +1938,7 @@
           },
           {
             "name": "thumbnailUrl",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -1973,7 +1950,7 @@
           },
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -1985,7 +1962,7 @@
           },
           {
             "name": "url",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2004,11 +1981,11 @@
       {
         "kind": "OBJECT",
         "name": "PhotosPage",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "data",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "LIST",
@@ -2024,7 +2001,7 @@
           },
           {
             "name": "links",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -2036,7 +2013,7 @@
           },
           {
             "name": "meta",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -2055,11 +2032,11 @@
       {
         "kind": "OBJECT",
         "name": "Post",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "body",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2071,11 +2048,11 @@
           },
           {
             "name": "comments",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -2096,7 +2073,7 @@
           },
           {
             "name": "id",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2108,7 +2085,7 @@
           },
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2120,7 +2097,7 @@
           },
           {
             "name": "user",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -2139,11 +2116,11 @@
       {
         "kind": "OBJECT",
         "name": "PostsPage",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "data",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "LIST",
@@ -2159,7 +2136,7 @@
           },
           {
             "name": "links",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -2171,7 +2148,7 @@
           },
           {
             "name": "meta",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -2190,11 +2167,11 @@
       {
         "kind": "OBJECT",
         "name": "Query",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "_",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2206,11 +2183,11 @@
           },
           {
             "name": "album",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -2235,11 +2212,11 @@
           },
           {
             "name": "albums",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -2260,11 +2237,11 @@
           },
           {
             "name": "comment",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -2289,11 +2266,11 @@
           },
           {
             "name": "comments",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -2314,11 +2291,11 @@
           },
           {
             "name": "photo",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -2343,11 +2320,11 @@
           },
           {
             "name": "photos",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -2368,11 +2345,11 @@
           },
           {
             "name": "post",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -2397,11 +2374,11 @@
           },
           {
             "name": "posts",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -2422,11 +2399,11 @@
           },
           {
             "name": "todo",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -2451,11 +2428,11 @@
           },
           {
             "name": "todos",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -2476,11 +2453,11 @@
           },
           {
             "name": "user",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -2505,11 +2482,11 @@
           },
           {
             "name": "users",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -2537,12 +2514,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "SearchOptions",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "q",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2560,12 +2537,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "SliceOptions",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "end",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "Int",
@@ -2577,7 +2554,7 @@
           },
           {
             "name": "limit",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "Int",
@@ -2589,7 +2566,7 @@
           },
           {
             "name": "start",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "Int",
@@ -2607,12 +2584,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "SortOptions",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "field",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2624,7 +2601,7 @@
           },
           {
             "name": "order",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "ENUM",
               "name": "SortOrderEnum",
@@ -2642,20 +2619,20 @@
       {
         "kind": "ENUM",
         "name": "SortOrderEnum",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": null,
         "interfaces": null,
         "enumValues": [
           {
             "name": "ASC",
-            "description": "",
+            "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
             "name": "DESC",
-            "description": "",
+            "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           }
@@ -2675,11 +2652,11 @@
       {
         "kind": "OBJECT",
         "name": "Todo",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "completed",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2691,7 +2668,7 @@
           },
           {
             "name": "id",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2703,7 +2680,7 @@
           },
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2715,7 +2692,7 @@
           },
           {
             "name": "user",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -2734,11 +2711,11 @@
       {
         "kind": "OBJECT",
         "name": "TodosPage",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "data",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "LIST",
@@ -2754,7 +2731,7 @@
           },
           {
             "name": "links",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -2766,7 +2743,7 @@
           },
           {
             "name": "meta",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -2785,12 +2762,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "UpdateAlbumInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2802,7 +2779,7 @@
           },
           {
             "name": "userId",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "ID",
@@ -2820,12 +2797,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "UpdateCommentInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "body",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2837,7 +2814,7 @@
           },
           {
             "name": "email",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2849,7 +2826,7 @@
           },
           {
             "name": "name",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2867,12 +2844,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "UpdatePhotoInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "thumbnailUrl",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2884,7 +2861,7 @@
           },
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2896,7 +2873,7 @@
           },
           {
             "name": "url",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2914,12 +2891,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "UpdatePostInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "body",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2931,7 +2908,7 @@
           },
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2949,12 +2926,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "UpdateTodoInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "completed",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "Boolean",
@@ -2966,7 +2943,7 @@
           },
           {
             "name": "title",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2984,12 +2961,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "UpdateUserInput",
-        "description": "",
+        "description": null,
         "fields": null,
         "inputFields": [
           {
             "name": "address",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "AddressInput",
@@ -3001,7 +2978,7 @@
           },
           {
             "name": "company",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "CompanyInput",
@@ -3013,7 +2990,7 @@
           },
           {
             "name": "email",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -3025,7 +3002,7 @@
           },
           {
             "name": "name",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -3037,7 +3014,7 @@
           },
           {
             "name": "phone",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -3049,7 +3026,7 @@
           },
           {
             "name": "username",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -3061,7 +3038,7 @@
           },
           {
             "name": "website",
-            "description": "",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -3077,23 +3054,13 @@
         "possibleTypes": null
       },
       {
-        "kind": "SCALAR",
-        "name": "Upload",
-        "description": "The `Upload` scalar type represents a file upload.",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
         "kind": "OBJECT",
         "name": "User",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "address",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -3105,11 +3072,11 @@
           },
           {
             "name": "albums",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -3130,7 +3097,7 @@
           },
           {
             "name": "company",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -3142,7 +3109,7 @@
           },
           {
             "name": "email",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -3154,7 +3121,7 @@
           },
           {
             "name": "id",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -3166,7 +3133,7 @@
           },
           {
             "name": "name",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -3178,7 +3145,7 @@
           },
           {
             "name": "phone",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -3190,11 +3157,11 @@
           },
           {
             "name": "posts",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -3215,11 +3182,11 @@
           },
           {
             "name": "todos",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "options",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "PageQueryOptions",
@@ -3240,7 +3207,7 @@
           },
           {
             "name": "username",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -3252,7 +3219,7 @@
           },
           {
             "name": "website",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -3271,11 +3238,11 @@
       {
         "kind": "OBJECT",
         "name": "UsersPage",
-        "description": "",
+        "description": null,
         "fields": [
           {
             "name": "data",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "LIST",
@@ -3291,7 +3258,7 @@
           },
           {
             "name": "links",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -3303,7 +3270,7 @@
           },
           {
             "name": "meta",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -4229,46 +4196,19 @@
     ],
     "directives": [
       {
-        "name": "cacheControl",
-        "description": "",
-        "isRepeatable": false,
-        "locations": ["FIELD_DEFINITION", "INTERFACE", "OBJECT"],
-        "args": [
-          {
-            "name": "maxAge",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "scope",
-            "description": "",
-            "type": {
-              "kind": "ENUM",
-              "name": "CacheControlScope",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ]
-      },
-      {
         "name": "deprecated",
         "description": "Marks an element of a GraphQL schema as no longer supported.",
         "isRepeatable": false,
-        "locations": ["ENUM_VALUE", "FIELD_DEFINITION"],
+        "locations": [
+          "ARGUMENT_DEFINITION",
+          "ENUM_VALUE",
+          "FIELD_DEFINITION",
+          "INPUT_FIELD_DEFINITION"
+        ],
         "args": [
           {
             "name": "reason",
-            "description": "Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted using the Markdown syntax (as specified by [CommonMark](https://commonmark.org/).",
+            "description": "Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted using the Markdown syntax, as specified by [CommonMark](https://commonmark.org/).",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -4284,7 +4224,11 @@
         "name": "include",
         "description": "Directs the executor to include this field or fragment only when the `if` argument is true.",
         "isRepeatable": false,
-        "locations": ["FIELD", "FRAGMENT_SPREAD", "INLINE_FRAGMENT"],
+        "locations": [
+          "FIELD",
+          "FRAGMENT_SPREAD",
+          "INLINE_FRAGMENT"
+        ],
         "args": [
           {
             "name": "if",
@@ -4308,7 +4252,11 @@
         "name": "skip",
         "description": "Directs the executor to skip this field or fragment when the `if` argument is true.",
         "isRepeatable": false,
-        "locations": ["FIELD", "FRAGMENT_SPREAD", "INLINE_FRAGMENT"],
+        "locations": [
+          "FIELD",
+          "FRAGMENT_SPREAD",
+          "INLINE_FRAGMENT"
+        ],
         "args": [
           {
             "name": "if",
@@ -4319,6 +4267,32 @@
               "ofType": {
                 "kind": "SCALAR",
                 "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ]
+      },
+      {
+        "name": "specifiedBy",
+        "description": "Exposes a URL that specifies the behavior of this scalar.",
+        "isRepeatable": false,
+        "locations": [
+          "SCALAR"
+        ],
+        "args": [
+          {
+            "name": "url",
+            "description": "The URL that specifies the behavior of this scalar.",
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               }
             },
