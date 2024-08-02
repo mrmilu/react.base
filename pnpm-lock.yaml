@@ -22,7 +22,7 @@ importers:
         version: 2.1.0(@babel/runtime@7.25.0)
       '@front_web_mrmilu/utils':
         specifier: ~2.1.0
-        version: 2.1.0(@babel/runtime@7.25.0)(yup@1.3.3)
+        version: 2.1.0(@babel/runtime@7.25.0)(yup@1.4.0)
       '@hookform/resolvers':
         specifier: ~3.3.4
         version: 3.3.4(react-hook-form@7.50.1(react@18.3.1))
@@ -93,8 +93,8 @@ importers:
         specifier: ~3.5.2
         version: 3.5.2
       yup:
-        specifier: ~1.3.3
-        version: 1.3.3
+        specifier: ~1.4.0
+        version: 1.4.0
       zustand:
         specifier: ~4.5.1
         version: 4.5.4(@types/react@18.3.3)(immer@10.0.4)(react@18.3.1)
@@ -4816,8 +4816,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  yup@1.3.3:
-    resolution: {integrity: sha512-v8QwZSsHH2K3/G9WSkp6mZKO+hugKT1EmnMqLNUcfu51HU9MDyhlETT/JgtzprnrnQHPWsjc6MUDMBp/l9fNnw==}
+  yup@1.4.0:
+    resolution: {integrity: sha512-wPbgkJRCqIf+OHyiTBQoJiP5PFuAXaWiJK6AmYkzQAh5/c2K9hzSApBZG5wV9KoKSePF7sAxmNSvh/13YHkFDg==}
 
   zen-observable-ts@1.2.5:
     resolution: {integrity: sha512-QZWQekv6iB72Naeake9hS1KxHlotfRpe+WGNbNx5/ta+R3DNjVO2bswf63gXlWDcs+EMd7XY8HfVQyP1X6T4Zg==}
@@ -5678,10 +5678,10 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.25.0
 
-  '@front_web_mrmilu/utils@2.1.0(@babel/runtime@7.25.0)(yup@1.3.3)':
+  '@front_web_mrmilu/utils@2.1.0(@babel/runtime@7.25.0)(yup@1.4.0)':
     dependencies:
       '@babel/runtime': 7.25.0
-      yup: 1.3.3
+      yup: 1.4.0
 
   '@graphql-codegen/add@3.2.3(graphql@16.8.2)':
     dependencies:
@@ -10145,7 +10145,7 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  yup@1.3.3:
+  yup@1.4.0:
     dependencies:
       property-expr: 2.0.6
       tiny-case: 1.0.3
