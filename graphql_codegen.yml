@@ -14,7 +14,7 @@ generates:
     plugins:
       - "typescript-operations"
       - "typescript-graphql-files-modules"
-  src/core/app/data/__generated__/graphql_introspection.ts:
+  src/core/app/data/__generated__/graphql-introspection.ts:
     plugins:
       - "fragment-matcher"
   ./graphql.schema.json:

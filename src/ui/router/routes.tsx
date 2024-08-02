@@ -1,18 +1,18 @@
-import { AppErrorBoundary } from "@/src/ui/components/app_error_boundary/app_error_boundary";
-import Page404 from "@/src/ui/components/error_pages/404";
-import React, { lazy } from "react";
-import { SuspenseMainLoader } from "@/src/ui/components/suspense_main_loader/suspense_main_loader";
-import { RouteMiddleware } from "@/src/ui/router/route_middleware";
-import { useAuthMiddleware } from "@/src/ui/router/middlewares/auth_middleware.hook";
-import { useUsersListProvider } from "@/src/ui/features/users/views/users_list_page/providers/users_list.provider";
-import { usePostsProvider } from "@/src/ui/features/posts/views/posts_list_page/providers/posts.provider";
+import { AppErrorBoundary } from "@/src/ui/components/app-error-boundary/app-error-boundary";
+import Page404 from "@/src/ui/components/error-pages/404";
+import { SuspenseMainLoader } from "@/src/ui/components/suspense-main-loader/suspense-main-loader";
+import { RootPage } from "@/src/ui/features/misc/root/root-page";
+import { usePostsProvider } from "@/src/ui/features/posts/views/posts-list-page/providers/posts.provider";
+import { useUsersListProvider } from "@/src/ui/features/users/views/users-list-page/providers/users-list.provider";
+import { useAuthMiddleware } from "@/src/ui/router/middlewares/auth-middleware.hook";
+import { RouteMiddleware } from "@/src/ui/router/route-middleware";
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { RootPage } from "@/src/ui/features/misc/root/root_page";
 
-const HomePage = lazy(() => import("@/src/ui/features/home/views/home_page/home_page"));
-const UsersListPage = lazy(() => import("@/src/ui/features/users/views/users_list_page/users_list_page"));
-const PostsListPage = lazy(() => import("@/src/ui/features/posts/views/posts_list_page/posts_list_page"));
-const CreatePostPage = lazy(() => import("@/src/ui/features/posts/views/create_post_page/create_post_page"));
+const HomePage = lazy(() => import("@/src/ui/features/home/views/home-page/home-page"));
+const UsersListPage = lazy(() => import("@/src/ui/features/users/views/users-list-page/users-list-page"));
+const PostsListPage = lazy(() => import("@/src/ui/features/posts/views/posts-list-page/posts-list-page"));
+const CreatePostPage = lazy(() => import("@/src/ui/features/posts/views/create-post-page/create-post-page"));
 
 // TODO migrate to new DataRouter API
 export const router = createBrowserRouter([

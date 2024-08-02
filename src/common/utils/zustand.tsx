@@ -1,9 +1,9 @@
-import type { StateCreator, StoreMutatorIdentifier } from "zustand";
-import { createStore, useStore } from "zustand";
+import type { ConstructorType } from "@/src/common/interfaces/constructor-type";
 import type { PropsWithChildren } from "react";
 import { createContext, useContext, useRef } from "react";
+import type { StateCreator, StoreMutatorIdentifier } from "zustand";
+import { createStore, useStore } from "zustand";
 import { immer } from "zustand/middleware/immer";
-import type { ConstructorType } from "@/src/common/interfaces/constructor_type";
 
 interface StateProviderProps<T extends object, P> {
   initialState?: ConstructorType<T>;
