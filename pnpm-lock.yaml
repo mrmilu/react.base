@@ -60,8 +60,8 @@ importers:
         specifier: ~1.2.0
         version: 1.2.1
       immer:
-        specifier: ~10.0.3
-        version: 10.0.4
+        specifier: ~10.1.1
+        version: 10.1.1
       inversify:
         specifier: ~6.0.2
         version: 6.0.2
@@ -96,8 +96,8 @@ importers:
         specifier: ~1.4.0
         version: 1.4.0
       zustand:
-        specifier: ~4.5.1
-        version: 4.5.4(@types/react@18.3.3)(immer@10.0.4)(react@18.3.1)
+        specifier: ~4.5.4
+        version: 4.5.4(@types/react@18.3.3)(immer@10.1.1)(react@18.3.1)
     devDependencies:
       '@babel/plugin-proposal-class-properties':
         specifier: 7.18.6
@@ -3100,8 +3100,8 @@ packages:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
     engines: {node: '>= 4'}
 
-  immer@10.0.4:
-    resolution: {integrity: sha512-cuBuGK40P/sk5IzWa9QPUaAdvPHjkk1c+xYsd9oZw+YQQEV+10G0P5uMpGctZZKnyQ+ibRO08bD25nWLmYi2pw==}
+  immer@10.1.1:
+    resolution: {integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==}
 
   immutable@3.7.6:
     resolution: {integrity: sha512-AizQPcaofEtO11RZhPPHBOJRdo/20MKQF9mBLnVkBoyHi1/zXK8fzVdnEpSV9gxqtnh6Qomfp3F0xT5qP/vThw==}
@@ -8412,7 +8412,7 @@ snapshots:
 
   ignore@5.3.1: {}
 
-  immer@10.0.4: {}
+  immer@10.1.1: {}
 
   immutable@3.7.6: {}
 
@@ -10158,10 +10158,10 @@ snapshots:
 
   zen-observable@0.8.15: {}
 
-  zustand@4.5.4(@types/react@18.3.3)(immer@10.0.4)(react@18.3.1):
+  zustand@4.5.4(@types/react@18.3.3)(immer@10.1.1)(react@18.3.1):
     dependencies:
       use-sync-external-store: 1.2.0(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.3
-      immer: 10.0.4
+      immer: 10.1.1
       react: 18.3.1
