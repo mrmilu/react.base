@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { UiStateViewModel } from "../view_models/ui_state";
 import type { ReactNode } from "react";
 import { createStore, useStore } from "zustand";
 import { immer } from "zustand/middleware/immer";
+import type { UiStateViewModel } from "../view-models/ui-state";
 
 export const uiProvider = createStore<UiStateViewModel>()(
   immer((set) => ({

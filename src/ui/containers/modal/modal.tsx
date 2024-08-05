@@ -1,12 +1,12 @@
 import CloseIcon from "@/src/ui/assets/icons/close.svg?react";
-import { IconButton } from "@/src/ui/components/icon_button/icon_button";
+import { IconButton } from "@/src/ui/components/icon-button/icon-button";
 import { useUiProvider } from "@/src/ui/providers/ui.provider";
+import type { CypressProps } from "@/src/ui/view-models/cypress";
 import { useClickOutside } from "@front_web_mrmilu/hooks";
 import { animated, easings, useTransition } from "@react-spring/web";
 import type { PropsWithChildren, ReactElement } from "react";
 import { cloneElement, forwardRef, useEffect, useRef, useState } from "react";
 import css from "./modal.css";
-import type { CypressProps } from "@/src/ui/view_models/cypress";
 
 const MODAL_TRANSITION_CONFIG = {
   duration: 450,

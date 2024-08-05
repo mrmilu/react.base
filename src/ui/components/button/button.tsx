@@ -1,7 +1,7 @@
 import type { MouseEventHandler, PropsWithChildren } from "react";
 import type { ButtonVariants } from "./button.css";
 import css from "./button.css";
-import type { CypressProps } from "@/src/ui/view_models/cypress";
+import type { CypressProps } from "@/src/ui/view-models/cypress";
 
 export interface ButtonProps extends CypressProps {
   onClick?: MouseEventHandler;

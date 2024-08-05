@@ -1,4 +1,4 @@
-import { aliasQuery } from "../utils/graphql_test_utils";
+import { aliasQuery } from "../utils/graphql-test-utils";
 
 describe("Visit users page", () => {
   beforeEach(() => {
