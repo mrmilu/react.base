@@ -10,28 +10,28 @@ importers:
     dependencies:
       '@apollo/client':
         specifier: ~3.9.5
-        version: 3.9.11(@types/react@18.2.79)(graphql-ws@5.16.0(graphql@16.8.2))(graphql@16.8.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.9.11(@types/react@18.3.3)(graphql-ws@5.16.0(graphql@16.8.2))(graphql@16.8.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@front_web_mrmilu/hooks':
         specifier: ~2.1.0
-        version: 2.1.0(@babel/runtime@7.25.0)(react@18.2.0)
+        version: 2.1.0(@babel/runtime@7.25.0)(react@18.3.1)
       '@front_web_mrmilu/network':
         specifier: ~2.1.0
-        version: 2.1.0(@apollo/client@3.9.11(@types/react@18.2.79)(graphql-ws@5.16.0(graphql@16.8.2))(graphql@16.8.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@babel/runtime@7.25.0)(graphql@16.8.2)
+        version: 2.1.0(@apollo/client@3.9.11(@types/react@18.3.3)(graphql-ws@5.16.0(graphql@16.8.2))(graphql@16.8.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@babel/runtime@7.25.0)(graphql@16.8.2)
       '@front_web_mrmilu/services':
         specifier: ~2.1.0
         version: 2.1.0(@babel/runtime@7.25.0)
       '@front_web_mrmilu/utils':
         specifier: ~2.1.0
-        version: 2.1.0(@babel/runtime@7.25.0)(yup@1.3.3)
+        version: 2.1.0(@babel/runtime@7.25.0)(yup@1.4.0)
       '@hookform/resolvers':
         specifier: ~3.3.4
-        version: 3.3.4(react-hook-form@7.50.1(react@18.2.0))
+        version: 3.3.4(react-hook-form@7.50.1(react@18.3.1))
       '@react-spring/web':
         specifier: ~9.7.3
-        version: 9.7.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 9.7.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@sentry/react':
         specifier: ~7.102.0
-        version: 7.102.1(react@18.2.0)
+        version: 7.102.1(react@18.3.1)
       '@sentry/tracing':
         specifier: ~7.102.0
         version: 7.102.1
@@ -60,8 +60,8 @@ importers:
         specifier: ~1.2.0
         version: 1.2.1
       immer:
-        specifier: ~10.0.3
-        version: 10.0.4
+        specifier: ~10.1.1
+        version: 10.1.1
       inversify:
         specifier: ~6.0.2
         version: 6.0.2
@@ -72,20 +72,20 @@ importers:
         specifier: ~4.17.21
         version: 4.17.21
       react:
-        specifier: ~18.2.0
-        version: 18.2.0
+        specifier: ~18.3.1
+        version: 18.3.1
       react-dom:
-        specifier: ~18.2.0
-        version: 18.2.0(react@18.2.0)
+        specifier: ~18.3.1
+        version: 18.3.1(react@18.3.1)
       react-hook-form:
         specifier: ~7.50.1
-        version: 7.50.1(react@18.2.0)
+        version: 7.50.1(react@18.3.1)
       react-i18next:
         specifier: ~14.0.5
-        version: 14.0.8(i18next@23.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 14.0.8(i18next@23.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-dom:
         specifier: ~6.22.1
-        version: 6.22.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 6.22.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       reflect-metadata:
         specifier: ~0.2.1
         version: 0.2.2
@@ -93,11 +93,11 @@ importers:
         specifier: ~3.5.2
         version: 3.5.2
       yup:
-        specifier: ~1.3.3
-        version: 1.3.3
+        specifier: ~1.4.0
+        version: 1.4.0
       zustand:
-        specifier: ~4.5.1
-        version: 4.5.4(@types/react@18.2.79)(immer@10.0.4)(react@18.2.0)
+        specifier: ~4.5.4
+        version: 4.5.4(@types/react@18.3.3)(immer@10.1.1)(react@18.3.1)
     devDependencies:
       '@babel/plugin-proposal-class-properties':
         specifier: 7.18.6
@@ -145,11 +145,11 @@ importers:
         specifier: ~20.11.19
         version: 20.11.30
       '@types/react':
-        specifier: ~18.2.57
-        version: 18.2.79
+        specifier: ~18.3.3
+        version: 18.3.3
       '@types/react-dom':
-        specifier: ~18.2.19
-        version: 18.2.25
+        specifier: ~18.3.0
+        version: 18.3.0
       '@typescript-eslint/eslint-plugin':
         specifier: ~7.0.2
         version: 7.0.2(@typescript-eslint/parser@7.0.2(eslint@8.56.0)(typescript@5.3.3))(eslint@8.56.0)(typescript@5.3.3)
@@ -1717,11 +1717,11 @@ packages:
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
 
-  '@types/react-dom@18.2.25':
-    resolution: {integrity: sha512-o/V48vf4MQh7juIKZU2QGDfli6p1+OOi5oXx36Hffpc9adsHeXjVp8rHuPkjd8VT8sOJ2Zp05HR7CdpGTIUFUA==}
+  '@types/react-dom@18.3.0':
+    resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
 
-  '@types/react@18.2.79':
-    resolution: {integrity: sha512-RwGAGXPl9kSXwdNTafkOEuFrTBD5SA2B3iEB96xi8+xu5ddUa/cpvyVCSNn+asgLCTHkb5ZxN8gbuibYJi4s1w==}
+  '@types/react@18.3.3':
+    resolution: {integrity: sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==}
 
   '@types/semver@7.5.8':
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
@@ -3100,8 +3100,8 @@ packages:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
     engines: {node: '>= 4'}
 
-  immer@10.0.4:
-    resolution: {integrity: sha512-cuBuGK40P/sk5IzWa9QPUaAdvPHjkk1c+xYsd9oZw+YQQEV+10G0P5uMpGctZZKnyQ+ibRO08bD25nWLmYi2pw==}
+  immer@10.1.1:
+    resolution: {integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==}
 
   immutable@3.7.6:
     resolution: {integrity: sha512-AizQPcaofEtO11RZhPPHBOJRdo/20MKQF9mBLnVkBoyHi1/zXK8fzVdnEpSV9gxqtnh6Qomfp3F0xT5qP/vThw==}
@@ -3995,10 +3995,10 @@ packages:
   react-app-alias@2.2.2:
     resolution: {integrity: sha512-mkebUkGLEBA8A8jripu5h1e3cccGl8wWHCUmyJo43/KhaN91DO3qyCLWGWneogqkG4PWhp2JHtlCJ06YSdHVYQ==}
 
-  react-dom@18.2.0:
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+  react-dom@18.3.1:
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.3.1
 
   react-hook-form@7.50.1:
     resolution: {integrity: sha512-3PCY82oE0WgeOgUtIr3nYNNtNvqtJ7BZjsbxh6TnYNbXButaD5WpjOmTjdxZfheuHKR68qfeFnEDVYoSSFPMTQ==}
@@ -4039,8 +4039,8 @@ packages:
     peerDependencies:
       react: '>=16.8'
 
-  react@18.2.0:
-    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+  react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
 
   read-pkg-up@7.0.1:
@@ -4816,8 +4816,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  yup@1.3.3:
-    resolution: {integrity: sha512-v8QwZSsHH2K3/G9WSkp6mZKO+hugKT1EmnMqLNUcfu51HU9MDyhlETT/JgtzprnrnQHPWsjc6MUDMBp/l9fNnw==}
+  yup@1.4.0:
+    resolution: {integrity: sha512-wPbgkJRCqIf+OHyiTBQoJiP5PFuAXaWiJK6AmYkzQAh5/c2K9hzSApBZG5wV9KoKSePF7sAxmNSvh/13YHkFDg==}
 
   zen-observable-ts@1.2.5:
     resolution: {integrity: sha512-QZWQekv6iB72Naeake9hS1KxHlotfRpe+WGNbNx5/ta+R3DNjVO2bswf63gXlWDcs+EMd7XY8HfVQyP1X6T4Zg==}
@@ -4847,7 +4847,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@apollo/client@3.9.11(@types/react@18.2.79)(graphql-ws@5.16.0(graphql@16.8.2))(graphql@16.8.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@apollo/client@3.9.11(@types/react@18.3.3)(graphql-ws@5.16.0(graphql@16.8.2))(graphql@16.8.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.2)
       '@wry/caches': 1.0.1
@@ -4858,7 +4858,7 @@ snapshots:
       hoist-non-react-statics: 3.3.2
       optimism: 0.18.0
       prop-types: 15.8.1
-      rehackt: 0.0.6(@types/react@18.2.79)(react@18.2.0)
+      rehackt: 0.0.6(@types/react@18.3.3)(react@18.3.1)
       response-iterator: 0.2.6
       symbol-observable: 4.0.0
       ts-invariant: 0.10.3
@@ -4866,8 +4866,8 @@ snapshots:
       zen-observable-ts: 1.2.5
     optionalDependencies:
       graphql-ws: 5.16.0(graphql@16.8.2)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
 
@@ -5663,14 +5663,14 @@ snapshots:
 
   '@eslint/js@8.56.0': {}
 
-  '@front_web_mrmilu/hooks@2.1.0(@babel/runtime@7.25.0)(react@18.2.0)':
+  '@front_web_mrmilu/hooks@2.1.0(@babel/runtime@7.25.0)(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.0
-      react: 18.2.0
+      react: 18.3.1
 
-  '@front_web_mrmilu/network@2.1.0(@apollo/client@3.9.11(@types/react@18.2.79)(graphql-ws@5.16.0(graphql@16.8.2))(graphql@16.8.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@babel/runtime@7.25.0)(graphql@16.8.2)':
+  '@front_web_mrmilu/network@2.1.0(@apollo/client@3.9.11(@types/react@18.3.3)(graphql-ws@5.16.0(graphql@16.8.2))(graphql@16.8.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@babel/runtime@7.25.0)(graphql@16.8.2)':
     dependencies:
-      '@apollo/client': 3.9.11(@types/react@18.2.79)(graphql-ws@5.16.0(graphql@16.8.2))(graphql@16.8.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@apollo/client': 3.9.11(@types/react@18.3.3)(graphql-ws@5.16.0(graphql@16.8.2))(graphql@16.8.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@babel/runtime': 7.25.0
       graphql: 16.8.2
 
@@ -5678,10 +5678,10 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.25.0
 
-  '@front_web_mrmilu/utils@2.1.0(@babel/runtime@7.25.0)(yup@1.3.3)':
+  '@front_web_mrmilu/utils@2.1.0(@babel/runtime@7.25.0)(yup@1.4.0)':
     dependencies:
       '@babel/runtime': 7.25.0
-      yup: 1.3.3
+      yup: 1.4.0
 
   '@graphql-codegen/add@3.2.3(graphql@16.8.2)':
     dependencies:
@@ -6242,9 +6242,9 @@ snapshots:
     dependencies:
       graphql: 16.8.2
 
-  '@hookform/resolvers@3.3.4(react-hook-form@7.50.1(react@18.2.0))':
+  '@hookform/resolvers@3.3.4(react-hook-form@7.50.1(react@18.3.1))':
     dependencies:
-      react-hook-form: 7.50.1(react@18.2.0)
+      react-hook-form: 7.50.1(react@18.3.1)
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -6307,34 +6307,34 @@ snapshots:
       tslib: 2.6.3
       webcrypto-core: 1.8.0
 
-  '@react-spring/animated@9.7.3(react@18.2.0)':
+  '@react-spring/animated@9.7.3(react@18.3.1)':
     dependencies:
-      '@react-spring/shared': 9.7.3(react@18.2.0)
+      '@react-spring/shared': 9.7.3(react@18.3.1)
       '@react-spring/types': 9.7.3
-      react: 18.2.0
+      react: 18.3.1
 
-  '@react-spring/core@9.7.3(react@18.2.0)':
+  '@react-spring/core@9.7.3(react@18.3.1)':
     dependencies:
-      '@react-spring/animated': 9.7.3(react@18.2.0)
-      '@react-spring/shared': 9.7.3(react@18.2.0)
+      '@react-spring/animated': 9.7.3(react@18.3.1)
+      '@react-spring/shared': 9.7.3(react@18.3.1)
       '@react-spring/types': 9.7.3
-      react: 18.2.0
+      react: 18.3.1
 
-  '@react-spring/shared@9.7.3(react@18.2.0)':
+  '@react-spring/shared@9.7.3(react@18.3.1)':
     dependencies:
       '@react-spring/types': 9.7.3
-      react: 18.2.0
+      react: 18.3.1
 
   '@react-spring/types@9.7.3': {}
 
-  '@react-spring/web@9.7.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@react-spring/web@9.7.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@react-spring/animated': 9.7.3(react@18.2.0)
-      '@react-spring/core': 9.7.3(react@18.2.0)
-      '@react-spring/shared': 9.7.3(react@18.2.0)
+      '@react-spring/animated': 9.7.3(react@18.3.1)
+      '@react-spring/core': 9.7.3(react@18.3.1)
+      '@react-spring/shared': 9.7.3(react@18.3.1)
       '@react-spring/types': 9.7.3
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@remix-run/router@1.15.3': {}
 
@@ -6486,14 +6486,14 @@ snapshots:
       '@sentry/types': 7.102.1
       '@sentry/utils': 7.102.1
 
-  '@sentry/react@7.102.1(react@18.2.0)':
+  '@sentry/react@7.102.1(react@18.3.1)':
     dependencies:
       '@sentry/browser': 7.102.1
       '@sentry/core': 7.102.1
       '@sentry/types': 7.102.1
       '@sentry/utils': 7.102.1
       hoist-non-react-statics: 3.3.2
-      react: 18.2.0
+      react: 18.3.1
 
   '@sentry/replay@7.102.1':
     dependencies:
@@ -6634,11 +6634,11 @@ snapshots:
 
   '@types/prop-types@15.7.12': {}
 
-  '@types/react-dom@18.2.25':
+  '@types/react-dom@18.3.0':
     dependencies:
-      '@types/react': 18.2.79
+      '@types/react': 18.3.3
 
-  '@types/react@18.2.79':
+  '@types/react@18.3.3':
     dependencies:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
@@ -8412,7 +8412,7 @@ snapshots:
 
   ignore@5.3.1: {}
 
-  immer@10.0.4: {}
+  immer@10.1.1: {}
 
   immutable@3.7.6: {}
 
@@ -9273,42 +9273,42 @@ snapshots:
 
   react-app-alias@2.2.2: {}
 
-  react-dom@18.2.0(react@18.2.0):
+  react-dom@18.3.1(react@18.3.1):
     dependencies:
       loose-envify: 1.4.0
-      react: 18.2.0
+      react: 18.3.1
       scheduler: 0.23.2
 
-  react-hook-form@7.50.1(react@18.2.0):
+  react-hook-form@7.50.1(react@18.3.1):
     dependencies:
-      react: 18.2.0
+      react: 18.3.1
 
-  react-i18next@14.0.8(i18next@23.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  react-i18next@14.0.8(i18next@23.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.24.7
       html-parse-stringify: 3.0.1
       i18next: 23.9.0
-      react: 18.2.0
+      react: 18.3.1
     optionalDependencies:
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.3.1(react@18.3.1)
 
   react-is@16.13.1: {}
 
   react-refresh@0.14.2: {}
 
-  react-router-dom@6.22.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  react-router-dom@6.22.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@remix-run/router': 1.15.3
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-router: 6.22.3(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-router: 6.22.3(react@18.3.1)
 
-  react-router@6.22.3(react@18.2.0):
+  react-router@6.22.3(react@18.3.1):
     dependencies:
       '@remix-run/router': 1.15.3
-      react: 18.2.0
+      react: 18.3.1
 
-  react@18.2.0:
+  react@18.3.1:
     dependencies:
       loose-envify: 1.4.0
 
@@ -9361,10 +9361,10 @@ snapshots:
       es-errors: 1.3.0
       set-function-name: 2.0.2
 
-  rehackt@0.0.6(@types/react@18.2.79)(react@18.2.0):
+  rehackt@0.0.6(@types/react@18.3.3)(react@18.3.1):
     optionalDependencies:
-      '@types/react': 18.2.79
-      react: 18.2.0
+      '@types/react': 18.3.3
+      react: 18.3.1
 
   relay-runtime@12.0.0:
     dependencies:
@@ -9942,9 +9942,9 @@ snapshots:
 
   urlpattern-polyfill@8.0.2: {}
 
-  use-sync-external-store@1.2.0(react@18.2.0):
+  use-sync-external-store@1.2.0(react@18.3.1):
     dependencies:
-      react: 18.2.0
+      react: 18.3.1
 
   util-deprecate@1.0.2: {}
 
@@ -10145,7 +10145,7 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  yup@1.3.3:
+  yup@1.4.0:
     dependencies:
       property-expr: 2.0.6
       tiny-case: 1.0.3
@@ -10158,10 +10158,10 @@ snapshots:
 
   zen-observable@0.8.15: {}
 
-  zustand@4.5.4(@types/react@18.2.79)(immer@10.0.4)(react@18.2.0):
+  zustand@4.5.4(@types/react@18.3.3)(immer@10.1.1)(react@18.3.1):
     dependencies:
-      use-sync-external-store: 1.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.0(react@18.3.1)
     optionalDependencies:
-      '@types/react': 18.2.79
-      immer: 10.0.4
-      react: 18.2.0
+      '@types/react': 18.3.3
+      immer: 10.1.1
+      react: 18.3.1
