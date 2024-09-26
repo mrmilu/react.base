@@ -1,9 +1,9 @@
-import { locator } from "@/src/core/app/ioc/__generated__";
-import { TYPES } from "@/src/core/app/ioc/__generated__/types";
-import type { IocProvider } from "@/src/core/app/ioc/interfaces";
-import type { CreatePostUseCase } from "@/src/core/posts/domain/use-cases/create-post-use-case";
-import { Button } from "@/src/ui/components/button/button";
-import { Switch } from "@/src/ui/components/switch/switch";
+import type { CreatePostUseCase } from "@/src/posts/application/use-cases/create-post-use-case";
+import { locator } from "@/src/shared/ioc/__generated__";
+import { TYPES } from "@/src/shared/ioc/__generated__/types";
+import type { IocProvider } from "@/src/shared/ioc/interfaces";
+import { Button } from "@/src/shared/ui/components/button/button";
+import { Switch } from "@/src/shared/ui/components/switch/switch";
 import { useAsyncState } from "@front_web_mrmilu/hooks";
 import { debounce } from "lodash";
 import { useCallback, useState } from "react";

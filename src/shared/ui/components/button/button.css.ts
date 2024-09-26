@@ -1,6 +1,6 @@
-import { px2rem } from "@/src/ui/styles/utils.css";
-import { spacing } from "@/src/ui/styles/spacing";
-import { vars } from "@/src/ui/styles/theme.css";
+import { px2rem } from "@/src/shared/ui/styles/utils.css";
+import { spacing } from "@/src/shared/ui/styles/spacing";
+import { vars } from "@/src/shared/ui/styles/theme.css";
 import type { RecipeVariants } from "@vanilla-extract/recipes";
 import { recipe } from "@vanilla-extract/recipes";
 

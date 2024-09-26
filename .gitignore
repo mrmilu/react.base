@@ -52,5 +52,5 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Inversify
-src/core/app/ioc/index.ts
-src/core/app/ioc/types.ts
+src/shared/ioc/index.ts
+src/shared/ioc/types.ts

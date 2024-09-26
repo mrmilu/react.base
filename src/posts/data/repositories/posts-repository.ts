@@ -1,16 +1,16 @@
 import type { CreatePostInput } from "@/src/__generated__/graphql";
-import { fromJson, fromJsonPage } from "@/src/common/utils/class-transformer";
-import type { JSONPlaceholderService } from "@/src/core/app/data/services/json-placeholder-service";
-import type { MockService } from "@/src/core/app/data/services/mock-service";
-import type { Page } from "@/src/core/app/domain/models/page";
-import { TYPES } from "@/src/core/app/ioc/__generated__/types";
-import type { IocProvider } from "@/src/core/app/ioc/interfaces";
-import type { CreatePostMutation } from "@/src/core/posts/data/graphql/mutations/__generated__/create-post";
-import { PostDataModel } from "@/src/core/posts/data/models/post-data-model";
-import type { Post } from "@/src/core/posts/domain/models/post";
+import type { CreatePostMutation } from "@/src/posts/data/graphql/mutations/__generated__/create-post";
+import { PostDataModel } from "@/src/posts/data/models/post-data-model";
+import type { Post } from "@/src/posts/domain/models/post";
+import type { JSONPlaceholderService } from "@/src/shared/data/services/json-placeholder-service";
+import type { MockService } from "@/src/shared/data/services/mock-service";
+import type { Page } from "@/src/shared/domain/models/page";
+import { TYPES } from "@/src/shared/ioc/__generated__/types";
+import type { IocProvider } from "@/src/shared/ioc/interfaces";
 import { inject, injectable } from "inversify";
 import type { IPostsRepository } from "../../domain/interfaces/posts-repository";
 import CreatePostMutationOperation from "../graphql/mutations/create-post.graphql";
+import { fromJson, fromJsonPage } from "@/src/shared/data/utils/class-transformer";
 
 @injectable()
 export class PostsRepository implements IPostsRepository {

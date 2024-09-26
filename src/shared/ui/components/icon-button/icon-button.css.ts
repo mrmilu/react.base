@@ -1,7 +1,7 @@
-import { px2rem } from "@/src/ui/styles/utils.css";
+import { px2rem } from "@/src/shared/ui/styles/utils.css";
 import { spacing } from "../../styles/spacing";
 import { globalStyle, style } from "@vanilla-extract/css";
-import { vars } from "@/src/ui/styles/theme.css";
+import { vars } from "@/src/shared/ui/styles/theme.css";
 
 const wrapper = style({
   display: "flex",

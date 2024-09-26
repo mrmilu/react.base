@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { UserStateViewModel } from "@/src/ui/view-models/user-state";
+import type { UserStateViewModel } from "@/src/shared/ui/view-models/user-state";
 import { createStore, useStore } from "zustand";
 
 export const userProvider = createStore<UserStateViewModel>((set) => ({

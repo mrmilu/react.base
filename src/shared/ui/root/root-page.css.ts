@@ -1,8 +1,8 @@
-import { getBreakpoint } from "@/src/ui/styles/breakpoints";
-import { vars } from "@/src/ui/styles/theme.css";
-import { px2rem } from "@/src/ui/styles/utils.css";
+import { getBreakpoint } from "@/src/shared/ui/styles/breakpoints";
+import { vars } from "@/src/shared/ui/styles/theme.css";
+import { px2rem } from "@/src/shared/ui/styles/utils.css";
 import { globalStyle, style } from "@vanilla-extract/css";
-import { spacing } from "../../../../ui/styles/spacing";
+import { spacing } from "../styles/spacing";
 
 const wrapper = style({
   display: "flex",

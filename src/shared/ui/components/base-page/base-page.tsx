@@ -1,4 +1,4 @@
-import type { CypressProps } from "@/src/ui/view-models/cypress";
+import type { CypressProps } from "@/src/shared/ui/view-models/cypress";
 import type { PropsWithChildren } from "react";
 import css from "./base-page.css";
 

@@ -1,6 +1,6 @@
 import { spacing } from "../../styles/spacing";
 import { px2rem } from "../../styles/utils.css";
-import { vars } from "@/src/ui/styles/theme.css";
+import { vars } from "@/src/shared/ui/styles/theme.css";
 import { style } from "@vanilla-extract/css";
 
 const wrapper = style({

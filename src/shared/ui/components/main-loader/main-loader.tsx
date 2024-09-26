@@ -1,5 +1,5 @@
-import { Loader } from "@/src/ui/components/loader/loader";
-import { useUiProvider } from "@/src/ui/providers/ui.provider";
+import { Loader } from "@/src/shared/ui/components/loader/loader";
+import { useUiProvider } from "@/src/shared/ui/providers/ui.provider";
 import { animated, easings, useTransition } from "@react-spring/web";
 import css from "./main-loader.css";
 

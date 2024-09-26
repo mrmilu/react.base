@@ -1,7 +1,7 @@
-import { TYPES } from "@/src/core/app/ioc/__generated__/types";
-import type { IocProvider } from "@/src/core/app/ioc/interfaces";
-import type { IUsersRepository } from "@/src/core/users/domain/interfaces/users-repository";
-import type { User } from "@/src/core/users/domain/models/user";
+import { TYPES } from "@/src/shared/ioc/__generated__/types";
+import type { IocProvider } from "@/src/shared/ioc/interfaces";
+import type { IUsersRepository } from "@/src/users/domain/interfaces/users-repository";
+import type { User } from "@/src/users/domain/models/user";
 import { inject, injectable } from "inversify";
 
 @injectable()

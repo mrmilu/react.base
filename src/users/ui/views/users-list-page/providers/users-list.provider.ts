@@ -1,12 +1,12 @@
-import { createProvider } from "@/src/common/utils/zustand";
-import { locator } from "@/src/core/app/ioc/__generated__";
-import { TYPES } from "@/src/core/app/ioc/__generated__/types";
-import type { IocProvider } from "@/src/core/app/ioc/interfaces";
-import type { GetUsersUseCase } from "@/src/core/users/domain/use-cases/get-users-use-case";
-import type { UsersListStateViewModel } from "@/src/ui/features/users/views/users-list-page/view-models/users-list-state";
-import { uiProvider } from "@/src/ui/providers/ui.provider";
+import { locator } from "@/src/shared/ioc/__generated__";
+import { TYPES } from "@/src/shared/ioc/__generated__/types";
+import type { IocProvider } from "@/src/shared/ioc/interfaces";
+import { uiProvider } from "@/src/shared/ui/providers/ui.provider";
+import { createProvider } from "@/src/shared/ui/utils/zustand";
+import type { GetUsersUseCase } from "@/src/users/application/use-cases/get-users-use-case";
 import { useEffectStrictMode } from "@front_web_mrmilu/hooks";
 import { makeCancelable, timeout } from "@front_web_mrmilu/utils";
+import type { UsersListStateViewModel } from "../view-models/users-list-state";
 
 export const useUsersListProvider = createProvider<UsersListStateViewModel>(() => (set) => ({
   users: [],

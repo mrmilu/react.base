@@ -1,5 +1,5 @@
-import type { DataModel } from "@/src/core/shared/domain/interfaces/data-model";
-import { User } from "@/src/core/users/domain/models/user";
+import type { DataModel } from "@/src/shared/data/models/data-model";
+import { User } from "@/src/users/domain/models/user";
 import { Expose } from "class-transformer";
 
 export class UserDataModel implements DataModel<User> {

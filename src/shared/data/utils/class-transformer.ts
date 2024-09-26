@@ -1,7 +1,7 @@
-import { PageDataModel } from "@/src/core/shared/data/models/page-data-model";
+import { PageDataModel } from "@/src/shared/data/models/page-data-model";
 import { instanceToPlain, plainToClass, plainToClassFromExist } from "class-transformer";
 import type { ClassConstructor } from "class-transformer/types/interfaces";
-import type { DataModel } from "../../domain/models/data-model";
+import type { DataModel } from "@/src/shared/data/models/data-model";
 
 export const fromJson = <T = never, U extends T = T>(model: ClassConstructor<U>, json: Record<string, unknown>): U =>
   plainToClass(model, json, { excludeExtraneousValues: true, exposeDefaultValues: true }) as U;

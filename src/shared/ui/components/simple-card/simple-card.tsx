@@ -1,5 +1,5 @@
-import { typographyStyles } from "@/src/ui/styles/typography.css";
-import type { CypressProps } from "@/src/ui/view-models/cypress";
+import { typographyStyles } from "@/src/shared/ui/styles/typography.css";
+import type { CypressProps } from "@/src/shared/ui/view-models/cypress";
 import type { MouseEventHandler } from "react";
 import css from "./simple-card.css";
 

@@ -1,5 +1,5 @@
-import { createProvider } from "@/src/common/utils/zustand";
-import type { HomeStateViewModel } from "@/src/ui/features/home/views/home-page/view-models/home-state";
+import type { HomeStateViewModel } from "@/src/home/ui/view-models/home-state";
+import { createProvider } from "@/src/shared/ui/utils/zustand";
 
 interface HomeProviderBuilderProps {
   amount: "none" | "twenty" | "thirty";

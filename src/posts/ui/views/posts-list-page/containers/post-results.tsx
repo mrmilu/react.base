@@ -1,6 +1,6 @@
-import { SimpleCard } from "@/src/ui/components/simple-card/simple-card";
-import { usePostsProvider } from "@/src/ui/features/posts/views/posts-list-page/providers/posts.provider";
+import { SimpleCard } from "@/src/shared/ui/components/simple-card/simple-card";
 import { Suspense } from "react";
+import { usePostsProvider } from "../providers/posts.provider";
 
 export function PostsResults() {
   const hasError = usePostsProvider((state) => state.hasError);

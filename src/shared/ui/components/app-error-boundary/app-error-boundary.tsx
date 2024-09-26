@@ -1,4 +1,4 @@
-import type { BaseError } from "@/src/core/app/domain/models/base-error";
+import type { BaseError } from "@/src/shared/domain/models/base-error";
 import * as Sentry from "@sentry/react";
 import type { PropsWithChildren } from "react";
 import { Component } from "react";

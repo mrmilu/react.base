@@ -1,7 +1,7 @@
-import { BaseError } from "@/src/core/app/domain/models/base-error";
-import { Button } from "@/src/ui/components/button/button";
-import { ControlledInput } from "@/src/ui/components/input/input";
-import { useHomeProvider, useHomeProviderBis } from "@/src/ui/features/home/views/home-page/providers/home-provider";
+import { useHomeProvider, useHomeProviderBis } from "@/src/home/ui/providers/home-provider";
+import { BaseError } from "@/src/shared/domain/models/base-error";
+import { Button } from "@/src/shared/ui/components/button/button";
+import { ControlledInput } from "@/src/shared/ui/components/input/input";
 import { timeout } from "@front_web_mrmilu/utils";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useMemo } from "react";

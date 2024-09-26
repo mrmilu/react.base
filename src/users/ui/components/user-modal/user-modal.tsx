@@ -1,5 +1,5 @@
-import type { User } from "@/src/core/users/domain/models/user";
-import { ModalContent } from "@/src/ui/containers/modal/modal";
+import { ModalContent } from "@/src/shared/ui/containers/modal/modal";
+import type { User } from "@/src/users/domain/models/user";
 import { forwardRef } from "react";
 import css from "./user-modal.css";
 

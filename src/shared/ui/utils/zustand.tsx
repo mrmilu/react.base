@@ -1,4 +1,4 @@
-import type { ConstructorType } from "@/src/common/interfaces/constructor-type";
+import type { ConstructorType } from "@/src/shared/domain/models/constructor-type";
 import type { PropsWithChildren } from "react";
 import { createContext, useContext, useRef } from "react";
 import type { StateCreator, StoreMutatorIdentifier } from "zustand";

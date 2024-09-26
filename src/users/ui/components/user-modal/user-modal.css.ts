@@ -1,5 +1,5 @@
 import { recipe } from "@vanilla-extract/recipes";
-import { vars } from "@/src/ui/styles/theme.css";
+import { vars } from "@/src/shared/ui/styles/theme.css";
 
 const content = recipe({
   base: {

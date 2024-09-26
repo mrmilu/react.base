@@ -1,5 +1,5 @@
-import { spacing } from "@/src/ui/styles/spacing";
-import { px2rem, wrapperStyles } from "@/src/ui/styles/utils.css";
+import { spacing } from "@/src/shared/ui/styles/spacing";
+import { px2rem, wrapperStyles } from "@/src/shared/ui/styles/utils.css";
 import { style } from "@vanilla-extract/css";
 
 const wrapper = style([

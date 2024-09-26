@@ -1,5 +1,5 @@
-import type { IEnvVars } from "@/src/core/app/domain/interfaces/env-vars";
-import { TYPES } from "@/src/core/app/ioc/__generated__/types";
+import type { IEnvVars } from "@/src/shared/domain/interfaces/env-vars";
+import { TYPES } from "@/src/shared/ioc/__generated__/types";
 import type { NetworkInterfaces } from "@front_web_mrmilu/network";
 import { GraphqlClient } from "@front_web_mrmilu/network";
 import type { DocumentNode } from "graphql";

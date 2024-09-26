@@ -1,9 +1,9 @@
-import { spacing } from "@/src/ui/styles/spacing";
-import { px2rem } from "@/src/ui/styles/utils.css";
+import { spacing } from "@/src/shared/ui/styles/spacing";
+import { px2rem } from "@/src/shared/ui/styles/utils.css";
 import { style } from "@vanilla-extract/css";
-import { vars } from "@/src/ui/styles/theme.css";
-import { typographyStyles } from "@/src/ui/styles/typography.css";
-import { getBreakpoint } from "@/src/ui/styles/breakpoints";
+import { vars } from "@/src/shared/ui/styles/theme.css";
+import { typographyStyles } from "@/src/shared/ui/styles/typography.css";
+import { getBreakpoint } from "@/src/shared/ui/styles/breakpoints";
 
 const wrapper = style({
   display: "flex",

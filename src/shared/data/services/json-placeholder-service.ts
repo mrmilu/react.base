@@ -1,7 +1,7 @@
-import { RestClient } from "@/src/common/network/rest/rest-client";
-import type { IEnvVars } from "@/src/core/app/domain/interfaces/env-vars";
-import { TYPES } from "@/src/core/app/ioc/__generated__/types";
-import type { IRestDataSource, RestDataSourceOptions } from "@/src/core/shared/domain/interfaces/rest-data-source";
+import type { IEnvVars } from "@/src/shared/domain/interfaces/env-vars";
+import type { IRestDataSource, RestDataSourceOptions } from "@/src/shared/domain/interfaces/rest-data-source";
+import { TYPES } from "@/src/shared/ioc/__generated__/types";
+import { RestClient } from "@/src/shared/data/services/rest-client";
 import { inject, injectable } from "inversify";
 import { generatorConf } from "inversify-generator/decorators";
 

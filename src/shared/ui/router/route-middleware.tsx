@@ -1,5 +1,5 @@
 import { Await, Navigate, useLocation, defer } from "react-router-dom";
-import { SuspenseMainLoader } from "@/src/ui/components/suspense-main-loader/suspense-main-loader";
+import { SuspenseMainLoader } from "@/src/shared/ui/components/suspense-main-loader/suspense-main-loader";
 
 export interface TrackedPromise<T> extends Promise<T> {
   _tracked?: boolean;

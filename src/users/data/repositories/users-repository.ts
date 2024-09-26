@@ -1,10 +1,10 @@
-import type { MockService } from "@/src/core/app/data/services/mock-service";
-import { TYPES } from "@/src/core/app/ioc/__generated__/types";
-import type { IocProvider } from "@/src/core/app/ioc/interfaces";
-import type { UsersQuery } from "@/src/core/users/data/graphql/queries/__generated__/users";
-import { UserDataModel } from "@/src/core/users/data/models/user-data-model";
-import type { IUsersRepository } from "@/src/core/users/domain/interfaces/users-repository";
-import type { User } from "@/src/core/users/domain/models/user";
+import type { MockService } from "@/src/shared/data/services/mock-service";
+import { TYPES } from "@/src/shared/ioc/__generated__/types";
+import type { IocProvider } from "@/src/shared/ioc/interfaces";
+import type { UsersQuery } from "@/src/users/data/graphql/queries/__generated__/users";
+import { UserDataModel } from "@/src/users/data/models/user-data-model";
+import type { IUsersRepository } from "@/src/users/domain/interfaces/users-repository";
+import type { User } from "@/src/users/domain/models/user";
 import { plainToClass } from "class-transformer";
 import { inject, injectable } from "inversify";
 import UsersQueryOperation from "../graphql/queries/users.graphql";

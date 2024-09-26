@@ -1,6 +1,6 @@
-import BasePage from "@/src/ui/components/base-page/base-page";
-import { PostsResults } from "@/src/ui/features/posts/views/posts-list-page/containers/post-results";
-import { useInitPostsProvider } from "@/src/ui/features/posts/views/posts-list-page/providers/posts.provider";
+import BasePage from "@/src/shared/ui/components/base-page/base-page";
+import { PostsResults } from "./containers/post-results";
+import { useInitPostsProvider } from "./providers/posts.provider";
 
 export default function PostsListPage() {
   useInitPostsProvider();

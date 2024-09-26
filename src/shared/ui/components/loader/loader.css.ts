@@ -1,5 +1,5 @@
-import { px2rem } from "@/src/ui/styles/utils.css";
-import { vars } from "@/src/ui/styles/theme.css";
+import { px2rem } from "@/src/shared/ui/styles/utils.css";
+import { vars } from "@/src/shared/ui/styles/theme.css";
 import { keyframes, style } from "@vanilla-extract/css";
 
 const dotFlashing = keyframes({

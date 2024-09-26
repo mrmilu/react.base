@@ -1,7 +1,7 @@
-import { LoggingModal } from "@/src/ui/components/logging-modal/logging-modal";
-import { useUiProvider } from "@/src/ui/providers/ui.provider";
-import { useUserProvider } from "@/src/ui/providers/user.provider";
-import type { MiddlewareHook } from "@/src/ui/router/route-middleware";
+import { LoggingModal } from "@/src/shared/ui/components/logging-modal/logging-modal";
+import { useUiProvider } from "@/src/shared/ui/providers/ui.provider";
+import { useUserProvider } from "@/src/shared/ui/providers/user.provider";
+import type { MiddlewareHook } from "@/src/shared/ui/router/route-middleware";
 import { useEffect } from "react";
 
 export const useAuthMiddleware: MiddlewareHook = () => {

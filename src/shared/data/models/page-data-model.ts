@@ -1,6 +1,6 @@
 import { Exclude, Expose, Type } from "class-transformer";
-import type { DataModel } from "../../domain/models/data-model";
 import { Page } from "../../domain/models/page";
+import type { DataModel } from "@/src/shared/data/models/data-model";
 
 export class PageDataModel<ItemDataType extends DataModel<ItemDomainType>, ItemDomainType> {
   @Exclude()

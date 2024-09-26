@@ -1,10 +1,10 @@
-import type { User } from "@/src/core/users/domain/models/user";
-import BasePage from "@/src/ui/components/base-page/base-page";
-import { SimpleCard } from "@/src/ui/components/simple-card/simple-card";
-import { useInitUsersListProvider, useUsersListProvider } from "@/src/ui/features/users/views/users-list-page/providers/users-list.provider";
-import { useUiProvider } from "@/src/ui/providers/ui.provider";
+import BasePage from "@/src/shared/ui/components/base-page/base-page";
+import { SimpleCard } from "@/src/shared/ui/components/simple-card/simple-card";
+import { useUiProvider } from "@/src/shared/ui/providers/ui.provider";
+import type { User } from "@/src/users/domain/models/user";
 import { useBreakpointsMatch } from "@front_web_mrmilu/hooks";
 import { UserModal } from "../../components/user-modal/user-modal";
+import { useInitUsersListProvider, useUsersListProvider } from "./providers/users-list.provider";
 
 export default function UsersListPage() {
   useInitUsersListProvider();

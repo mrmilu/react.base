@@ -1,4 +1,4 @@
-import type { CypressProps } from "@/src/ui/view-models/cypress";
+import type { CypressProps } from "@/src/shared/ui/view-models/cypress";
 import type { MouseEventHandler, ReactNode } from "react";
 import { forwardRef } from "react";
 import css from "./icon-button.css";

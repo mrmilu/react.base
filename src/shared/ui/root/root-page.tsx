@@ -1,13 +1,13 @@
-import { Button } from "@/src/ui/components/button/button";
-import { MainLoader } from "@/src/ui/components/main-loader/main-loader";
-import { Modal } from "@/src/ui/containers/modal/modal";
-import { useUserProvider } from "@/src/ui/providers/user.provider";
-import "@/src/ui/styles/fonts.css";
-import "@/src/ui/styles/globals.css";
-import "@/src/ui/styles/reset.css";
-import { theme } from "@/src/ui/styles/theme.css";
+import { Button } from "@/src/shared/ui/components/button/button";
+import { MainLoader } from "@/src/shared/ui/components/main-loader/main-loader";
+import { Modal } from "@/src/shared/ui/containers/modal/modal";
+import { useUserProvider } from "@/src/shared/ui/providers/user.provider";
+import "@/src/shared/ui/styles/fonts.css";
+import "@/src/shared/ui/styles/globals.css";
+import "@/src/shared/ui/styles/reset.css";
+import { theme } from "@/src/shared/ui/styles/theme.css";
 import { Link, Outlet } from "react-router-dom";
-import { SuspenseMainLoader } from "../../../components/suspense-main-loader/suspense-main-loader";
+import { SuspenseMainLoader } from "../components/suspense-main-loader/suspense-main-loader";
 import css from "./root-page.css";
 
 export const RootPage = () => {
