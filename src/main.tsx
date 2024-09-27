@@ -1,9 +1,9 @@
 import type { IEnvVars } from "@/src/shared/domain/interfaces/env-vars";
 import { locator } from "@/src/shared/ioc/__generated__";
 import { TYPES } from "@/src/shared/ioc/__generated__/types";
-import "@/src/shared/ui/i18n/index";
-import { router } from "@/src/shared/ui/router/routes";
-import "@/src/shared/ui/utils/yup-extensions";
+import "@/src/shared/presentation/i18n/index";
+import { router } from "@/src/shared/presentation/router/routes";
+import "@/src/shared/presentation/utils/yup-extensions";
 import * as Sentry from "@sentry/react";
 import { BrowserTracing } from "@sentry/tracing";
 import { StrictMode } from "react";
