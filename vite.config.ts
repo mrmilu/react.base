@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => {
         { find: "@/src", replacement: path.resolve(__dirname, "src") },
         {
           find: "@/ioc",
-          replacement: path.resolve(__dirname, "src/common/ioc")
+          replacement: path.resolve(__dirname, "src/shared/ioc")
         }
       ]
     },

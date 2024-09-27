@@ -1,4 +1,4 @@
 {
-  "output": "./src/core/app/ioc/__generated__",
+  "output": "./src/shared/ioc/__generated__",
   "binding": "dynamic"
 }
