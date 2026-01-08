@@ -66,6 +66,8 @@ jobs:
           labels: ${{ steps.meta_main.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            NODE_VERSION=${{ steps.node_version.outputs.NODE_VER }}
           secrets: |
             "env_variables=${{ secrets.ENV_VARIABLES}}"
 
